@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>enssamble</title>
+  <link rel="icon" type="image/png" href="assets/icons/enssamble_icon_64.png" />
+  <link rel="shortcut icon" type="image/x-icon" href="assets/icons/enssamble.ico" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-layout" onclick="closeAllCardMenus()">
+    <!-- BARRA LATERAL ENSSAMBLE (Íconos en tono gris del logo + animación suave) -->
+    <aside class="sidebar expanded" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo-slot" onclick="setTab('inicio')" title="enssamble - Inicio">
+          <img src="assets/icons/sidebar_logo_collapsed.png" alt="ss" class="logo-collapsed-img" />
+          <img src="assets/icons/sidebar_logo_expanded.png" alt="enssamble" class="logo-expanded-img" />
+        </div>
+
+        <button class="sidebar-toggle-btn" id="sidebarToggleBtn" onclick="toggleSidebar()" title="Expandir / Contraer panel lateral">
+          <img src="assets/icons/arrow_expand.png" alt="Expandir" class="arrow-expand-img" />
+          <img src="assets/icons/arrow_collapse.png" alt="Contraer" class="arrow-collapse-img" />
+        </button>
+      </div>
+
+      <!-- Navegación Principal: Inicio, Módulos, Materiales, Despiece, RENDER -->
+      <nav class="nav-list">
+        <button class="nav-item active" data-tab="inicio" onclick="setTab('inicio')" title="Inicio">
+          <span class="nav-icon-wrap">
+            <img src="assets/icons/icon_inicio.png" alt="Inicio" class="nav-icon-img icon-inicio" />
+          </span>
+          <span class="nav-label">Inicio</span>
+        </button>
+
+        <button class="nav-item" data-tab="modules" onclick="setTab('modules')" title="Módulos">
+          <span class="nav-icon-wrap">
+            <img src="assets/icons/icon_modulos.png" alt="Módulos" class="nav-icon-img icon-modulos" />
+          </span>
+          <span class="nav-label">Módulos</span>
+        </button>
+
+        <button class="nav-item" data-tab="materials" onclick="setTab('materials')" title="Materiales">
+          <span class="nav-icon-wrap">
+            <img src="assets/icons/icon_materiales.png" alt="Materiales" class="nav-icon-img icon-materiales" />
+          </span>
+          <span class="nav-label">Materiales</span>
+        </button>
+
+        <button class="nav-item" data-tab="despiece" onclick="setTab('despiece')" title="Despiece">
+          <span class="nav-icon-wrap">
+            <img src="assets/icons/icon_despiece.png" alt="Despiece" class="nav-icon-img icon-despiece" />
+          </span>
+          <span class="nav-label">Despiece</span>
+        </button>
+
+        <button class="nav-item" data-tab="render" onclick="setTab('render')" title="Render">
+          <span class="nav-icon-wrap">
+            <img src="assets/icons/icon_render.png" alt="Render" class="nav-icon-img icon-render" />
+          </span>
+          <span class="nav-label">Render</span>
+        </button>
+
+        <button class="nav-item" data-tab="moodboard" onclick="setTab('moodboard')" title="Moodboard">
+          <span class="nav-icon-wrap">
+            <img src="assets/icons/icon_moodboard.png" alt="Moodboard" class="nav-icon-img icon-moodboard" />
+          </span>
+          <span class="nav-label">Moodboard</span>
+        </button>
+      </nav>
+
+      <!-- Pestaña intermedia a mitad de la barra lateral (entre Render y Sebastián): Url + Showroom + Trash -->
+      <div class="sidebar-mid">
+        <button class="nav-item" data-tab="url" onclick="setTab('url')" title="Url - Madereras">
+          <span class="nav-icon-wrap">
+            <img src="assets/icons/icon_url.png" alt="Url" class="nav-icon-img icon-url" />
+          </span>
+          <span class="nav-label">Url</span>
+        </button>
+
+        <button class="nav-item" data-tab="showroom" onclick="setTab('showroom')" title="Showroom">
+          <span class="nav-icon-wrap">
+            <img src="assets/icons/icon_showroom.png" alt="Showroom" class="nav-icon-img icon-showroom" />
+          </span>
+          <span class="nav-label">Showroom</span>
+        </button>
+
+        <button class="nav-item" data-tab="trash" onclick="setTab('trash')" title="Trash - Elementos eliminados">
+          <span class="nav-icon-wrap">
+            <img src="assets/icons/icon_trash.png" alt="Trash" class="nav-icon-img icon-trash" />
+          </span>
+          <span class="nav-label">Trash</span>
+        </button>
+      </div>
+
+      <!-- Parte Inferior: Sebastián (Login) y Settings -->
+      <div class="sidebar-bottom">
+        <button class="nav-item bottom-item" data-tab="login" onclick="setTab('login')" title="Login - Perfil de usuario">
+          <span class="nav-icon-wrap">
+            <img src="assets/icons/icon_user.png" alt="Sebastián" class="nav-icon-img icon-user" />
+          </span>
+          <span class="nav-label bottom-label" id="sidebarUsernameLabel">Sebastián</span>
+        </button>
+
+        <button class="nav-item bottom-item" data-tab="settings" onclick="setTab('settings')" title="Settings">
+          <span class="nav-icon-wrap">
+            <img src="assets/icons/icon_settings.png" alt="Settings" class="nav-icon-img icon-settings" />
+          </span>
+          <span class="nav-label bottom-label">Settings</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- ÁREA PRINCIPAL -->
+    <main class="main-content" id="mainContent">
+      <!-- Encabezado central original enssamble / where ideas fit -->
+      <div class="hero-brand-header" id="heroBrandHeader">
+        <img src="assets/icons/hero_logo.png" alt="enssamble - where ideas fit" class="hero-logo-img" />
+      </div>
+
+      <!-- ================= PESTAÑA 1: INICIO (Top 10 Módulos más usados + Top 10 Materiales más usados) ================= -->
+      <section class="tab-view active" id="viewInicio">
+        <div class="inicio-dashboard">
+          <div class="inicio-section-block">
+            <div class="inicio-section-header">
+              <div>
+                <h2 class="inicio-section-title">Módulos</h2>
+                <p class="inicio-section-sub">LOS 10 MÓDULOS DINÁMICOS 3D MÁS USADOS</p>
+              </div>
+              <button class="ens-pill-btn" onclick="setTab('modules')">Ver todos los módulos &rarr;</button>
+            </div>
+            <div class="cards-grid cols-10" id="inicioTopModulesGrid"></div>
+          </div>
+
+          <div class="inicio-section-block">
+            <div class="inicio-section-header">
+              <div>
+                <h2 class="inicio-section-title">Materiales</h2>
+                <p class="inicio-section-sub">LOS 10 MATERIALES EGGER (.SKM) MÁS USADOS</p>
+              </div>
+              <button class="ens-pill-btn" onclick="setTab('materials')">Ver todos los materiales &rarr;</button>
+            </div>
+            <div class="cards-grid cols-10" id="inicioTopMaterialsGrid"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PESTAÑA 2 y 3: MÓDULOS Y MATERIALES ================= -->
+      <section class="tab-view" id="viewCatalog">
+        <header class="catalog-header">
+          <h1 class="catalog-title" id="catalogTitle">Catálogo de Materiales</h1>
+          <p class="catalog-subtitle" id="catalogSubtitle">EXPLORA TEXTURAS Y ACABADOS PREMIUM PARA TUS DISEÑOS.</p>
+
+          <div class="search-and-actions-row">
+            <div class="search-box-wrap">
+              <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="searchInput" class="search-input" placeholder="Nombre, categoría o clasificación..." />
+              <button class="clear-search-btn" id="clearSearchBtn" title="Limpiar búsqueda">&times;</button>
+            </div>
+
+            <!-- ACCIONES EXCLUSIVAS DE PESTAÑA MATERIALES -->
+            <div class="catalog-extra-actions" id="materialsExtraActions" style="display:none;">
+              <button type="button" class="ens-pill-btn" id="openUrlImportBtn" onclick="openUrlImportModal()" title="Importar materiales o catálogo completo pegando el enlace URL de una página web">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+                <span>Importar desde URL</span>
+              </button>
+
+              <!-- 1 SOLO BOTÓN CÍCLICO CON PUNTERO EN SKETCHUP -->
+              <button type="button" class="ens-pill-btn paint-mode-cycle-btn" id="paintModeCycleBtn" onclick="cyclePaintApplicationMode()" title="Cambia el modo y activa el puntero en SketchUp para seleccionar manualmente qué pintar">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                  <path d="M2 17l10 5 10-5"></path>
+                  <path d="M2 12l10 5 10-5"></path>
+                </svg>
+                <span id="paintModeCycleLabel">Aplicar a todo el módulo</span>
+              </button>
+
+              <!-- BOTÓN "ROTAR TEXTURA" CON PUNTERO INTERACTIVO EN SKETCHUP -->
+              <button type="button" class="ens-pill-btn" id="rotateTextureBtn" onclick="toggleRotateTextureTool()" title="Activa el puntero en SketchUp para picar las caras que deseas rotar 90°">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2.5"></rect>
+                  <path d="M8 12a4 4 0 0 1 6.8-2.8L17 11"></path>
+                  <polyline points="17 7 17 11 13 11"></polyline>
+                  <path d="M16 12a4 4 0 0 1-6.8 2.8L7 13"></path>
+                  <polyline points="7 17 7 13 11 13"></polyline>
+                </svg>
+                <span>Rotar textura</span>
+              </button>
+            </div>
+
+            <!-- ACCIONES EXCLUSIVAS DE PESTAÑA MÓDULOS -->
+            <div class="catalog-extra-actions" id="modulesExtraActions" style="display:none;">
+              <button type="button" class="ens-pill-btn" id="toggleSortModulesBtn" onclick="toggleSortModulesMode()" title="Activar o desactivar el modo Ordenar para arrastrar y organizar libremente las tarjetas en la grilla">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="16 3 21 3 21 8"></polyline>
+                  <line x1="4" y1="20" x2="21" y2="3"></line>
+                  <polyline points="21 16 21 21 16 21"></polyline>
+                  <line x1="15" y1="15" x2="21" y2="21"></line>
+                  <line x1="4" y1="4" x2="9" y2="9"></line>
+                </svg>
+                <span>Ordenar</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- PESTAÑAS DE FILTRO (Se agrandan en amarillo al seleccionarse) -->
+          <div class="filter-pills-row" id="filterPillsRow"></div>
+        </header>
+
+        <div class="cards-grid" id="cardsGrid"></div>
+
+        <!-- SECCIÓN ANIMACIONES (Simplificada con ejes locales que siguen a Rotate + botón Quitar) -->
+        <div class="anim-section-container" id="modulesAnimationsView" style="display:none;">
+          <div class="anim-simple-panel anim-two-cols-layout">
+            <!-- GRUPO 1: PUERTAS -->
+            <div class="anim-simple-group">
+              <div class="anim-simple-group-header">
+                <h2 class="anim-simple-group-title">Puertas</h2>
+              </div>
+              <div class="anim-simple-actions-stack">
+                <div class="anim-action-row">
+                  <button type="button" class="ens-pill-btn anim-assign-btn" onclick="applyDirectAnimationToSelection('door_right', 'animInput_door_right')">
+                    <span>Abrir hacia la derecha</span>
+                  </button>
+                  <input type="number" id="animInput_door_right" class="anim-blank-input" value="" placeholder="Grados" step="any" />
+                </div>
+
+                <div class="anim-action-row">
+                  <button type="button" class="ens-pill-btn anim-assign-btn" onclick="applyDirectAnimationToSelection('door_left', 'animInput_door_left')">
+                    <span>Abrir hacia la izquierda</span>
+                  </button>
+                  <input type="number" id="animInput_door_left" class="anim-blank-input" value="" placeholder="Grados" step="any" />
+                </div>
+
+                <div class="anim-action-row">
+                  <button type="button" class="ens-pill-btn anim-assign-btn" onclick="applyDirectAnimationToSelection('door_up', 'animInput_door_up')">
+                    <span>Abrir hacia arriba</span>
+                  </button>
+                  <input type="number" id="animInput_door_up" class="anim-blank-input" value="" placeholder="Grados" step="any" />
+                </div>
+
+                <div class="anim-action-row">
+                  <button type="button" class="ens-pill-btn anim-assign-btn" onclick="applyDirectAnimationToSelection('door_down', 'animInput_door_down')">
+                    <span>Abrir hacia abajo</span>
+                  </button>
+                  <input type="number" id="animInput_door_down" class="anim-blank-input" value="" placeholder="Grados" step="any" />
+                </div>
+              </div>
+            </div>
+
+            <!-- GRUPO 2: CAJONES (Con botón 'Quitar' a la derecha del todo al mismo nivel que Puertas y Cajones) -->
+            <div class="anim-simple-group">
+              <div class="anim-simple-group-header">
+                <h2 class="anim-simple-group-title">Cajones</h2>
+                <button type="button" class="ens-pill-btn anim-remove-toggle-btn" id="toggleRemoveAnimBtn" onclick="toggleRemoveAnimationMode()" title="Activar o desactivar para quitar la animación del objeto seleccionado en SketchUp">
+                  <span>Quitar</span>
+                </button>
+              </div>
+              <div class="anim-simple-actions-stack">
+                <div class="anim-action-row">
+                  <button type="button" class="ens-pill-btn anim-assign-btn" onclick="applyDirectAnimationToSelection('drawer_forward', 'animInput_drawer_forward')">
+                    <span>Hacia adelante</span>
+                  </button>
+                  <input type="number" id="animInput_drawer_forward" class="anim-blank-input" value="" placeholder="mm" step="any" />
+                </div>
+
+                <div class="anim-action-row">
+                  <button type="button" class="ens-pill-btn anim-assign-btn" onclick="applyDirectAnimationToSelection('drawer_back', 'animInput_drawer_back')">
+                    <span>Hacia atrás</span>
+                  </button>
+                  <input type="number" id="animInput_drawer_back" class="anim-blank-input" value="" placeholder="mm" step="any" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PESTAÑA 4: DESPIECE ================= -->
+      <section class="tab-view" id="viewDespiece">
+        <header class="catalog-header">
+          <h1 class="catalog-title">Despiece</h1>
+          <p class="catalog-subtitle">organiza las piezas de los modulos para enviar a producción</p>
+
+          <div class="search-and-actions-row">
+            <div class="catalog-extra-actions">
+              <button type="button" class="ens-pill-btn" onclick="triggerScanSketchUpCutlist()" title="Leer las piezas del módulo seleccionado o de los módulos en SketchUp">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <span>Escanear módulo</span>
+              </button>
+
+              <button type="button" class="ens-pill-btn" id="explodeModelBtn" onclick="toggleExplodeModel()" title="Separa las placas del módulo seleccionado en SketchUp y muestra las cotas de las medidas necesarias">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <polyline points="9 21 3 21 3 15"></polyline>
+                  <line x1="21" y1="3" x2="14" y2="10"></line>
+                  <line x1="3" y1="21" x2="10" y2="14"></line>
+                </svg>
+                <span>Explotar módulo</span>
+              </button>
+
+              <button type="button" class="ens-pill-btn" id="exportCsvBtn" onclick="exportDespieceToCsv()" title="Exportar planilla de despiece, tapacantos y herrajes en formato CSV compatible con Excel y optimizadores">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span>Exportar CSV / Excel</span>
+              </button>
+            </div>
+          </div>
+        </header>
+
+        <div class="despiece-container" id="despieceZoomContainer">
+          <!-- Resumen general del proyecto -->
+          <div class="despiece-stats-grid" id="despieceStatsGrid"></div>
+
+          <!-- Barra de Herrajes Sugeridos calculados automáticamente según puertas, cajones y estantes -->
+          <div class="despiece-hardware-bar" id="despieceHardwareBar" style="display:none;"></div>
+
+          <!-- Panel interactivo de Vista Explotada con Cotas Esenciales cuando "Explotar modelo" está activo -->
+          <div class="explode-preview-card" id="explodePreviewCard" style="display:none;">
+            <div class="explode-preview-header">
+              <div>
+                <span class="explode-badge">EXPLOTAR MÓDULO ACTIVO</span>
+                <span class="explode-sub">Las placas del módulo se muestran separadas entre sí con sus cotas principales de armado.</span>
+              </div>
+              <button type="button" class="ens-pill-btn" onclick="toggleExplodeModel()">Armar módulo</button>
+            </div>
+            <canvas id="explodeModelCanvas" width="960" height="290"></canvas>
+          </div>
+
+          <!-- Contenedor de tablas separadas por cada Módulo escaneado (con flechita desplegable) -->
+          <div class="despiece-modules-stack" id="despieceModulesStack"></div>
+        </div>
+      </section>
+
+      <!-- ================= PESTAÑA 5: Render ================= -->
+      <section class="tab-view" id="viewRender">
+        <header class="catalog-header">
+          <h1 class="catalog-title">Renderizado</h1>
+          <p class="catalog-subtitle">visualiza como se vería tu proyecto</p>
+
+          <div class="search-and-actions-row">
+            <div class="catalog-extra-actions">
+              <button type="button" class="ens-pill-btn" onclick="captureSketchUpSceneForRender()" title="Capturar la vista actual de tus módulos en SketchUp 3D">
+                <span>📸 Capturar Vista SketchUp</span>
+              </button>
+              <button type="button" class="ens-pill-btn" onclick="downloadRenderedImage()" title="Guardar imagen renderizada en alta resolución (.PNG)">
+                <span>Descargar</span>
+              </button>
+
+              <!-- Opciones de color de fondo: Blanco, Greige, Gris, Verde (Chroma Photoshop) o Dark de la app -->
+              <div class="render-bg-options-group" id="renderBgOptionsGroup">
+                <button type="button" class="ens-pill-btn render-bg-opt-btn" data-bg="white" onclick="setRenderBackgroundOption('white')" title="Fondo Blanco">
+                  <span class="render-bg-swatch" style="background:#FFFFFF;border:1px solid #9CA3AF;"></span>
+                  <span>Blanco</span>
+                </button>
+                <button type="button" class="ens-pill-btn render-bg-opt-btn active" data-bg="greige" onclick="setRenderBackgroundOption('greige')" title="Fondo Greige">
+                  <span class="render-bg-swatch" style="background:#CFC7BC;border:1px solid #78716C;"></span>
+                  <span>Greige</span>
+                </button>
+                <button type="button" class="ens-pill-btn render-bg-opt-btn" data-bg="gray" onclick="setRenderBackgroundOption('gray')" title="Fondo Gris">
+                  <span class="render-bg-swatch" style="background:#9CA3AF;border:1px solid #4B5563;"></span>
+                  <span>Gris</span>
+                </button>
+                <button type="button" class="ens-pill-btn render-bg-opt-btn" data-bg="green" onclick="setRenderBackgroundOption('green')" title="Fondo Verde Chroma Key (ideal para hacer fondo transparente en Photoshop)">
+                  <span class="render-bg-swatch" style="background:#00B140;border:1px solid #047857;"></span>
+                  <span>Verde</span>
+                </button>
+                <button type="button" class="ens-pill-btn render-bg-opt-btn" data-bg="dark" onclick="setRenderBackgroundOption('dark')" title="Fondo con el tono Dark de la aplicación">
+                  <span class="render-bg-swatch" style="background:#1E242B;border:1px solid #FFC576;"></span>
+                  <span>Dark</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div class="render-studio-container" id="renderStudioContainer">
+          <div class="render-viewport-card" id="renderViewportCard" title="Mantén presionada la rueda del mouse (clic central) y arrastra para rotar la vista • Gira la rueda del mouse para acercar o alejar (Zoom)">
+            <canvas id="renderStudioCanvas" width="1920" height="1080"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PESTAÑA 6: MOODBOARD (Hecha de 0 con Excalidraw oficial https://github.com/excalidraw/excalidraw) ================= -->
+      <section class="tab-view" id="viewMoodboard">
+        <div class="excalidraw-host-wrap">
+          <iframe id="excalidrawIframe" class="excalidraw-iframe" src="excalidraw_frame.html" title="Excalidraw Moodboard"></iframe>
+        </div>
+      </section>
+
+      <!-- ================= PESTAÑA SHOWROOM (Gato negro con casquito animado al 45% centrado vertical y horizontalmente) ================= -->
+      <section class="tab-view" id="viewShowroom">
+        <div class="showroom-box-content">
+          <div class="showroom-cat-stage" aria-label="Gato negro jugando con una bola de estambre amarilla y casco a un lado">
+            <svg class="showroom-cat-svg" viewBox="0 0 460 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="catAmbientGlow" cx="52%" cy="54%" r="48%">
+                  <stop offset="0%" stop-color="#FFC576" stop-opacity="0.22" />
+                  <stop offset="65%" stop-color="#FFC576" stop-opacity="0.05" />
+                  <stop offset="100%" stop-color="#FFC576" stop-opacity="0" />
+                </radialGradient>
+                <linearGradient id="catFurGrad" x1="150" y1="90" x2="320" y2="365" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#23252B" />
+                  <stop offset="45%" stop-color="#141519" />
+                  <stop offset="100%" stop-color="#0B0C0E" />
+                </linearGradient>
+                <linearGradient id="hardHatDome" x1="20" y1="295" x2="120" y2="355" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#FFE082" />
+                  <stop offset="45%" stop-color="#FFC576" />
+                  <stop offset="100%" stop-color="#D98A1C" />
+                </linearGradient>
+                <linearGradient id="hardHatBrim" x1="10" y1="342" x2="132" y2="356" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#FFB300" />
+                  <stop offset="50%" stop-color="#FFC576" />
+                  <stop offset="100%" stop-color="#B86E00" />
+                </linearGradient>
+                <linearGradient id="catEyeGold" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#FFE57F" />
+                  <stop offset="100%" stop-color="#FF9800" />
+                </linearGradient>
+                <radialGradient id="yarnBallGrad" cx="36%" cy="32%" r="68%">
+                  <stop offset="0%" stop-color="#FFE3B3" />
+                  <stop offset="48%" stop-color="#FFC576" />
+                  <stop offset="100%" stop-color="#D99234" />
+                </radialGradient>
+              </defs>
+
+              <!-- Halo ambiental suave -->
+              <circle cx="245" cy="215" r="175" fill="url(#catAmbientGlow)" class="showroom-cat-glow" />
+
+              <!-- Sombra de piso del gato -->
+              <ellipse cx="250" cy="364" rx="104" ry="15" fill="rgba(0,0,0,0.36)" class="showroom-cat-shadow" />
+
+              <!-- CASCO APOYADO EN EL PISO A UN LADO DEL GATITO (IZQUIERDA) -->
+              <g class="showroom-side-hardhat" transform="translate(18, 292) rotate(-8 56 52)">
+                <!-- Sombra del casco en el suelo -->
+                <ellipse cx="58" cy="66" rx="54" ry="9" fill="rgba(0,0,0,0.32)" />
+                <!-- Domo del casco -->
+                <path d="M14 58 C14 20, 36 4, 62 4 C88 4, 110 20, 110 58 Z"
+                      fill="url(#hardHatDome)" stroke="#8C5300" stroke-width="2.6" stroke-linejoin="round" />
+                <!-- Nervadura central superior -->
+                <path d="M53 3 C53 -1, 71 -1, 71 3 L74 55 L50 55 Z"
+                      fill="#FFD54F" stroke="#B26A00" stroke-width="1.8" />
+                <!-- Líneas laterales de refuerzo -->
+                <path d="M34 14 C30 28, 28 42, 28 56" stroke="#D48800" stroke-width="2" stroke-linecap="round" fill="none" />
+                <path d="M90 14 C94 28, 96 42, 96 56" stroke="#D48800" stroke-width="2" stroke-linecap="round" fill="none" />
+                <!-- Brillo especular -->
+                <path d="M25 38 C29 22, 40 12, 50 10" stroke="#FFF8E1" stroke-width="3.8" stroke-linecap="round" fill="none" opacity="0.75" />
+                <!-- Placa frontal y linterna del casco -->
+                <rect x="52" y="32" width="20" height="14" rx="3.5" fill="#1F1F23" stroke="#FFE082" stroke-width="1.5" />
+                <circle cx="62" cy="39" r="3.8" fill="#FFC576" class="showroom-helmet-lamp" />
+                <!-- Visera / Ala del casco -->
+                <path d="M4 58 C24 51, 100 51, 120 58 C124 62, 118 67, 110 66 C82 60, 42 60, 14 66 C6 67, 0 62, 4 58 Z"
+                      fill="url(#hardHatBrim)" stroke="#8C5300" stroke-width="2.4" />
+              </g>
+
+              <!-- Cola negra animada -->
+              <g class="showroom-cat-tail">
+                <path d="M316 328 C372 326, 404 284, 388 236 C378 206, 402 184, 416 198"
+                      stroke="url(#catFurGrad)" stroke-width="24" stroke-linecap="round" fill="none" />
+                <path d="M316 328 C372 326, 404 284, 388 236 C378 206, 402 184, 416 198"
+                      stroke="#2F323B" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.45" />
+              </g>
+
+              <!-- Cuerpo del gato negro sentado -->
+              <g class="showroom-cat-body">
+                <path d="M178 238 C172 284, 168 337, 186 356 C205 366, 295 366, 314 356 C332 337, 328 284, 322 238 C312 206, 188 206, 178 238 Z"
+                      fill="url(#catFurGrad)" stroke="#2E313A" stroke-width="2.2" />
+
+                <!-- Pecho / pelaje suave -->
+                <path d="M222 244 Q250 264 278 244 Q266 278 250 286 Q234 278 222 244 Z"
+                      fill="#1E2027" opacity="0.85" />
+
+                <!-- Collar tono clásico #FFC576 con medallita "ss" -->
+                <path d="M190 237 Q250 258 310 237" stroke="#E09A3E" stroke-width="8.5" stroke-linecap="round" fill="none" />
+                <path d="M204 241 Q250 257 296 241" stroke="#FFC576" stroke-width="3" stroke-dasharray="8 6" stroke-linecap="round" fill="none" />
+                <circle cx="250" cy="260" r="11" fill="#FFC576" stroke="#B26A00" stroke-width="2" />
+                <text x="250" y="264" text-anchor="middle" fill="#1C1A17" font-size="10" font-weight="800" font-family="sans-serif">ss</text>
+
+                <!-- Patita delantera izquierda (jugando con el estambre) -->
+                <g class="showroom-cat-paw-left">
+                  <rect x="190" y="328" width="38" height="32" rx="16" fill="#111216" stroke="#2F323B" stroke-width="2" />
+                  <line x1="203" y1="346" x2="203" y2="358" stroke="#2F323B" stroke-width="2" stroke-linecap="round" />
+                  <line x1="215" y1="346" x2="215" y2="358" stroke="#2F323B" stroke-width="2" stroke-linecap="round" />
+                </g>
+
+                <!-- Patita delantera derecha (jugando con el estambre) -->
+                <g class="showroom-cat-paw-right">
+                  <rect x="272" y="328" width="38" height="32" rx="16" fill="#111216" stroke="#2F323B" stroke-width="2" />
+                  <line x1="285" y1="346" x2="285" y2="358" stroke="#2F323B" stroke-width="2" stroke-linecap="round" />
+                  <line x1="297" y1="346" x2="297" y2="358" stroke="#2F323B" stroke-width="2" stroke-linecap="round" />
+                </g>
+              </g>
+
+              <!-- Cabeza + Orejas completas (SIN CASCO) siguiendo la bola de estambre -->
+              <g class="showroom-cat-head-group">
+                <!-- Oreja Izquierda completa -->
+                <g class="showroom-cat-ear-left">
+                  <path d="M168 156 L142 78 L212 114 Z" fill="#121318" stroke="#2E313A" stroke-width="2.5" stroke-linejoin="round" />
+                  <path d="M172 146 L154 94 L200 118 Z" fill="#3A2832" opacity="0.78" />
+                </g>
+
+                <!-- Oreja Derecha completa -->
+                <g class="showroom-cat-ear-right">
+                  <path d="M332 156 L358 78 L288 114 Z" fill="#121318" stroke="#2E313A" stroke-width="2.5" stroke-linejoin="round" />
+                  <path d="M328 146 L346 94 L300 118 Z" fill="#3A2832" opacity="0.78" />
+                </g>
+
+                <!-- Esfera principal de la cabeza del gato negro -->
+                <ellipse cx="250" cy="182" rx="84" ry="70" fill="url(#catFurGrad)" stroke="#2E313A" stroke-width="2.4" />
+
+                <!-- Mechón superior de pelito en la cabeza (ahora visible sin el casco) -->
+                <path d="M236 114 Q244 98 250 112 Q257 96 264 114" fill="#181A20" stroke="#2E313A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+
+                <!-- Mejillas esponjosas -->
+                <path d="M166 186 C152 194, 154 214, 174 222" fill="url(#catFurGrad)" stroke="#2E313A" stroke-width="2" stroke-linecap="round" />
+                <path d="M334 186 C348 194, 346 214, 326 222" fill="url(#catFurGrad)" stroke="#2E313A" stroke-width="2" stroke-linecap="round" />
+
+                <!-- Ojos dorados expresivos siguiendo la bola de estambre -->
+                <g class="showroom-cat-eyes">
+                  <ellipse cx="212" cy="184" rx="20" ry="21" fill="url(#catEyeGold)" stroke="#0A0A0D" stroke-width="2.5" />
+                  <ellipse cx="288" cy="184" rx="20" ry="21" fill="url(#catEyeGold)" stroke="#0A0A0D" stroke-width="2.5" />
+
+                  <g class="showroom-cat-pupils">
+                    <ellipse cx="212" cy="188" rx="6.5" ry="15" fill="#090A0C" />
+                    <circle cx="206" cy="180" r="4.5" fill="#FFFFFF" />
+                    <circle cx="217" cy="195" r="2.2" fill="#FFFFFF" opacity="0.85" />
+
+                    <ellipse cx="288" cy="188" rx="6.5" ry="15" fill="#090A0C" />
+                    <circle cx="282" cy="180" r="4.5" fill="#FFFFFF" />
+                    <circle cx="293" cy="195" r="2.2" fill="#FFFFFF" opacity="0.85" />
+                  </g>
+                </g>
+
+                <!-- Nariz y boquita -->
+                <polygon points="243,203 257,203 250,212" fill="#F48FB1" stroke="#111216" stroke-width="1.5" stroke-linejoin="round" />
+                <path d="M250 212 C244 220, 233 220, 229 214" stroke="#5C6270" stroke-width="2.5" stroke-linecap="round" fill="none" />
+                <path d="M250 212 C256 220, 267 220, 271 214" stroke="#5C6270" stroke-width="2.5" stroke-linecap="round" fill="none" />
+
+                <!-- Bigotes animados -->
+                <g class="showroom-cat-whiskers-left" stroke="#494E5B" stroke-width="2.2" stroke-linecap="round">
+                  <line x1="172" y1="198" x2="128" y2="190" />
+                  <line x1="170" y1="207" x2="124" y2="207" />
+                  <line x1="174" y1="216" x2="130" y2="224" />
+                </g>
+                <g class="showroom-cat-whiskers-right" stroke="#494E5B" stroke-width="2.2" stroke-linecap="round">
+                  <line x1="328" y1="198" x2="372" y2="190" />
+                  <line x1="330" y1="207" x2="376" y2="207" />
+                  <line x1="326" y1="216" x2="370" y2="224" />
+                </g>
+              </g>
+
+              <!-- Hebra de estambre suelta ondulando en el suelo -->
+              <path class="showroom-yarn-trail" d="M195 374 C225 384, 275 366, 305 376"
+                    stroke="#FFC576" stroke-width="3.6" stroke-linecap="round" fill="none" />
+
+              <!-- BOLA DE ESTAMBRE AMARILLA (#FFC576, tono de la barra lateral del theme clásico) RODANDO DE AQUÍ PARA ALLÁ -->
+              <g class="showroom-yarn-travel">
+                <ellipse cx="250" cy="375" rx="24" ry="5.5" fill="rgba(0,0,0,0.34)" />
+                <g class="showroom-yarn-spin">
+                  <circle cx="250" cy="350" r="24" fill="url(#yarnBallGrad)" stroke="#A86814" stroke-width="2.2" />
+                  <!-- Hebras curvas del ovillo de estambre -->
+                  <path d="M231 339 C244 330, 260 334, 270 347" stroke="#A86814" stroke-width="2.1" stroke-linecap="round" fill="none" />
+                  <path d="M228 348 C242 339, 258 344, 272 356" stroke="#A86814" stroke-width="2.1" stroke-linecap="round" fill="none" />
+                  <path d="M234 363 C240 344, 254 333, 264 331" stroke="#B87318" stroke-width="2.1" stroke-linecap="round" fill="none" />
+                  <path d="M242 370 C248 352, 260 340, 271 338" stroke="#B87318" stroke-width="2.1" stroke-linecap="round" fill="none" />
+                  <path d="M232 356 C244 364, 258 366, 268 360" stroke="#FFE5B8" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.85" />
+                </g>
+              </g>
+            </svg>
+            <div class="showroom-under-construction-text">en construcción</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PESTAÑA 6: Url (Esquina superior izquierda: título "Madereras" + logo EGGER con redirección) ================= -->
+      <section class="tab-view" id="viewUrl">
+        <div class="url-madereras-corner">
+          <h2 class="url-madereras-title">Madereras</h2>
+          <a class="egger-partner-card"
+             href="https://www.madererapinar.com.ar/optimizador-de-corte/?gad_source=1&amp;gad_campaignid=22910125907&amp;gbraid=0AAAAAD9jLsWf5oIEp0_s2OLTBumOySOC_&amp;gclid=CjwKCAjwxeHWBhBPEiwAiqtQ-VV-8hzt7Bj6InnIMOnP6v5swRbogqUWPE_Xzt6tG0PG76ZDdkHSMhoCw8IQAvD_BwE"
+             target="_blank"
+             rel="noopener noreferrer"
+             onclick="openMadereraPinarUrl(event)"
+             title="Ir al Optimizador de Corte — EGGER / Maderera Pinar">
+            <img src="assets/icons/egger_logo.png" alt="EGGER" class="egger-partner-logo-img" />
+          </a>
+        </div>
+      </section>
+
+      <!-- ================= PESTAÑA 7: TRASH (Elementos eliminados con los 3 puntitos, recuperables) ================= -->
+      <section class="tab-view" id="viewTrash">
+        <header class="catalog-header">
+          <h1 class="catalog-title">Trash</h1>
+          <p class="catalog-subtitle">recupera los módulos y materiales que eliminaste</p>
+
+          <div class="search-and-actions-row">
+            <div class="search-box-wrap">
+              <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="trashSearchInput" class="search-input" placeholder="Buscar en Trash..." oninput="onTrashSearchInput(this.value)" />
+            </div>
+
+          </div>
+
+          <div class="filter-pills-row" id="trashPillsRow"></div>
+        </header>
+
+        <div class="trash-empty-box" id="trashEmptyBox" style="display:none;">
+          <img src="assets/icons/icon_trash.png" alt="" class="trash-empty-icon" />
+          <p class="trash-empty-title">Trash está vacío</p>
+          <p class="trash-empty-sub">Los elementos que elimines con los 3 puntitos (⋯) aparecerán acá. Sus archivos nunca se borran del programa.</p>
+        </div>
+        <div class="cards-grid" id="trashGrid"></div>
+      </section>
+
+      <!-- ================= PESTAÑA 8: LOGIN (Perfil de usuario) ================= -->
+      <section class="tab-view" id="viewLogin">
+        <header class="catalog-header">
+          <h1 class="catalog-title">Login</h1>
+          <p class="catalog-subtitle">tu perfil de usuario en enssamble</p>
+        </header>
+
+        <div class="ag-page">
+          <div class="ag-set-panel ag-login-panel">
+            <div class="ag-login-hero">
+              <div class="ag-login-avatar" id="loginAvatar">S</div>
+              <div>
+                <div class="ag-login-name" id="loginNameLabel">Sebastián</div>
+                <div class="ag-set-desc" id="loginStudioLabel">Sin taller / estudio configurado</div>
+              </div>
+            </div>
+            <form onsubmit="saveProfileForm(event)">
+              <div class="ag-set-row">
+                <div class="ag-set-text">
+                  <div class="ag-set-label">Nombre de usuario</div>
+                  <div class="ag-set-desc">Se muestra en la barra lateral.</div>
+                </div>
+                <div class="ag-set-control">
+                  <input type="text" id="profileUsernameInput" class="ag-input" value="Sebastián" required />
+                </div>
+              </div>
+              <div class="ag-set-row">
+                <div class="ag-set-text">
+                  <div class="ag-set-label">Taller / Estudio de diseño</div>
+                  <div class="ag-set-desc">Nombre de tu taller, carpintería o estudio.</div>
+                </div>
+                <div class="ag-set-control">
+                  <input type="text" id="profileStudioInput" class="ag-input" placeholder="Ej. Estudio enssamble" />
+                </div>
+              </div>
+              <div class="ag-set-actions">
+                <button type="submit" class="ens-pill-btn active">Guardar perfil</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PESTAÑA 9: SETTINGS (Diseño estilo Antigravity) ================= -->
+      <section class="tab-view" id="viewSettings">
+        <header class="catalog-header">
+          <h1 class="catalog-title">Settings</h1>
+          <p class="catalog-subtitle">personaliza enssamble a tu manera</p>
+
+          <div class="search-and-actions-row">
+            <div class="search-box-wrap">
+              <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="settingsSearchInput" class="search-input" placeholder="Buscar configuración..." oninput="filterSettingsRows(this.value)" />
+            </div>
+          </div>
+        </header>
+
+        <div class="ag-settings-layout">
+          <!-- Navegación lateral de categorías -->
+          <nav class="ag-settings-nav" id="agSettingsNav">
+            <button type="button" class="ag-nav-btn active" data-sec="appearance" onclick="scrollToSettingsSection('appearance')">Apariencia</button>
+            <button type="button" class="ag-nav-btn" data-sec="catalog" onclick="scrollToSettingsSection('catalog')">Catálogo</button>
+            <button type="button" class="ag-nav-btn" data-sec="sketchup" onclick="scrollToSettingsSection('sketchup')">SketchUp</button>
+            <button type="button" class="ag-nav-btn" data-sec="ai" onclick="scrollToSettingsSection('ai')">Inteligencia Artificial</button>
+            <button type="button" class="ag-nav-btn" data-sec="about" onclick="scrollToSettingsSection('about')">Acerca de</button>
+          </nav>
+
+          <div class="ag-settings-panel">
+            <!-- APARIENCIA -->
+            <section class="ag-set-section" id="setSec-appearance">
+              <h2 class="ag-set-section-title">Apariencia</h2>
+              <div class="ag-set-panel">
+                <div class="ag-set-row ag-set-row-col" data-keywords="tema theme clasico noche dark light dia día claro oscuro colores interfaz">
+                  <div class="ag-set-text">
+                    <div class="ag-set-label">Tema de la interfaz</div>
+                    <div class="ag-set-desc">Cambia los colores de toda la interfaz de enssamble.</div>
+                  </div>
+                  <div class="ag-theme-picker" id="themePicker">
+                    <button type="button" class="ag-theme-card" data-theme="classic" onclick="setTheme('classic')">
+                      <span class="ag-theme-preview theme-prev-classic"><i class="tp-side"></i><i class="tp-main"><b></b><b></b><b></b></i></span>
+                      <span class="ag-theme-name">Clásico</span>
+                    </button>
+                    <button type="button" class="ag-theme-card" data-theme="dark" onclick="setTheme('dark')">
+                      <span class="ag-theme-preview theme-prev-dark"><i class="tp-side"></i><i class="tp-main"><b></b><b></b><b></b></i></span>
+                      <span class="ag-theme-name">Noche</span>
+                    </button>
+                    <button type="button" class="ag-theme-card" data-theme="light" onclick="setTheme('light')">
+                      <span class="ag-theme-preview theme-prev-light"><i class="tp-side"></i><i class="tp-main"><b></b><b></b><b></b></i></span>
+                      <span class="ag-theme-name">Día</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="ag-set-row" data-keywords="opacidad transparencia contenido fondo pestañas sin blur">
+                  <div class="ag-set-text">
+                    <div class="ag-set-label">Opacidad del contenido</div>
+                    <div class="ag-set-desc">Fondo de Inicio, Módulos, Materiales, Despiece, Render, Url, Trash, Login y Settings, sin blur. En 0% queda totalmente transparente.</div>
+                  </div>
+                  <div class="ag-set-control">
+                    <label class="ag-switch"><input type="checkbox" id="settingContentOpacityOn" onchange="onOpacityToggle('content', this.checked)" /><span class="ag-switch-track"></span></label>
+                  </div>
+                </div>
+                <div class="ag-set-row ag-sub-row" id="contentOpacitySliderRow" data-keywords="opacidad contenido porcentaje barra">
+                  <div class="ag-set-text">
+                    <div class="ag-set-label">Porcentaje de opacidad del contenido</div>
+                  </div>
+                  <div class="ag-set-control ag-range-wrap">
+                    <input type="range" class="ag-range" id="settingContentOpacity" min="0" max="100" step="1" value="100" oninput="onOpacitySlider('content', this.value)" />
+                    <span class="ag-range-value" id="settingContentOpacityVal">100%</span>
+                  </div>
+                </div>
+
+                <div class="ag-set-row" data-keywords="opacidad transparencia barra lateral amarilla sidebar">
+                  <div class="ag-set-text">
+                    <div class="ag-set-label">Opacidad de la barra lateral</div>
+                    <div class="ag-set-desc">Independiente de la opacidad del contenido.</div>
+                  </div>
+                  <div class="ag-set-control">
+                    <label class="ag-switch"><input type="checkbox" id="settingSidebarOpacityOn" onchange="onOpacityToggle('sidebar', this.checked)" /><span class="ag-switch-track"></span></label>
+                  </div>
+                </div>
+                <div class="ag-set-row ag-sub-row" id="sidebarOpacitySliderRow" data-keywords="opacidad barra lateral porcentaje">
+                  <div class="ag-set-text">
+                    <div class="ag-set-label">Porcentaje de opacidad de la barra lateral</div>
+                  </div>
+                  <div class="ag-set-control ag-range-wrap">
+                    <input type="range" class="ag-range" id="settingSidebarOpacity" min="0" max="100" step="1" value="100" oninput="onOpacitySlider('sidebar', this.value)" />
+                    <span class="ag-range-value" id="settingSidebarOpacityVal">100%</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- CATÁLOGO -->
+            <section class="ag-set-section" id="setSec-catalog">
+              <h2 class="ag-set-section-title">Catálogo</h2>
+              <div class="ag-set-panel">
+                <div class="ag-set-row" data-keywords="eliminar borrar 3 puntitos tres puntos menu tarjetas">
+                  <div class="ag-set-text">
+                    <div class="ag-set-label">Eliminar con los 3 puntitos (⋯)</div>
+                    <div class="ag-set-desc">Muestra el menú ⋯ en las tarjetas de Módulos y Materiales. Lo eliminado solo se quita de la interfaz y va a Trash; los archivos siguen en el programa.</div>
+                  </div>
+                  <div class="ag-set-control">
+                    <label class="ag-switch"><input type="checkbox" id="settingCardDeleteOn" onchange="onCardDeleteToggle(this.checked)" /><span class="ag-switch-track"></span></label>
+                  </div>
+                </div>
+                <div class="ag-set-row" data-keywords="importar url web enlace catalogo boton materiales">
+                  <div class="ag-set-text">
+                    <div class="ag-set-label">Importar desde URL</div>
+                    <div class="ag-set-desc">Muestra el botón para importar catálogos de melaminas desde enlaces web en la pestaña Materiales.</div>
+                  </div>
+                  <div class="ag-set-control">
+                    <label class="ag-switch"><input type="checkbox" id="settingImportUrlOn" onchange="onImportUrlToggle(this.checked)" /><span class="ag-switch-track"></span></label>
+                  </div>
+                </div>
+                <div class="ag-set-row" data-keywords="trash papelera recuperar eliminados">
+                  <div class="ag-set-text">
+                    <div class="ag-set-label">Trash</div>
+                    <div class="ag-set-desc" id="settingTrashInfo">0 elementos eliminados.</div>
+                  </div>
+                  <div class="ag-set-control">
+                    <button type="button" class="ens-pill-btn" onclick="setTab('trash')">Abrir Trash</button>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- SKETCHUP -->
+            <section class="ag-set-section" id="setSec-sketchup">
+              <h2 class="ag-set-section-title">SketchUp</h2>
+              <div class="ag-set-panel">
+                <div class="ag-set-row" data-keywords="espesor melamina mm fijo">
+                  <div class="ag-set-text">
+                    <div class="ag-set-label">Espesor fijo de melamina</div>
+                    <div class="ag-set-desc">Espesor que se mantiene al escalar los módulos.</div>
+                  </div>
+                  <div class="ag-set-control">
+                    <select id="settingDefaultThick" class="ag-select" onchange="onSettingThickChange(this.value)">
+                      <option value="3">3 mm</option>
+                      <option value="5">5 mm</option>
+                      <option value="12">12 mm</option>
+                      <option value="15">15 mm</option>
+                      <option value="18" selected>18 mm</option>
+                      <option value="36">36 mm</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="ag-set-row" data-keywords="rotar textura veta caras contracara sincronizar">
+                  <div class="ag-set-text">
+                    <div class="ag-set-label">Rotar textura en cara y contracara</div>
+                    <div class="ag-set-desc">Al rotar la veta 90°, gira también la cara opuesta de la placa.</div>
+                  </div>
+                  <div class="ag-set-control">
+                    <label class="ag-switch"><input type="checkbox" id="settingSyncRotateFaces" onchange="onSyncRotateToggle(this.checked)" /><span class="ag-switch-track"></span></label>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- INTELIGENCIA ARTIFICIAL -->
+            <section class="ag-set-section" id="setSec-ai">
+              <h2 class="ag-set-section-title">Inteligencia Artificial</h2>
+              <div class="ag-set-panel">
+                <div class="ag-set-row" data-keywords="gemini api key ia render inteligencia artificial">
+                  <div class="ag-set-text">
+                    <div class="ag-set-label">Google Gemini API Key</div>
+                    <div class="ag-set-desc">Se usa para el Renderizado con IA.</div>
+                  </div>
+                  <div class="ag-set-control">
+                    <input type="password" id="settingGeminiApiKey" class="ag-input" placeholder="AIzaSy..." oninput="onSettingGeminiKey(this.value)" />
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- ACERCA DE -->
+            <section class="ag-set-section" id="setSec-about">
+              <h2 class="ag-set-section-title">Acerca de</h2>
+              <div class="ag-set-panel">
+                <div class="ag-set-row" data-keywords="version acerca enssamble">
+                  <div class="ag-set-text">
+                    <div class="ag-set-label">enssamble para SketchUp</div>
+                    <div class="ag-set-desc">Versión 1.0.0 • where ideas fit</div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <p class="ag-no-results" id="settingsNoResults" style="display:none;">No hay configuraciones que coincidan con la búsqueda.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- ================= MODAL 2D DE TAPACANTOS POR PLACA (Idéntico a Maderera Pinar / Video de Recursos) ================= -->
+  <div class="modal-backdrop" id="xrayTapacantoModal" onclick="if(event.target===this) closeXrayTapacantoModal()">
+    <div class="modal-box tc2d-modal-box">
+      <div class="tc2d-header">
+        <h2 class="tc2d-title" id="xrayModalTitle">Tapacantos</h2>
+        <button class="modal-close-btn" onclick="closeXrayTapacantoModal()" title="Cerrar">&times;</button>
+      </div>
+
+      <div class="tc2d-body">
+        <!-- Banner de instrucción idéntico al video -->
+        <div class="tc2d-instruction-banner">
+          Haga un click en el canto para seleccionar el tapacanto 1 o dos para el tapacanto 2.
+        </div>
+
+        <!-- Diagrama 2D interactivo de la placa (Bordes, Esquinas dobles y Centro para los 4 lados) -->
+        <div class="tc2d-diagram-stage">
+          <div class="tc2d-outer-frame">
+            <div class="tc2d-board-box" id="tc2dBoardBox">
+              <!-- Centro blanco clickeable: alterna los 4 cantos a la vez (igual al video 00:05-00:08) -->
+              <div class="tc2d-core-center" onclick="cycleAllPieceEdges2D()" title="Haz clic en el centro para alternar los 4 cantos a la vez"></div>
+
+              <!-- Canto Izquierdo (lado_0) -->
+              <div class="tc2d-edge tc2d-left" id="tc2dEdgeLeft" onclick="cyclePieceEdge2D(2)" title="Canto Izquierdo">
+                <div class="tc2d-vert-left-wrap">
+                  <span class="tc2d-edge-label">Canto Izquierdo</span>
+                </div>
+              </div>
+
+              <!-- Canto Derecho (lado_1) -->
+              <div class="tc2d-edge tc2d-right" id="tc2dEdgeRight" onclick="cyclePieceEdge2D(3)" title="Canto Derecho">
+                <div class="tc2d-vert-right-wrap">
+                  <span class="tc2d-edge-dim" id="tc2dDimRight">600 mm</span>
+                  <span class="tc2d-edge-label">Canto Derecho</span>
+                </div>
+              </div>
+
+              <!-- Canto Superior (lado_2) -->
+              <div class="tc2d-edge tc2d-top" id="tc2dEdgeTop" onclick="cyclePieceEdge2D(0)" title="Canto Superior">
+                <span class="tc2d-edge-label">Canto Superior</span>
+                <span class="tc2d-edge-dim" id="tc2dDimTop">800 mm</span>
+              </div>
+
+              <!-- Canto Inferior (lado_3) -->
+              <div class="tc2d-edge tc2d-bottom" id="tc2dEdgeBottom" onclick="cyclePieceEdge2D(1)" title="Canto Inferior">
+                <span class="tc2d-edge-label">Canto Inferior</span>
+              </div>
+
+              <!-- 4 Esquinas interactivas: alternan los 2 cantos adyacentes a esa esquina (igual al video 00:09-00:21) -->
+              <div class="tc2d-corner tc2d-tl" onclick="cycleCornerPieceEdges2D(0)" title="Esquina Superior Izquierda (Canto Izquierdo + Canto Superior)"></div>
+              <div class="tc2d-corner tc2d-tr" onclick="cycleCornerPieceEdges2D(1)" title="Esquina Superior Derecha (Canto Derecho + Canto Superior)"></div>
+              <div class="tc2d-corner tc2d-bl" onclick="cycleCornerPieceEdges2D(2)" title="Esquina Inferior Izquierda (Canto Izquierdo + Canto Inferior)"></div>
+              <div class="tc2d-corner tc2d-br" onclick="cycleCornerPieceEdges2D(3)" title="Esquina Inferior Derecha (Canto Derecho + Canto Inferior)"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pie de ventana: Leyenda Tapacanto 1 y 2 + Medida Real (descontando cantos) + Botón Cerrar -->
+      <div class="tc2d-footer">
+        <div class="tc2d-legend-info">
+          <div class="tc2d-legend-item">
+            <div class="tc2d-legend-head">
+              <span class="tc2d-color-bar red"></span>
+              <span class="tc2d-legend-title">Tapacanto #1 (Rojo)</span>
+            </div>
+          </div>
+
+          <div class="tc2d-legend-item">
+            <div class="tc2d-legend-head">
+              <span class="tc2d-color-bar blue"></span>
+              <span class="tc2d-legend-title">Tapacanto #2 (Azul)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tc2d-right-footer">
+          <div class="tc2d-realsize-box">
+            <div class="tc2d-realsize-title">Medida Real</div>
+            <div class="tc2d-realsize-sub">(descontando cantos)</div>
+            <div class="tc2d-realsize-val" id="tc2dRealSizeVal">800 mm x 600 mm</div>
+          </div>
+
+          <button type="button" class="ens-pill-btn active tc2d-close-btn" onclick="closeXrayTapacantoModal()">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL IMPORTAR CATÁLOGO DE MATERIALES DESDE URL WEB -->
+  <div class="modal-backdrop" id="urlImportModal" onclick="if(event.target===this) closeUrlImportModal()">
+    <div class="modal-box url-import-modal-box">
+      <div class="modal-header">
+        <div>
+          <h2 class="modal-title">Importar Materiales desde Página Web (URL)</h2>
+          <p class="xray-modal-sub">Copia y pega la URL de un catálogo online (EGGER, Faplac, Arauco, Masisa, Sadepan o tienda web) para extraer sus melaminas y generar sus archivos .SKM automáticamente.</p>
+        </div>
+        <button class="modal-close-btn" onclick="closeUrlImportModal()">&times;</button>
+      </div>
+
+      <form class="form-grid" onsubmit="submitUrlImportForm(event)">
+        <div class="form-group">
+          <label class="form-label">URL del Catálogo Web o de la Melamina</label>
+          <div class="url-input-group">
+            <input type="text" id="importUrlInput" class="form-input" placeholder="https://www.faplac.com.ar/catalogo... o https://www.egger.com/..." required />
+            <button type="button" class="ens-pill-btn" onclick="pasteUrlFromClipboard()" title="Pegar enlace del portapapeles">
+              <span>📋 Pegar URL</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label class="form-label">Marca del Catálogo</label>
+            <select id="importUrlBrand" class="form-select">
+              <option value="AUTO">Detectar automáticamente de la web</option>
+              <option value="EGGER">EGGER</option>
+              <option value="FAPLAC">FAPLAC</option>
+              <option value="ARAUCO">ARAUCO</option>
+              <option value="MASISA">MASISA</option>
+              <option value="SADEPAN">SADEPAN</option>
+              <option value="PELÍKANO">PELÍKANO</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Pestaña de Destino</label>
+            <select id="importUrlCategory" class="form-select">
+              <option value="Melaminas">Melaminas</option>
+              <option value="Herrajes">Herrajes</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="url-import-info-box" id="urlImportStatusBox">
+          <span>✨ <b>Conversión automática a SketchUp (.SKM):</b> El programa analiza el catálogo de la URL recibida, descarga cada textura, calibra su escala a <b>768 × 1655 mm</b> (igual que <i>Roble Bardolino natural</i>) y crea las tarjetas con el mismo diseño en la pestaña <b>Materiales</b>.</span>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="ens-pill-btn" onclick="closeUrlImportModal()">Cancelar</button>
+          <button type="submit" class="ens-pill-btn active" id="submitUrlImportBtn">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            <span id="submitUrlImportBtnText">Extraer y Cargar Materiales</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL CONFIRMAR ELIMINACIÓN (NORMAL O PERMANENTE EN TRASH) -->
+  <div class="modal-backdrop" id="deleteConfirmModal" onclick="if(event.target===this) closeDeleteConfirmModal()">
+    <div class="modal-box delete-confirm-modal-box">
+      <div class="modal-header">
+        <h2 class="modal-title" id="deleteConfirmModalTitle" style="color:var(--text-title); font-size:14px;">¿Deseas eliminar este elemento?</h2>
+        <button class="modal-close-btn" onclick="closeDeleteConfirmModal()">&times;</button>
+      </div>
+      <div style="padding:12px 0 16px 0;">
+        <p id="deleteConfirmItemName" style="font-size:11.5px; font-weight:600; color:var(--text-title); margin-bottom:6px;"></p>
+        <p id="deleteConfirmModalDesc" style="font-size:9.5px; color:var(--text-desc); line-height:1.45;">Se ocultará del catálogo y se moverá a <b>Trash</b>. Podrás recuperarlo cuando quieras manteniendo su orden original.</p>
+      </div>
+      <div class="delete-confirm-buttons-row">
+        <button type="button" class="del-confirm-btn del-btn-no" onclick="closeDeleteConfirmModal()">
+          <span>✕ No</span>
+        </button>
+        <button type="button" class="del-confirm-btn del-btn-si" onclick="executeDeleteConfirmed()">
+          <span>✓ Sí</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL NUEVO NOMBRE -->
+  <div class="modal-backdrop" id="renameModal" onclick="if(event.target===this) closeRenameModal()">
+    <div class="modal-box rename-modal-box">
+      <div class="modal-header rename-modal-header">
+        <h2 class="modal-title rename-modal-title">Nuevo nombre</h2>
+        <button type="button" class="modal-close-btn rename-modal-close-btn" onclick="closeRenameModal()">&times;</button>
+      </div>
+      <form onsubmit="submitRenameForm(event)" class="form-grid rename-modal-form">
+        <div class="form-group rename-modal-input-group">
+          <input type="text" id="renameTitleInput" class="form-input rename-modal-input" value="" autocomplete="off" spellcheck="false" required />
+        </div>
+        <div class="modal-footer rename-modal-footer">
+          <button type="button" class="ens-pill-btn rename-cancel-btn" onclick="closeRenameModal()">Cancelar</button>
+          <button type="submit" class="ens-pill-btn active rename-save-btn">Guardar nombre</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

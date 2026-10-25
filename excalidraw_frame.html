@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Excalidraw Moodboard — Enssamble</title>
+  <link rel="stylesheet" href="excalidraw/excalidraw.css" />
+  <style>
+    html, body, #root {
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      overflow: hidden !important;
+      background: #ffffff;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    body.dark-mode,
+    body.dark-mode #root {
+      background: #121212;
+    }
+    .excalidraw {
+      width: 100% !important;
+      height: 100% !important;
+      --color-primary: #d99b38 !important;
+      --color-primary-darker: #c28524 !important;
+      --color-primary-darkest: #393939 !important;
+      --color-primary-light: #FFF3DF !important;
+      --color-primary-light-darker: #FFE4B8 !important;
+      --color-primary-hover: #e5a946 !important;
+      --color-selection: #e5a946 !important;
+      --color-surface-primary-container: #FFC576 !important;
+      --color-on-primary-container: #393939 !important;
+      --color-logo-icon: #393939 !important;
+      --color-logo-text: #393939 !important;
+    }
+    .excalidraw.theme--dark {
+      --color-primary: #FFC576 !important;
+      --color-primary-darker: #eab060 !important;
+      --color-primary-darkest: #FFC576 !important;
+      --color-primary-light: rgba(255, 197, 118, 0.22) !important;
+      --color-primary-light-darker: rgba(255, 197, 118, 0.32) !important;
+      --color-primary-hover: #ffd294 !important;
+      --color-selection: #FFC576 !important;
+      --color-surface-primary-container: #FFC576 !important;
+      --color-on-primary-container: #181C22 !important;
+      --color-logo-icon: #FFC576 !important;
+      --color-logo-text: #FFC576 !important;
+    }
+
+    /* ======================================================================
+       RECUADRO IZQUIERDO DE LA GOMA DE BORRAR (#ensEraserIsland)
+       ====================================================================== */
+    #ensEraserIsland {
+      position: fixed;
+      top: 72px;
+      left: 12px;
+      width: 204px;
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.09);
+      padding: 12px;
+      z-index: 50;
+      display: none;
+      box-sizing: border-box;
+      user-select: none;
+      color: #2c2c2c;
+    }
+    body.dark-mode #ensEraserIsland,
+    .excalidraw.theme--dark ~ #ensEraserIsland {
+      background: #232329;
+      border-color: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+      color: #e3e3e8;
+    }
+    .ens-panel-title {
+      font-size: 11px;
+      font-weight: 600;
+      color: #6b6b76;
+      margin: 0 0 8px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      letter-spacing: 0.01em;
+    }
+    body.dark-mode .ens-panel-title {
+      color: #a5a5b2;
+    }
+    .ens-size-badge {
+      font-size: 11px;
+      font-weight: 700;
+      color: #393939;
+      background: #FFF3DF;
+      border: 1px solid #FFC576;
+      border-radius: 5px;
+      padding: 1px 6px;
+    }
+    body.dark-mode .ens-size-badge {
+      color: #FFC576;
+      background: rgba(255, 197, 118, 0.16);
+      border-color: rgba(255, 197, 118, 0.45);
+    }
+    .ens-eraser-slider-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .ens-eraser-slider {
+      width: 100%;
+      accent-color: #d99b38;
+      cursor: pointer;
+      height: 5px;
+      margin: 0;
+    }
+    .ens-eraser-mode-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .ens-eraser-mode-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+      padding: 8px 10px;
+      border-radius: 7px;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      background: #f8f9fa;
+      color: #2c2c2c;
+      font-size: 11.5px;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.14s ease;
+      box-sizing: border-box;
+    }
+    .ens-eraser-mode-btn:hover {
+      border-color: #d99b38;
+      background: #FFF9EF;
+    }
+    .ens-eraser-mode-btn.active {
+      background: #FFC576;
+      border-color: #c28524;
+      color: #232329;
+      box-shadow: 0 1px 3px rgba(217, 155, 56, 0.25);
+    }
+    body.dark-mode .ens-eraser-mode-btn {
+      background: #2c2c34;
+      border-color: rgba(255, 255, 255, 0.12);
+      color: #e3e3e8;
+    }
+    body.dark-mode .ens-eraser-mode-btn:hover {
+      border-color: #FFC576;
+      background: rgba(255, 197, 118, 0.12);
+    }
+    body.dark-mode .ens-eraser-mode-btn.active {
+      background: #FFC576;
+      border-color: #FFC576;
+      color: #181C22;
+    }
+    .ens-eraser-mode-btn svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+    .ens-eraser-mode-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.25;
+    }
+    .ens-eraser-mode-sub {
+      font-size: 9.5px;
+      font-weight: 400;
+      opacity: 0.78;
+      margin-top: 1px;
+    }
+
+    /* Cursor circular de la goma */
+    #ensEraserCursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1.5px solid #d99b38;
+      background: rgba(255, 197, 118, 0.22);
+      pointer-events: none;
+      z-index: 9999;
+      display: none;
+      transform: translate(-50%, -50%);
+      box-sizing: border-box;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.22);
+    }
+
+    /* ======================================================================
+       BOTÓN 'ACTIVAR ORTOGONAL' (F8) EN EL RECUADRO DEL LÁPIZ
+       ====================================================================== */
+    #ensOrthoPencilContainer {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .excalidraw.theme--dark #ensOrthoPencilContainer,
+    body.dark-mode #ensOrthoPencilContainer {
+      border-top-color: rgba(255, 255, 255, 0.12);
+    }
+    .ens-ortho-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      width: 100%;
+      padding: 7px 10px;
+      border-radius: 7px;
+      border: 1px solid rgba(0, 0, 0, 0.14);
+      background: #f8f9fa;
+      color: #2c2c2c;
+      font-size: 11.5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.14s ease;
+      box-sizing: border-box;
+    }
+    .ens-ortho-btn:hover {
+      border-color: #d99b38;
+      background: #FFF9EF;
+    }
+    .ens-ortho-btn.active {
+      background: #FFC576 !important;
+      border-color: #c28524 !important;
+      color: #181C22 !important;
+      box-shadow: 0 1px 4px rgba(217, 155, 56, 0.32);
+    }
+    .excalidraw.theme--dark .ens-ortho-btn,
+    body.dark-mode .ens-ortho-btn {
+      background: #2c2c34;
+      border-color: rgba(255, 255, 255, 0.14);
+      color: #e3e3e8;
+    }
+    .excalidraw.theme--dark .ens-ortho-btn:hover,
+    body.dark-mode .ens-ortho-btn:hover {
+      border-color: #FFC576;
+      background: rgba(255, 197, 118, 0.14);
+    }
+    .ens-ortho-btn-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .ens-ortho-btn-left svg {
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+    }
+    .ens-ortho-kbd {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 1px 5px;
+      border-radius: 4px;
+      background: rgba(0, 0, 0, 0.08);
+      color: inherit;
+    }
+    .ens-ortho-hint {
+      font-size: 9.5px;
+      color: #6b6b76;
+      text-align: center;
+      margin-top: 2px;
+    }
+    .excalidraw.theme--dark .ens-ortho-hint,
+    body.dark-mode .ens-ortho-hint {
+      color: #9e9ea9;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- Recuadro izquierdo de la Goma de Borrar -->
+  <div id="ensEraserIsland" aria-label="Opciones de Goma de Borrar">
+    <div class="ens-panel-title">
+      <span>Tamaño de la goma</span>
+      <span id="ensEraserSizeLabel" class="ens-size-badge">28 px</span>
+    </div>
+    <div class="ens-eraser-slider-row">
+      <input
+        type="range"
+        id="ensEraserSizeSlider"
+        class="ens-eraser-slider"
+        min="6"
+        max="120"
+        step="2"
+        value="28"
+      />
+    </div>
+
+    <div class="ens-panel-title" style="margin-top: 4px;">
+      <span>Modo de borrado</span>
+    </div>
+    <div class="ens-eraser-mode-list">
+      <!-- Opción 1 (arriba): Uso normal de la goma (borra el trazo completo) -->
+      <button type="button" id="ensEraserModeFull" class="ens-eraser-mode-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 20H7L3 16C2 15 2 13 3 12L13 2L22 11L20 20Z"/>
+          <path d="M17 17L7 7"/>
+        </svg>
+        <div class="ens-eraser-mode-text">
+          <span>Borrar trazo completo</span>
+          <span class="ens-eraser-mode-sub">Uso normal de la goma</span>
+        </div>
+      </button>
+
+      <!-- Opción 2 (abajo): Borra el pedazo del trazo sobre el que pase la goma -->
+      <button type="button" id="ensEraserModePartial" class="ens-eraser-mode-btn active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 12h5"/>
+          <circle cx="12" cy="12" r="3.5" stroke-dasharray="2 2"/>
+          <path d="M16 12h5"/>
+        </svg>
+        <div class="ens-eraser-mode-text">
+          <span>Borrar por partes</span>
+          <span class="ens-eraser-mode-sub">Borra el pedazo del trazo</span>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <!-- Cursor circular visual para el tamaño de la goma -->
+  <div id="ensEraserCursor"></div>
+
+  <script>
+    (function() {
+      try {
+        var params = new URLSearchParams(window.location.search);
+        var t = params.get("theme") || "classic";
+        if (t === "dark") {
+          document.body.classList.add("dark-mode");
+        } else {
+          document.body.classList.remove("dark-mode");
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <script src="excalidraw/excalidraw.bundle.js"></script>
+  <script>
+    (function() {
+      // ====================================================================
+      // ESTADO DE GOMA DE BORRAR Y LÁPIZ ORTOGONAL (0°, 45°, 90°)
+      // ====================================================================
+      var eraserSize = 28; // diámetro en px de pantalla
+      var eraserMode = "partial"; // "full" (trazo completo) | "partial" (pedazo del trazo)
+      var isErasingDrag = false;
+      var lastEraseScenePt = null;
+
+      var orthoPencilActive = false; // Activar Ortogonal (F8)
+      var isOrthoPencilDrawing = false;
+      var orthoStartClient = null;
+      var orthoStartScene = null;
+      var orthoBypassSynthetic = false;
+
+      var eraserIsland = document.getElementById("ensEraserIsland");
+      var eraserSizeSlider = document.getElementById("ensEraserSizeSlider");
+      var eraserSizeLabel = document.getElementById("ensEraserSizeLabel");
+      var eraserModeFullBtn = document.getElementById("ensEraserModeFull");
+      var eraserModePartialBtn = document.getElementById("ensEraserModePartial");
+      var eraserCursor = document.getElementById("ensEraserCursor");
+
+      function getApi() {
+        return window.excalidrawAPI || null;
+      }
+
+      function getActiveToolType() {
+        var api = getApi();
+        if (!api || typeof api.getAppState !== "function") return "";
+        var st = api.getAppState();
+        return (st && st.activeTool && st.activeTool.type) ? st.activeTool.type : "";
+      }
+
+      // Conversión de coordenadas de pantalla (clientX/Y) a coordenadas de escena Excalidraw
+      function clientToScene(clientX, clientY) {
+        var api = getApi();
+        if (!api) return { x: clientX, y: clientY, zoom: 1 };
+        var st = api.getAppState();
+        var zoom = (st.zoom && st.zoom.value) ? st.zoom.value : 1;
+        var offsetLeft = st.offsetLeft || 0;
+        var offsetTop = st.offsetTop || 0;
+        var scrollX = st.scrollX || 0;
+        var scrollY = st.scrollY || 0;
+        return {
+          x: (clientX - offsetLeft) / zoom - scrollX,
+          y: (clientY - offsetTop) / zoom - scrollY,
+          zoom: zoom
+        };
+      }
+
+      // ====================================================================
+      // CONTROLES DEL RECUADRO DE LA GOMA DE BORRAR
+      // ====================================================================
+      function updateEraserSizeUI() {
+        if (eraserSizeLabel) eraserSizeLabel.textContent = eraserSize + " px";
+        if (eraserCursor) {
+          eraserCursor.style.width = eraserSize + "px";
+          eraserCursor.style.height = eraserSize + "px";
+        }
+      }
+
+      function setEraserMode(mode) {
+        eraserMode = mode === "full" ? "full" : "partial";
+        if (eraserModeFullBtn) {
+          eraserModeFullBtn.classList.toggle("active", eraserMode === "full");
+        }
+        if (eraserModePartialBtn) {
+          eraserModePartialBtn.classList.toggle("active", eraserMode === "partial");
+        }
+      }
+
+      if (eraserSizeSlider) {
+        eraserSizeSlider.addEventListener("input", function(e) {
+          eraserSize = Math.max(6, Math.min(120, parseInt(e.target.value, 10) || 28));
+          updateEraserSizeUI();
+        });
+      }
+      if (eraserModeFullBtn) {
+        eraserModeFullBtn.addEventListener("click", function() {
+          setEraserMode("full");
+        });
+      }
+      if (eraserModePartialBtn) {
+        eraserModePartialBtn.addEventListener("click", function() {
+          setEraserMode("partial");
+        });
+      }
+      updateEraserSizeUI();
+
+      // ====================================================================
+      // BOTÓN 'ACTIVAR ORTOGONAL' (F8) EN EL RECUADRO DEL LÁPIZ
+      // ====================================================================
+      function updateOrthoButtonUI() {
+        var btn = document.getElementById("ensOrthoToggleBtn");
+        if (!btn) return;
+        btn.classList.toggle("active", orthoPencilActive);
+        btn.setAttribute("aria-pressed", orthoPencilActive ? "true" : "false");
+      }
+
+      function toggleOrthoPencil(forceState) {
+        if (typeof forceState === "boolean") {
+          orthoPencilActive = forceState;
+        } else {
+          orthoPencilActive = !orthoPencilActive;
+        }
+        updateOrthoButtonUI();
+      }
+
+      function ensureOrthoButtonInPencilPanel() {
+        var tool = getActiveToolType();
+        var existing = document.getElementById("ensOrthoPencilContainer");
+        if (tool !== "freedraw") {
+          if (existing) existing.style.display = "none";
+          return;
+        }
+        var leftIsland = document.querySelector(".App-menu_top__left .Island.App-menu__left, .App-menu__left");
+        if (!leftIsland) return;
+
+        if (!existing) {
+          var container = document.createElement("div");
+          container.id = "ensOrthoPencilContainer";
+          container.innerHTML =
+            '<button type="button" id="ensOrthoToggleBtn" class="ens-ortho-btn" title="Dibujar líneas horizontales, verticales y a 45° (Tecla F8)">' +
+              '<span class="ens-ortho-btn-left">' +
+                '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">' +
+                  '<path d="M4 20V4"/>' +
+                  '<path d="M4 20H20"/>' +
+                  '<path d="M4 20L18 6"/>' +
+                '</svg>' +
+                '<span>Activar Ortogonal</span>' +
+              '</span>' +
+              '<span class="ens-ortho-kbd">F8</span>' +
+            '</button>' +
+            '<div class="ens-ortho-hint">0° · 45° · 90°</div>';
+          leftIsland.appendChild(container);
+          var btn = container.querySelector("#ensOrthoToggleBtn");
+          if (btn) {
+            btn.addEventListener("click", function(ev) {
+              ev.preventDefault();
+              ev.stopPropagation();
+              toggleOrthoPencil();
+            });
+          }
+        } else {
+          if (existing.parentElement !== leftIsland) {
+            leftIsland.appendChild(existing);
+          }
+          existing.style.display = "flex";
+        }
+        updateOrthoButtonUI();
+      }
+
+      // Sincronizar visibilidad de paneles según la herramienta activa
+      function syncToolPanels() {
+        var tool = getActiveToolType();
+        if (eraserIsland) {
+          eraserIsland.style.display = (tool === "eraser") ? "block" : "none";
+        }
+        if (tool !== "eraser" && eraserCursor) {
+          eraserCursor.style.display = "none";
+        }
+        ensureOrthoButtonInPencilPanel();
+      }
+
+      setInterval(syncToolPanels, 140);
+
+      // Atajo de teclado F8 para activar/desactivar Ortogonal
+      window.addEventListener("keydown", function(ev) {
+        if (ev.key === "F8" || ev.keyCode === 119) {
+          ev.preventDefault();
+          ev.stopPropagation();
+          toggleOrthoPencil();
+          ensureOrthoButtonInPencilPanel();
+        }
+      }, true);
+
+      // ====================================================================
+      // GEOMETRÍA PARA BORRADO POR PARTES Y TRAZO COMPLETO CON RADIO
+      // ====================================================================
+      function distToSegmentSq(px, py, ax, ay, bx, by) {
+        var l2 = (bx - ax) * (bx - ax) + (by - ay) * (by - ay);
+        if (l2 === 0) return (px - ax) * (px - ax) + (py - ay) * (py - ay);
+        var t = ((px - ax) * (bx - ax) + (py - ay) * (by - ay)) / l2;
+        t = Math.max(0, Math.min(1, t));
+        var projX = ax + t * (bx - ax);
+        var projY = ay + t * (by - ay);
+        return (px - projX) * (px - projX) + (py - projY) * (py - projY);
+      }
+
+      function densifyPolyline(absPts, maxStep) {
+        if (!absPts || absPts.length === 0) return [];
+        if (absPts.length === 1) return [absPts[0].slice()];
+        var out = [absPts[0].slice()];
+        for (var i = 0; i < absPts.length - 1; i++) {
+          var p0 = absPts[i];
+          var p1 = absPts[i + 1];
+          var dx = p1[0] - p0[0];
+          var dy = p1[1] - p0[1];
+          var d = Math.hypot(dx, dy);
+          if (d > maxStep) {
+            var steps = Math.ceil(d / maxStep);
+            for (var s = 1; s < steps; s++) {
+              var ratio = s / steps;
+              out.push([p0[0] + dx * ratio, p0[1] + dy * ratio]);
+            }
+          }
+          out.push(p1.slice());
+        }
+        return out;
+      }
+
+      function simplifyDenseRun(runPts, tolerance) {
+        if (runPts.length <= 3) return runPts;
+        var out = [runPts[0]];
+        var last = runPts[0];
+        for (var i = 1; i < runPts.length - 1; i++) {
+          var pt = runPts[i];
+          if (Math.hypot(pt[0] - last[0], pt[1] - last[1]) >= tolerance) {
+            out.push(pt);
+            last = pt;
+          }
+        }
+        out.push(runPts[runPts.length - 1]);
+        return out;
+      }
+
+      function buildPolylinePieceFromRun(baseEl, runScenePts, isFirstPiece) {
+        var simplified = simplifyDenseRun(runScenePts, 1.8);
+        var originX = simplified[0][0];
+        var originY = simplified[0][1];
+        var relPoints = [];
+        var minX = 0, maxX = 0, minY = 0, maxY = 0;
+
+        for (var i = 0; i < simplified.length; i++) {
+          var rx = simplified[i][0] - originX;
+          var ry = simplified[i][1] - originY;
+          if (rx < minX) minX = rx;
+          if (rx > maxX) maxX = rx;
+          if (ry < minY) minY = ry;
+          if (ry > maxY) maxY = ry;
+          relPoints.push([rx, ry]);
+        }
+
+        var clone = Object.assign({}, baseEl, {
+          id: isFirstPiece
+            ? baseEl.id
+            : ("ens_seg_" + Date.now().toString(36) + "_" + Math.random().toString(36).slice(2, 8)),
+          x: originX,
+          y: originY,
+          width: Math.max(1, maxX - minX),
+          height: Math.max(1, maxY - minY),
+          points: relPoints,
+          pressures: [],
+          simulatePressure: true,
+          version: (baseEl.version || 1) + 1,
+          versionNonce: Math.floor(Math.random() * 1000000000),
+          updated: Date.now()
+        });
+        return clone;
+      }
+
+      function applyCustomEraseStep(prevPt, currPt) {
+        var api = getApi();
+        if (!api) return;
+        var elements = api.getSceneElements();
+        if (!elements || !elements.length) return;
+
+        var radiusScene = (eraserSize / 2) / (currPt.zoom || 1);
+        var rSq = radiusScene * radiusScene;
+        var ax = prevPt ? prevPt.x : currPt.x;
+        var ay = prevPt ? prevPt.y : currPt.y;
+        var bx = currPt.x;
+        var by = currPt.y;
+
+        var sweepMinX = Math.min(ax, bx) - radiusScene;
+        var sweepMaxX = Math.max(ax, bx) + radiusScene;
+        var sweepMinY = Math.min(ay, by) - radiusScene;
+        var sweepMaxY = Math.max(ay, by) + radiusScene;
+
+        var changed = false;
+        var nextElements = [];
+
+        for (var idx = 0; idx < elements.length; idx++) {
+          var el = elements[idx];
+          if (!el || el.isDeleted) {
+            nextElements.push(el);
+            continue;
+          }
+
+          var isPathEl = (el.type === "freedraw" || el.type === "line" || el.type === "arrow") && Array.isArray(el.points) && el.points.length >= 2;
+
+          if (isPathEl) {
+            // Calcular caja envolvente real de los puntos
+            var elMinX = Infinity, elMaxX = -Infinity, elMinY = Infinity, elMaxY = -Infinity;
+            var absPts = [];
+            for (var p = 0; p < el.points.length; p++) {
+              var px = el.x + el.points[p][0];
+              var py = el.y + el.points[p][1];
+              if (px < elMinX) elMinX = px;
+              if (px > elMaxX) elMaxX = px;
+              if (py < elMinY) elMinY = py;
+              if (py > elMaxY) elMaxY = py;
+              absPts.push([px, py]);
+            }
+
+            if (elMaxX < sweepMinX || elMinX > sweepMaxX || elMaxY < sweepMinY || elMinY > sweepMaxY) {
+              nextElements.push(el);
+              continue;
+            }
+
+            var stepSize = Math.max(1.5, Math.min(4, radiusScene * 0.35));
+            var densePts = densifyPolyline(absPts, stepSize);
+            var hitAny = false;
+            var keepFlags = new Array(densePts.length);
+
+            for (var k = 0; k < densePts.length; k++) {
+              var dSq = distToSegmentSq(densePts[k][0], densePts[k][1], ax, ay, bx, by);
+              if (dSq <= rSq) {
+                keepFlags[k] = false;
+                hitAny = true;
+              } else {
+                keepFlags[k] = true;
+              }
+            }
+
+            if (!hitAny) {
+              nextElements.push(el);
+              continue;
+            }
+
+            changed = true;
+
+            if (eraserMode === "full") {
+              // Modo normal: borra el trazo completo al tocarlo con el tamaño actual de la goma
+              nextElements.push(Object.assign({}, el, {
+                isDeleted: true,
+                version: (el.version || 1) + 1,
+                versionNonce: Math.floor(Math.random() * 1000000000)
+              }));
+              continue;
+            }
+
+            // Modo parcial ("partial"): conserva los sub-trazos por donde NO pasó la goma
+            var runs = [];
+            var currentRun = [];
+            for (var m = 0; m < densePts.length; m++) {
+              if (keepFlags[m]) {
+                currentRun.push(densePts[m]);
+              } else {
+                if (currentRun.length >= 2) {
+                  runs.push(currentRun);
+                }
+                currentRun = [];
+              }
+            }
+            if (currentRun.length >= 2) {
+              runs.push(currentRun);
+            }
+
+            if (runs.length === 0) {
+              nextElements.push(Object.assign({}, el, {
+                isDeleted: true,
+                version: (el.version || 1) + 1,
+                versionNonce: Math.floor(Math.random() * 1000000000)
+              }));
+            } else {
+              for (var r = 0; r < runs.length; r++) {
+                nextElements.push(buildPolylinePieceFromRun(el, runs[r], r === 0));
+              }
+            }
+          } else {
+            // Otros elementos (rectángulos, texto, etc.): verificar colisión con el radio de la goma
+            var bx1 = el.x || 0;
+            var by1 = el.y || 0;
+            var bx2 = bx1 + (el.width || 0);
+            var by2 = by1 + (el.height || 0);
+            var clampedX = Math.max(bx1, Math.min(bx, bx2));
+            var clampedY = Math.max(by1, Math.min(by, by2));
+            var distSqBox = (bx - clampedX) * (bx - clampedX) + (by - clampedY) * (by - clampedY);
+            if (distSqBox <= rSq) {
+              changed = true;
+              nextElements.push(Object.assign({}, el, {
+                isDeleted: true,
+                version: (el.version || 1) + 1,
+                versionNonce: Math.floor(Math.random() * 1000000000)
+              }));
+            } else {
+              nextElements.push(el);
+            }
+          }
+        }
+
+        if (changed) {
+          api.updateScene({ elements: nextElements });
+        }
+      }
+
+      // ====================================================================
+      // LÓGICA DE LÁPIZ ORTOGONAL (0°, 45°, 90°)
+      // ====================================================================
+      function computeOrthoSnappedClient(startClientX, startClientY, rawClientX, rawClientY) {
+        var dx = rawClientX - startClientX;
+        var dy = rawClientY - startClientY;
+        var dist = Math.hypot(dx, dy);
+        if (dist < 2) {
+          return { x: rawClientX, y: rawClientY, angle: 0 };
+        }
+        var step = Math.PI / 4; // 45 grados (0°, 45°, 90°, 135°, 180°...)
+        var snappedAngle = Math.round(Math.atan2(dy, dx) / step) * step;
+        return {
+          x: startClientX + dist * Math.cos(snappedAngle),
+          y: startClientY + dist * Math.sin(snappedAngle),
+          angle: snappedAngle
+        };
+      }
+
+      function enforceStraightLineOnActiveFreedraw(endClientX, endClientY) {
+        if (!orthoStartScene) return;
+        var api = getApi();
+        if (!api) return;
+        var elements = api.getSceneElements();
+        if (!elements || !elements.length) return;
+
+        // Buscar el último trazo freedraw activo
+        var lastIdx = -1;
+        for (var i = elements.length - 1; i >= 0; i--) {
+          if (!elements[i].isDeleted && elements[i].type === "freedraw") {
+            lastIdx = i;
+            break;
+          }
+        }
+        if (lastIdx === -1) return;
+
+        var el = elements[lastIdx];
+        var endScene = clientToScene(endClientX, endClientY);
+        var dx = endScene.x - el.x;
+        var dy = endScene.y - el.y;
+        var dist = Math.hypot(dx, dy);
+        if (dist < 0.5) return;
+
+        var step = Math.PI / 4;
+        var snappedAngle = Math.round(Math.atan2(dy, dx) / step) * step;
+        var finalDx = dist * Math.cos(snappedAngle);
+        var finalDy = dist * Math.sin(snappedAngle);
+
+        var numSegments = Math.max(2, Math.min(24, Math.ceil(dist / 8)));
+        var straightPts = [];
+        for (var s = 0; s <= numSegments; s++) {
+          var t = s / numSegments;
+          straightPts.push([finalDx * t, finalDy * t]);
+        }
+
+        var updatedEl = Object.assign({}, el, {
+          points: straightPts,
+          width: Math.max(1, Math.abs(finalDx)),
+          height: Math.max(1, Math.abs(finalDy)),
+          version: (el.version || 1) + 1,
+          versionNonce: Math.floor(Math.random() * 1000000000)
+        });
+
+        var nextEls = elements.slice();
+        nextEls[lastIdx] = updatedEl;
+        api.updateScene({ elements: nextEls });
+      }
+
+      function overridePointerCoordinates(ev, targetClientX, targetClientY) {
+        try {
+          Object.defineProperty(ev, "clientX", { get: function() { return targetClientX; }, configurable: true });
+          Object.defineProperty(ev, "clientY", { get: function() { return targetClientY; }, configurable: true });
+          Object.defineProperty(ev, "pageX", { get: function() { return targetClientX; }, configurable: true });
+          Object.defineProperty(ev, "pageY", { get: function() { return targetClientY; }, configurable: true });
+        } catch (err) {}
+      }
+
+      // ====================================================================
+      // INTERCEPTOR DE EVENTOS DE PUNTERO EN EL LIENZO
+      // ====================================================================
+      function isEventInsideInteractiveCanvas(ev) {
+        var target = ev.target;
+        if (!target || !target.closest) return false;
+        if (target.closest("#ensEraserIsland") || target.closest("#ensOrthoPencilContainer") || target.closest(".App-menu")) {
+          return false;
+        }
+        return Boolean(target.closest(".excalidraw__canvas") || target.tagName === "CANVAS");
+      }
+
+      window.addEventListener("pointerdown", function(ev) {
+        var tool = getActiveToolType();
+        if (!isEventInsideInteractiveCanvas(ev)) return;
+        if (ev.button !== 0) return;
+
+        // 1. Goma de borrar personalizada (con tamaño por slider y modo completo/parcial)
+        if (tool === "eraser") {
+          ev.stopPropagation();
+          ev.stopImmediatePropagation();
+          ev.preventDefault();
+          isErasingDrag = true;
+          var pt = clientToScene(ev.clientX, ev.clientY);
+          lastEraseScenePt = pt;
+          applyCustomEraseStep(pt, pt);
+          return;
+        }
+
+        // 2. Lápiz Ortogonal (0°, 45°, 90°)
+        if (tool === "freedraw" && orthoPencilActive) {
+          isOrthoPencilDrawing = true;
+          orthoStartClient = { x: ev.clientX, y: ev.clientY };
+          orthoStartScene = clientToScene(ev.clientX, ev.clientY);
+        }
+      }, true);
+
+      window.addEventListener("pointermove", function(ev) {
+        var tool = getActiveToolType();
+
+        // Actualizar cursor circular de la goma de borrar
+        if (tool === "eraser" && eraserCursor) {
+          if (isEventInsideInteractiveCanvas(ev) || isErasingDrag) {
+            eraserCursor.style.display = "block";
+            eraserCursor.style.left = ev.clientX + "px";
+            eraserCursor.style.top = ev.clientY + "px";
+          } else {
+            eraserCursor.style.display = "none";
+          }
+        }
+
+        // 1. Arrastre de Goma de borrar
+        if (tool === "eraser" && isErasingDrag) {
+          ev.stopPropagation();
+          ev.stopImmediatePropagation();
+          ev.preventDefault();
+          var currPt = clientToScene(ev.clientX, ev.clientY);
+          applyCustomEraseStep(lastEraseScenePt || currPt, currPt);
+          lastEraseScenePt = currPt;
+          return;
+        }
+
+        // 2. Arrastre de Lápiz Ortogonal (0°, 45°, 90°)
+        if (tool === "freedraw" && orthoPencilActive && isOrthoPencilDrawing && orthoStartClient) {
+          var snapped = computeOrthoSnappedClient(
+            orthoStartClient.x,
+            orthoStartClient.y,
+            ev.clientX,
+            ev.clientY
+          );
+          overridePointerCoordinates(ev, snapped.x, snapped.y);
+          requestAnimationFrame(function() {
+            enforceStraightLineOnActiveFreedraw(snapped.x, snapped.y);
+          });
+        }
+      }, true);
+
+      function endPointerInteraction(ev) {
+        var tool = getActiveToolType();
+        if (isErasingDrag) {
+          isErasingDrag = false;
+          lastEraseScenePt = null;
+          if (tool === "eraser") {
+            ev.stopPropagation();
+            ev.stopImmediatePropagation();
+          }
+        }
+        if (isOrthoPencilDrawing && orthoStartClient) {
+          var snapped = computeOrthoSnappedClient(
+            orthoStartClient.x,
+            orthoStartClient.y,
+            ev.clientX,
+            ev.clientY
+          );
+          overridePointerCoordinates(ev, snapped.x, snapped.y);
+          setTimeout(function() {
+            enforceStraightLineOnActiveFreedraw(snapped.x, snapped.y);
+          }, 0);
+          isOrthoPencilDrawing = false;
+          orthoStartClient = null;
+          orthoStartScene = null;
+        }
+      }
+
+      window.addEventListener("pointerup", endPointerInteraction, true);
+      window.addEventListener("pointercancel", endPointerInteraction, true);
+    })();
+  </script>
+</body>
+</html>

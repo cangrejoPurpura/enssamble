@@ -1,0 +1,6211 @@
+/* Tipografías Montserrat incluidas en la extensión */
+@font-face {
+  font-family: 'Montserrat';
+  src: url('fonts/Montserrat-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('fonts/Montserrat-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('fonts/Montserrat-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('fonts/Montserrat-Medium.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('fonts/Montserrat-Medium.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+:root {
+  --content-bg-alpha: 1;
+  --sidebar-bg-alpha: 1;
+  --bg-main: rgba(217, 217, 217, var(--content-bg-alpha, 1));
+  --bg-sidebar: rgba(255, 197, 118, var(--sidebar-bg-alpha, 1));
+  --bg-sidebar-hover: rgba(0, 0, 0, 0.06);
+  --bg-sidebar-active: rgba(255, 255, 255, 0.44);
+  --frame-border: #9E9E9E;
+  --brand-charcoal: #393939;
+  --brand-bronze: #A68E6E;
+  --brand-bronze-dark: #8E7758;
+  --bg-card: #FFFFFF;
+  --bg-thumb-mod: #F1F4F9;
+  --egger-red: #E30613;
+  --enssamble-orange: #FFC576;
+  --masisa-green: #2E7D5B;
+  --pelikano-blue: #1D4ED8;
+  --danger-red: #DC2626;
+  --text-heading: #4A5058;
+  --text-subtitle: #7A828C;
+  --text-title: #1E242B;
+  --text-desc: #68707A;
+  --accent-contrast: #FFC576;
+}
+
+/* ============================================================================
+   TEMAS: CLÁSICO, NOCHE (DARK) Y LIGHT
+   ============================================================================ */
+/* TEMA NOCHE (DARK) - Inspirado en Antigravity Dark con letras de contraste en amarillo clásico #FFC576 */
+[data-theme="dark"] {
+  --bg-main: rgba(24, 28, 34, var(--content-bg-alpha, 1));
+  --bg-sidebar: rgba(26, 31, 38, var(--sidebar-bg-alpha, 1));
+  --bg-sidebar-hover: rgba(255, 197, 118, 0.12);
+  --bg-sidebar-active: rgba(255, 197, 118, 0.22);
+  --frame-border: #2D3748;
+  --brand-charcoal: #FFC576;
+  --bg-card: #1F252D;
+  --bg-thumb-mod: #161A20;
+  --text-heading: #FFC576;
+  --text-subtitle: #CBD5E1;
+  --text-title: #FFC576;
+  --text-desc: #94A3B8;
+  --accent-contrast: #FFC576;
+}
+
+[data-theme="dark"] .sidebar {
+  border-right: 1px solid rgba(255, 197, 118, 0.18);
+}
+
+[data-theme="dark"] .sidebar .nav-label {
+  color: #FFC576 !important;
+}
+
+[data-theme="dark"] .sidebar .nav-icon-img,
+[data-theme="dark"] .sidebar-logo-slot img,
+[data-theme="dark"] .sidebar-toggle-btn img,
+[data-theme="dark"] .hero-logo-img {
+  filter: none !important;
+}
+
+[data-theme="dark"] .logo-collapsed-img { content: url('assets/icons/sidebar_logo_collapsed_dark.png') !important; }
+[data-theme="dark"] .logo-expanded-img { content: url('assets/icons/sidebar_logo_expanded_dark.png') !important; }
+[data-theme="dark"] .hero-logo-img { content: url('assets/icons/hero_logo_dark.png') !important; }
+[data-theme="dark"] .arrow-expand-img { content: url('assets/icons/arrow_expand_dark.png') !important; }
+[data-theme="dark"] .arrow-collapse-img { content: url('assets/icons/arrow_collapse_dark.png') !important; }
+[data-theme="dark"] .icon-inicio { content: url('assets/icons/icon_inicio_dark.png') !important; }
+[data-theme="dark"] .icon-modulos { content: url('assets/icons/icon_modulos_dark.png') !important; }
+[data-theme="dark"] .icon-materiales { content: url('assets/icons/icon_materiales_dark.png') !important; }
+[data-theme="dark"] .icon-despiece { content: url('assets/icons/icon_despiece_dark.png') !important; }
+[data-theme="dark"] .icon-render { content: url('assets/icons/icon_render_dark.png') !important; }
+[data-theme="dark"] .icon-moodboard { content: url('assets/icons/icon_moodboard_dark.png') !important; }
+[data-theme="dark"] .icon-url { content: url('assets/icons/icon_url_dark.png') !important; }
+[data-theme="dark"] .icon-showroom { content: url('assets/icons/icon_showroom_dark.png') !important; }
+[data-theme="dark"] .icon-trash { content: url('assets/icons/icon_trash_dark.png') !important; }
+[data-theme="dark"] .trash-empty-icon { content: url('assets/icons/icon_trash_dark.png') !important; }
+[data-theme="dark"] .icon-user { content: url('assets/icons/icon_user_dark.png') !important; }
+[data-theme="dark"] .icon-settings { content: url('assets/icons/icon_settings_dark.png') !important; }
+
+[data-theme="dark"] .catalog-title,
+[data-theme="dark"] .url-madereras-title,
+[data-theme="dark"] .inicio-section-title {
+  color: #FFC576 !important;
+}
+
+[data-theme="dark"] .catalog-header,
+[data-theme="dark"] .despiece-sticky-header {
+  background: rgba(24, 28, 34, var(--content-bg-alpha, 0.96)) !important;
+  border-bottom: 1px solid rgba(255, 197, 118, 0.20) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35) !important;
+}
+
+[data-theme="dark"] .catalog-card {
+  border-color: rgba(255, 197, 118, 0.22) !important;
+}
+
+[data-theme="dark"] .catalog-card .card-body {
+  background: #FFFFFF !important;
+}
+
+[data-theme="dark"] .catalog-card .card-title {
+  color: #1E242B !important;
+}
+
+[data-theme="dark"] .catalog-card .card-category {
+  color: #4A5058 !important;
+}
+
+[data-theme="dark"] .ens-pill-btn.active,
+[data-theme="dark"] .top-action-btn.active {
+  background: #FFC576 !important;
+  color: #1E242B !important;
+  border: 1.5px solid #FFC576 !important;
+  font-weight: 700 !important;
+}
+
+[data-theme="dark"] .ens-pill-btn:not(.active),
+[data-theme="dark"] .top-action-btn:not(.active) {
+  background: transparent !important;
+  color: #FFFFFF !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Espesor en Modo Dark: el botón con el valor (ej: 18 mm) tiene el mismo diseño que el botón clásico */
+[data-theme="dark"] .min-thick-badge {
+  background: #FFC576 !important;
+  color: #1E242B !important;
+  border: 1.5px solid #FFC576 !important;
+  font-weight: 700 !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.28) !important;
+}
+
+[data-theme="dark"] .min-thick-title {
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .minimal-thickness-bar {
+  background: #272E38 !important;
+  border-color: rgba(255, 197, 118, 0.35) !important;
+}
+
+[data-theme="dark"] .min-thick-range::-webkit-slider-thumb {
+  background: #FFC576 !important;
+  border: 2px solid #161A1F !important;
+}
+
+/* TEMA LIGHT - Inspirado en Antigravity Light con letras en tono carbón #393939 de los iconos de la barra lateral */
+[data-theme="light"] {
+  --bg-main: rgba(244, 245, 247, var(--content-bg-alpha, 1));
+  --bg-sidebar: rgba(255, 255, 255, var(--sidebar-bg-alpha, 1));
+  --bg-sidebar-hover: rgba(0, 0, 0, 0.05);
+  --bg-sidebar-active: rgba(0, 0, 0, 0.1);
+  --frame-border: #CBD5E1;
+  --brand-charcoal: #393939;
+  --bg-card: #FFFFFF;
+  --bg-thumb-mod: #F8FAFC;
+  --text-heading: #393939;
+  --text-subtitle: #64748B;
+  --text-title: #393939;
+  --text-desc: #475569;
+  --accent-contrast: #393939;
+}
+
+[data-theme="light"] .sidebar {
+  border-right: 1px solid #E2E8F0;
+}
+
+[data-theme="light"] .sidebar .nav-label {
+  color: #393939 !important;
+}
+
+[data-theme="light"] .catalog-title,
+[data-theme="light"] .url-madereras-title,
+[data-theme="light"] .inicio-section-title {
+  color: #393939 !important;
+}
+
+[data-theme="light"] .catalog-header,
+[data-theme="light"] .despiece-sticky-header {
+  background: rgba(244, 245, 247, var(--content-bg-alpha, 0.96)) !important;
+  border-bottom: 1px solid #CBD5E1 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+}
+
+[data-theme="light"] .catalog-card .card-title {
+  color: #393939 !important;
+}
+
+/* En modo light, los botones no seleccionados (incluyendo importar desde URL y crear módulo por escaneo) tienen el mismo fill que los activos */
+[data-theme="light"] .ens-pill-btn,
+[data-theme="light"] .top-action-btn,
+[data-theme="light"] #openUrlImportBtn,
+[data-theme="light"] #createModFromScanBtn {
+  background: #FFC576 !important;
+  border: 1.5px solid #FFC576 !important;
+  color: #1E242B !important;
+}
+
+[data-theme="light"] .ens-pill-btn.active,
+[data-theme="light"] .top-action-btn.active {
+  background: #FFC576 !important;
+  border: 1.5px solid #FFC576 !important;
+  color: #1E242B !important;
+  font-weight: 700 !important;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--bg-main);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  color: var(--text-title);
+}
+
+.app-layout {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  border: 4px solid var(--frame-border);
+  background: var(--bg-main);
+}
+
+/* ============================================================================
+   SIDEBAR CON ANIMACIÓN SUAVE (SOFT EASE-OUT) Y ALINEACIÓN FIJA (dx=0, dy=0)
+   ============================================================================ */
+.sidebar {
+  position: relative;
+  width: 62px;
+  min-width: 62px;
+  max-width: 62px;
+  height: 100%;
+  background-color: var(--bg-sidebar);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  z-index: 30;
+  transition: width 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+              min-width 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+              max-width 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+  flex-shrink: 0;
+}
+
+.sidebar.expanded {
+  width: 154px;
+  min-width: 154px;
+  max-width: 154px;
+}
+
+.sidebar-header {
+  position: relative;
+  width: 100%;
+  height: 90px;
+  flex-shrink: 0;
+}
+
+.sidebar-logo-slot {
+  position: absolute;
+  top: 8px;
+  left: 9px;
+  width: 115px;
+  height: 58px;
+  cursor: pointer;
+}
+
+.logo-collapsed-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 33px;
+  height: 25px;
+  object-fit: contain;
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.32s cubic-bezier(0.22, 1, 0.36, 1), transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.logo-expanded-img {
+  position: absolute;
+  top: 0;
+  left: 6px;
+  width: 102px;
+  height: 55px;
+  object-fit: contain;
+  opacity: 0;
+  transform: translateX(-6px) scale(0.96);
+  pointer-events: none;
+  transition: opacity 0.36s cubic-bezier(0.22, 1, 0.36, 1), transform 0.36s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.sidebar.expanded .logo-collapsed-img {
+  opacity: 0;
+  transform: scale(0.92);
+  pointer-events: none;
+}
+
+.sidebar.expanded .logo-expanded-img {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  pointer-events: auto;
+}
+
+.sidebar-toggle-btn {
+  position: absolute;
+  top: 8px;
+  right: 2px;
+  width: 22px;
+  height: 24px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 4px;
+  transition: background 0.2s ease, right 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 5;
+}
+
+.sidebar.expanded .sidebar-toggle-btn {
+  right: 4px;
+}
+
+.sidebar-toggle-btn:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.arrow-expand-img, .arrow-collapse-img {
+  position: absolute;
+  width: 20px;
+  height: 24px;
+  object-fit: contain;
+  transition: opacity 0.28s ease;
+}
+
+.arrow-expand-img {
+  opacity: 1;
+}
+
+.arrow-collapse-img {
+  opacity: 0;
+}
+
+.sidebar.expanded .arrow-expand-img {
+  opacity: 0;
+}
+
+.sidebar.expanded .arrow-collapse-img {
+  opacity: 1;
+}
+
+/* Lista de navegación principal */
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  margin-top: 36px;
+  margin-bottom: auto;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.nav-item {
+  width: 100%;
+  height: 40px;
+  min-height: 40px;
+  max-height: 40px;
+  border: none;
+  background: transparent;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 0 0 13px;
+  gap: 10px;
+  cursor: pointer;
+  color: #363636;
+  overflow: hidden;
+  transition: background 0.2s ease;
+  text-align: left;
+}
+
+.nav-item:hover {
+  background: var(--bg-sidebar-hover);
+}
+
+.nav-item.active {
+  background: var(--bg-sidebar-active);
+}
+
+.nav-icon-wrap {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  max-width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.nav-icon-img {
+  display: block;
+  object-fit: contain;
+  margin: auto;
+}
+
+.icon-inicio { width: 28px; height: 25px; }
+.icon-modulos { width: 29px; height: 30px; }
+.icon-materiales { width: 26px; height: 26px; }
+.icon-despiece { width: 26px; height: 31px; }
+.icon-render { width: 26px; height: 26px; }
+.icon-moodboard { width: 25px; height: 25px; }
+.icon-user { width: 34px; height: 34px; }
+.icon-settings { width: 35px; height: 34px; }
+
+.nav-label {
+  display: flex;
+  align-items: center;
+  height: 36px;
+  line-height: 1;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  color: #363636;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.34s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.34s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.sidebar.expanded .nav-label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.sidebar-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  padding-bottom: 12px;
+  flex-shrink: 0;
+}
+
+.bottom-item {
+  height: 40px;
+  min-height: 40px;
+  max-height: 40px;
+}
+
+.bottom-label {
+  font-size: 14.5px;
+  color: #383838;
+}
+
+/* ============================================================================
+   ÁREA PRINCIPAL (#D9D9D9)
+   ============================================================================ */
+.main-content {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: var(--bg-main);
+  background-image: radial-gradient(circle at 0% 21%, rgba(203, 203, 203, 0.7) 0%, rgba(217, 217, 217, 0) 230px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.main-content::-webkit-scrollbar {
+  width: 7px;
+}
+.main-content::-webkit-scrollbar-thumb {
+  background: #B8B8B8;
+  border-radius: 999px;
+}
+
+.hero-brand-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 22px;
+  margin-bottom: 8px;
+  flex-shrink: 0;
+}
+
+.main-content.hide-hero .hero-brand-header {
+  display: none;
+}
+
+.hero-logo-img {
+  width: 240px;
+  height: 65px;
+  object-fit: contain;
+  display: block;
+}
+
+.tab-view {
+  display: none;
+  width: 100%;
+  padding: 12px 22px 32px 22px;
+}
+
+.tab-view.active {
+  display: block;
+}
+
+/* ============================================================================
+   PESTAÑA INICIO (Top 10 Módulos más usados + Top 10 Materiales más usados)
+   ============================================================================ */
+.inicio-dashboard {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.inicio-section-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inicio-section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding-bottom: 6px;
+}
+
+.inicio-section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  color: #2E343B;
+}
+
+.inicio-section-sub {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  color: #68707A;
+  margin-top: 1px;
+}
+
+/* ============================================================================
+   ENCABEZADO Y FILTROS DE CATÁLOGO (MÓDULOS Y MATERIALES)
+   ============================================================================ */
+.catalog-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.catalog-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 22px;
+  color: #4A5058;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+
+.catalog-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 8.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #7A828C;
+  margin-bottom: 11px;
+}
+
+.search-and-actions-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.search-box-wrap {
+  position: relative;
+  width: 310px;
+  max-width: 90vw;
+}
+
+.search-icon {
+  position: absolute;
+  left: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 13px;
+  height: 13px;
+  color: #9CA3AF;
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  height: 32px;
+  padding: 0 28px 0 34px;
+  border-radius: 999px;
+  border: 1px solid #E2E5EC;
+  background: #FFFFFF;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 10.2px;
+  color: var(--text-title);
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: var(--brand-bronze);
+}
+
+.clear-search-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  color: #9CA3AF;
+  cursor: pointer;
+  font-size: 14px;
+  display: none;
+}
+
+.filter-pills-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.filter-pill {
+  height: 24px;
+  padding: 0 11px;
+  border-radius: 999px;
+  border: 1px solid #E5E7EB;
+  background: #FFFFFF;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 8.8px;
+  color: #4A5058;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.filter-pill:hover {
+  border-color: #CBD5E1;
+  background: #F9FAFB;
+}
+
+.filter-pill.active {
+  background: var(--brand-bronze);
+  border-color: var(--brand-bronze);
+  color: #FFFFFF;
+}
+
+/* ============================================================================
+   GRILLA DE TARJETAS UNIFICADA (Soporta 8, 10 o 12 tarjetas en horizontal)
+   ============================================================================ */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 10px;
+  width: 100%;
+}
+
+.cards-grid.cols-10 {
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.cards-grid.cols-12 {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.cards-grid.cols-12 .card-body {
+  padding: 6px 6px 7px 6px;
+}
+
+.cards-grid.cols-12 .card-category {
+  font-size: 7.1px;
+}
+
+.cards-grid.cols-12 .card-brand {
+  font-size: 7.3px;
+}
+
+.cards-grid.cols-12 .card-title {
+  font-size: 9.3px;
+}
+
+.catalog-card {
+  position: relative;
+  background: var(--bg-card);
+  border-radius: 9px;
+  overflow: hidden;
+  border: 1px solid rgba(226, 229, 236, 0.95);
+  box-shadow: 0 2px 5px rgba(15, 23, 42, 0.04);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.catalog-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.1);
+  border-color: rgba(166, 142, 110, 0.55);
+}
+
+.card-thumb-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: var(--bg-thumb-mod);
+  overflow: hidden;
+}
+
+.card-flat-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+.catalog-card:hover .card-flat-img {
+  transform: scale(1.03);
+}
+
+.hover-detail-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.04) 0%, rgba(15, 23, 42, 0.58) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 7px;
+  opacity: 0;
+  transition: opacity 0.18s ease;
+  z-index: 6;
+}
+
+.catalog-card:hover .hover-detail-overlay {
+  opacity: 1;
+}
+
+.ver-detalle-btn {
+  width: 100%;
+  height: 23px;
+  border: none;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #1E242B;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.22);
+  transition: background 0.14s ease, transform 0.14s ease;
+}
+
+.ver-detalle-btn:hover {
+  background: var(--bg-sidebar);
+  transform: scale(1.02);
+}
+
+.hover-desc-drawer {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.97);
+  color: #334155;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 7.5px;
+  line-height: 1.32;
+  padding: 5px 6px;
+  border-radius: 5px;
+  margin-bottom: 4px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
+  display: none;
+  text-align: left;
+}
+
+.catalog-card.show-inline-desc .hover-desc-drawer {
+  display: block;
+}
+
+.card-body {
+  padding: 7px 8px 9px 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.card-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  margin-bottom: 3px;
+}
+
+.card-category {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 8px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--brand-bronze);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 8.2px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  color: #1E242B;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 0.95;
+}
+
+.card-brand.egger::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--egger-red);
+  margin-top: 1px;
+}
+
+.card-brand.faplac::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #0076A8;
+  margin-top: 1px;
+}
+
+.card-brand.enssamble::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--enssamble-orange);
+  margin-top: 1px;
+}
+
+.card-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 10.3px;
+  line-height: 1.28;
+  height: 1.28em;
+  letter-spacing: -0.01em;
+  color: var(--text-title);
+  display: block !important;
+  width: 100%;
+  min-width: 0;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  margin: 0;
+}
+
+/* ============================================================================
+   PESTAÑA DESPIECE (Agrupado por Módulo Separado + Tapacanto 3D X-Ray)
+   ============================================================================ */
+.despiece-container {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.despiece-topbar {
+  background: #FFFFFF;
+  border-radius: 10px;
+  padding: 11px 16px;
+  border: 1px solid #C8C8C8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.despiece-title-area {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.despiece-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: #222222;
+}
+
+.project-name-inline {
+  display: flex;
+  align-items: center;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 6px;
+  overflow: hidden;
+  height: 27px;
+}
+
+.proj-label {
+  background: #F1F5F9;
+  padding: 0 9px;
+  font-size: 8.8px;
+  font-weight: 600;
+  color: #475569;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid #E2E8F0;
+}
+
+.proj-input {
+  border: none;
+  background: transparent;
+  padding: 0 9px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9.5px;
+  color: #1E242B;
+  width: 220px;
+  outline: none;
+}
+
+.despiece-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.despiece-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.stat-card {
+  background: #FFFFFF;
+  border-radius: 9px;
+  padding: 9px 14px;
+  border: 1px solid #C8C8C8;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stat-label {
+  font-size: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #6B7280;
+}
+
+.stat-value {
+  font-size: 15px;
+  font-weight: 600;
+  color: #222222;
+}
+
+/* Bloques de Despiece por cada Módulo Separado (Estilo Imagen 2 adaptado a enssamble) */
+.despiece-modules-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.module-cutlist-card {
+  background: #FFFFFF;
+  border-radius: 10px;
+  border: 1px solid #C4C4C4;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.module-cutlist-titlebar {
+  background: rgba(255, 197, 118, 0.15);
+  padding: 8px 14px;
+  border-bottom: 1px solid #FFC576;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.mod-group-name-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mod-badge-num {
+  background: var(--bg-sidebar);
+  color: #1E242B;
+  font-weight: 700;
+  font-size: 8.5px;
+  padding: 3px 8px;
+  border-radius: 5px;
+}
+
+.mod-group-title-input {
+  border: 1px solid transparent;
+  background: transparent;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  color: #1E242B;
+  padding: 2px 6px;
+  border-radius: 4px;
+  width: 240px;
+}
+
+.mod-group-title-input:focus, .mod-group-title-input:hover {
+  border-color: #D1D5DB;
+  background: #FFFFFF;
+}
+
+.mod-group-summary-pills {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.mod-stat-pill {
+  background: #FFFFFF;
+  border: 1px solid #E2D5C1;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 8.5px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.mod-stat-pill.red-pill {
+  background: #FEF2F2;
+  border-color: #FECACA;
+  color: #B91C1C;
+  font-weight: 600;
+}
+
+/* Fila de Material + Tapacanto #1 + Tapacanto #2 (inspirada en la 2da imagen) */
+.module-mat-band-row {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 8px;
+  padding: 9px 14px;
+  background: #F8FAFC;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.mat-info-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #CBD5E1;
+  border-radius: 6px;
+  background: #FFFFFF;
+  overflow: hidden;
+  min-height: 44px;
+}
+
+.mat-box-tag {
+  background: #F1F5F9;
+  color: #334155;
+  font-weight: 600;
+  font-size: 8.2px;
+  padding: 0 9px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-right: 1px solid #CBD5E1;
+  min-width: 68px;
+}
+
+.mat-box-swatch {
+  width: 34px;
+  height: 34px;
+  border-radius: 4px;
+  object-fit: cover;
+  margin: 4px 7px;
+  border: 1px solid #E2E8F0;
+  flex-shrink: 0;
+}
+
+.mat-box-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4px 8px 4px 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.mat-box-select {
+  border: none;
+  background: transparent;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 8.8px;
+  color: #1E242B;
+  outline: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+.mat-box-sub {
+  font-size: 7.5px;
+  color: #64748B;
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Tabla de piezas estilo Imagen 2 */
+.despiece-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9.5px;
+}
+
+.despiece-table th {
+  background: #FFFFFF;
+  color: #475569;
+  font-weight: 600;
+  text-align: center;
+  padding: 8px 8px;
+  border-bottom: 1px solid #E2E8F0;
+  font-size: 8.5px;
+}
+
+.despiece-table td {
+  padding: 5px 8px;
+  border-bottom: 1px solid #F1F5F9;
+  color: #333333;
+  text-align: center;
+}
+
+.dp-cell-input {
+  width: 100%;
+  height: 25px;
+  padding: 0 8px;
+  border: 1px solid #CBD5E1;
+  border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9.2px;
+  color: #1E242B;
+  background: #FFFFFF;
+}
+
+.dp-swap-btn {
+  border: none;
+  background: transparent;
+  color: #64748B;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.dp-swap-btn:hover {
+  background: #F1F5F9;
+  color: #1E242B;
+}
+
+/* Botón interactivo de Tapacanto en cada fila (muestra bordes rojos + ml y abre el 3D X-Ray) */
+.tapacanto-cell-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px;
+  border: 1px solid #CBD5E1;
+  border-radius: 5px;
+  background: #FFFFFF;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8.2px;
+  font-weight: 600;
+  color: #334155;
+  transition: all 0.14s ease;
+}
+
+.tapacanto-cell-btn:hover {
+  border-color: #E11D48;
+  background: #FFF1F2;
+  color: #BE123C;
+}
+
+.mini-board-rect {
+  position: relative;
+  width: 24px;
+  height: 16px;
+  background: #E2E8F0;
+  border: 1.5px solid #94A3B8;
+  border-radius: 1px;
+}
+
+.mini-board-rect.eb-top    { border-top: 2.5px solid #E11D48; }
+.mini-board-rect.eb-bottom { border-bottom: 2.5px solid #E11D48; }
+.mini-board-rect.eb-left   { border-left: 2.5px solid #E11D48; }
+.mini-board-rect.eb-right  { border-right: 2.5px solid #E11D48; }
+
+.dp-trash-btn {
+  border: none;
+  background: transparent;
+  color: #3B82F6;
+  cursor: pointer;
+  padding: 3px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dp-trash-btn:hover {
+  color: #DC2626;
+  background: #FEF2F2;
+}
+
+/* ============================================================================
+   MODAL VISOR 3D X-RAY DE TAPACANTO
+   ============================================================================ */
+.modal-box.xray-modal-box {
+  width: 840px;
+  max-width: 96vw;
+}
+
+.xray-modal-sub {
+  font-size: 9px;
+  color: #64748B;
+  margin-top: 2px;
+}
+
+.xray-workspace {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 14px;
+  align-items: stretch;
+}
+
+.xray-canvas-wrap {
+  position: relative;
+  background: linear-gradient(180deg, #F8FAFC 0%, #EEF2F6 100%);
+  border: 1px solid #CBD5E1;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.xray-view-pills {
+  display: flex;
+  gap: 6px;
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid #E2E8F0;
+}
+
+#xrayTapacantoCanvas {
+  width: 100%;
+  height: 330px;
+  display: block;
+  cursor: grab;
+}
+
+#xrayTapacantoCanvas:active {
+  cursor: grabbing;
+}
+
+.xray-legend-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 12px;
+  background: #FFFFFF;
+  border-top: 1px solid #E2E8F0;
+  font-size: 8px;
+  font-weight: 500;
+  color: #475569;
+}
+
+.legend-dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+.legend-dot.xray-glass {
+  background: rgba(148, 163, 184, 0.35);
+  border: 1px solid #64748B;
+}
+
+.legend-dot.xray-red {
+  background: #E11D48;
+}
+
+.xray-controls-col {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.xray-section-label {
+  font-size: 8.5px;
+  font-weight: 600;
+  color: #475569;
+  letter-spacing: 0.04em;
+}
+
+.edge-toggle-btn {
+  width: 100%;
+  height: 34px;
+  padding: 0 11px;
+  border-radius: 7px;
+  border: 1px solid #CBD5E1;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.14s ease;
+}
+
+.edge-toggle-btn.active {
+  border-color: #E11D48;
+  background: #FFF1F2;
+}
+
+.edge-red-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  border: 1.5px solid #94A3B8;
+  background: #F1F5F9;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.edge-toggle-btn.active .edge-red-indicator {
+  background: #E11D48;
+  border-color: #BE123C;
+  box-shadow: 0 0 6px rgba(225, 29, 72, 0.45);
+}
+
+.edge-btn-name {
+  font-size: 9.2px;
+  font-weight: 500;
+  color: #1E242B;
+  flex: 1;
+  text-align: left;
+}
+
+.edge-btn-mm {
+  font-size: 8.8px;
+  font-weight: 600;
+  color: #64748B;
+}
+
+.edge-toggle-btn.active .edge-btn-mm {
+  color: #BE123C;
+}
+
+.xray-quick-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 2px;
+}
+
+.xray-summary-box {
+  margin-top: auto;
+  background: rgba(255, 197, 118, 0.15);
+  border: 1px solid #FFC576;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 9px;
+  line-height: 1.5;
+  color: #1E242B;
+}
+
+/* ============================================================================
+   PESTAÑA RENDER IA (Estudio Interior Greige + Piso Roble Kendal Natural)
+   ============================================================================ */
+.render-container {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.render-topbar {
+  background: #FFFFFF;
+  border-radius: 10px;
+  padding: 11px 16px;
+  border: 1px solid #C8C8C8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.render-cta-btn {
+  background: #FFC576 !important;
+  border-color: #FFC576 !important;
+  color: #1E242B !important;
+  font-weight: 600 !important;
+}
+
+.render-workspace {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.render-controls-card {
+  background: #FFFFFF;
+  border-radius: 10px;
+  border: 1px solid #C8C8C8;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.render-ctrl-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.render-ctrl-group label {
+  font-size: 8.8px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.render-env-badge {
+  margin-top: auto;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 7px;
+  padding: 9px 10px;
+  font-size: 8.2px;
+  line-height: 1.48;
+  color: #475569;
+}
+
+.render-stage-card {
+  position: relative;
+  background: #1E242B;
+  border-radius: 10px;
+  border: 1px solid #9E9E9E;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+#aiRenderCanvas {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  display: block;
+}
+
+.render-progress-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.62);
+  backdrop-filter: blur(4px);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #FFFFFF;
+  z-index: 10;
+}
+
+.render-progress-overlay.active {
+  display: flex;
+}
+
+.render-spinner {
+  width: 34px;
+  height: 34px;
+  border: 3px solid rgba(255, 197, 118, 0.3);
+  border-top-color: #FFC576;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.render-progress-text {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* ============================================================================
+   MODAL DE DETALLE Y ELEMENTOS COMUNES
+   ============================================================================ */
+.modal-box.detail-modal-box {
+  width: 550px;
+  max-width: 94vw;
+}
+
+.detail-modal-cat {
+  font-size: 8.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--brand-bronze);
+}
+
+.detail-modal-content {
+  display: grid;
+  grid-template-columns: 165px 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.detail-img-wrap {
+  width: 165px;
+  height: 165px;
+  border-radius: 9px;
+  overflow: hidden;
+  border: 1px solid #E5E7EB;
+  background: var(--bg-thumb-mod);
+}
+
+.detail-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.detail-info-col {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+
+.detail-modal-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #1E242B;
+  line-height: 1.2;
+}
+
+.detail-code-Tag {
+  display: inline-block;
+  align-self: flex-start;
+  background: #F3F4F6;
+  color: #374151;
+  font-size: 8.8px;
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: 5px;
+}
+
+.detail-modal-desc {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #4B5563;
+}
+
+.detail-module-config {
+  margin-top: 6px;
+  padding-top: 8px;
+  border-top: 1px solid #F1F3F6;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.detail-config-label {
+  font-size: 8px;
+  font-weight: 600;
+  color: #6B7280;
+}
+
+.thickness-Selector-row {
+  display: flex;
+  gap: 6px;
+}
+
+.thick-pill {
+  flex: 1;
+  height: 26px;
+  border-radius: 6px;
+  border: 1px solid #D1D5DB;
+  background: #FFFFFF;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 9.5px;
+  color: #374151;
+  cursor: pointer;
+}
+
+.thick-pill.active {
+  background: var(--bg-sidebar);
+  border-color: #FFC576;
+  color: #1E242B;
+  font-weight: 600;
+}
+
+.detail-dims-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.dim-field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dim-field label {
+  font-size: 8px;
+  font-weight: 500;
+  color: #6B7280;
+}
+
+.dim-field input {
+  width: 100%;
+  min-width: 0;
+  height: 25px;
+  padding: 0 6px;
+  border-radius: 5px;
+  border: 1px solid #D1D5DB;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9.5px;
+  color: #1E242B;
+}
+
+.top-action-btn {
+  height: 30px;
+  padding: 0 13px;
+  border-radius: 999px;
+  border: 1px solid var(--brand-charcoal);
+  background: var(--brand-charcoal);
+  color: #FFFFFF;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 9.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.top-action-btn:hover {
+  background: #1F1F1F;
+}
+
+.top-action-btn.secondary {
+  background: #FFFFFF;
+  color: #333333;
+  border-color: #BDBDBD;
+}
+
+.top-action-btn.secondary:hover {
+  background: var(--bg-sidebar);
+  border-color: #FFC576;
+  color: #222222;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(2px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal-backdrop.open {
+  display: flex;
+}
+
+.modal-box {
+  width: 480px;
+  max-width: 94vw;
+  background: #FFFFFF;
+  border-radius: 13px;
+  padding: 18px 20px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
+  position: relative;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.modal-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 14.5px;
+  color: var(--text-title);
+}
+
+.modal-close-btn {
+  border: none;
+  background: #F3F4F6;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #4B5563;
+  font-size: 15px;
+}
+
+.form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 9.5px;
+  color: #4B5563;
+}
+
+.form-input, .form-select {
+  width: 100%;
+  padding: 6px 9px;
+  border-radius: 6px;
+  border: 1px solid #D1D5DB;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 10px;
+  color: var(--text-title);
+  outline: none;
+}
+
+.modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.toast-msg {
+  display: none !important;
+}
+
+/* ============================================================================
+   EFECTO DORADO ALREDEDOR DE LA TARJETA SELECCIONADA (Como en Imagen 1, sin badge 'APLICADO')
+   (Doble marco dorado: borde ámbar #D97706 + halo externo #FFC576 + cuerpo en degradado crema-dorado)
+   Aplicado únicamente cuando la tarjeta está seleccionada, en los 3 temas: Clásico, Dark y Light
+   ============================================================================ */
+.catalog-card .card-body {
+  border-radius: 0 0 8px 8px;
+  transition: background 0.18s ease;
+}
+
+.catalog-card.selected-material,
+.catalog-card.selected-card,
+[data-theme="dark"] .catalog-card.selected-material,
+[data-theme="dark"] .catalog-card.selected-card,
+[data-theme="light"] .catalog-card.selected-material,
+[data-theme="light"] .catalog-card.selected-card {
+  border: 2.5px solid #D97706 !important;
+  outline: none !important;
+  box-shadow: 0 0 0 4px rgba(255, 197, 118, 0.85), 0 10px 22px rgba(15, 23, 42, 0.18) !important;
+  transform: translateY(-3px) !important;
+  z-index: 5 !important;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease !important;
+}
+
+/* Degradado crema-dorado suave en el pie de la tarjeta seleccionada idéntico a la imagen de referencia */
+.catalog-card.selected-material .card-body,
+.catalog-card.selected-card .card-body,
+[data-theme="dark"] .catalog-card.selected-material .card-body,
+[data-theme="dark"] .catalog-card.selected-card .card-body,
+[data-theme="light"] .catalog-card.selected-material .card-body,
+[data-theme="light"] .catalog-card.selected-card .card-body {
+  background: linear-gradient(180deg, #FFFDF2 0%, #FFF2C2 52%, #FEE892 100%) !important;
+  border-radius: 0 0 6.5px 6.5px !important;
+}
+
+.catalog-card.selected-material .card-category,
+.catalog-card.selected-card .card-category,
+[data-theme="dark"] .catalog-card.selected-material .card-category,
+[data-theme="dark"] .catalog-card.selected-card .card-category,
+[data-theme="light"] .catalog-card.selected-material .card-category,
+[data-theme="light"] .catalog-card.selected-card .card-category {
+  color: #955422 !important;
+  font-weight: 600 !important;
+}
+
+.catalog-card.selected-material .card-title,
+.catalog-card.selected-card .card-title,
+[data-theme="dark"] .catalog-card.selected-material .card-title,
+[data-theme="dark"] .catalog-card.selected-card .card-title,
+[data-theme="light"] .catalog-card.selected-material .card-title,
+[data-theme="light"] .catalog-card.selected-card .card-title {
+  color: #1E242B !important;
+  font-weight: 700 !important;
+}
+
+.selected-mat-badge {
+  display: none !important;
+}
+
+.active-material-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 197, 118, 0.15);
+  border: 1.5px solid #FFC576;
+  border-radius: 999px;
+  padding: 3px 12px 3px 5px;
+  box-shadow: 0 2px 6px rgba(255, 197, 118, 0.25);
+}
+
+.active-material-banner img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #FFC576;
+}
+
+.active-material-banner span {
+  font-size: 8.8px;
+  font-weight: 600;
+  color: #1E242B;
+}
+
+
+/* ============================================================================
+   IMPORTADOR DE MATERIALES DESDE URL WEB Y LOGOS DE MARCAS ADICIONALES
+   ============================================================================ */
+.search-and-actions-row {
+  gap: 8px;
+}
+
+.url-import-trigger-btn {
+  height: 32px;
+  padding: 0 14px;
+  background: var(--brand-charcoal);
+  border-color: var(--brand-charcoal);
+  color: #FFFFFF;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.url-import-trigger-btn:hover {
+  background: var(--bg-sidebar);
+  border-color: #FFC576;
+  color: #1E242B;
+}
+
+.modal-box.url-import-modal-box {
+  width: 560px;
+  max-width: 94vw;
+}
+
+.url-input-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.url-input-group .form-input {
+  flex: 1;
+}
+
+.url-import-info-box {
+  background: rgba(255, 197, 118, 0.15);
+  border: 1px solid #FFC576;
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 8.8px;
+  line-height: 1.48;
+  color: #4B5563;
+}
+
+.url-import-info-box.loading {
+  background: #EFF6FF;
+  border-color: #BFDBFE;
+  color: #1E40AF;
+}
+
+.url-import-info-box.error {
+  background: #FEF2F2;
+  border-color: #FECACA;
+  color: #B91C1C;
+}
+
+.card-brand.faplac::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #0D9488;
+  margin-top: 1px;
+}
+
+.card-brand.sadepan::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #D97706;
+  margin-top: 1px;
+}
+
+.card-brand.masisa::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--masisa-green);
+  margin-top: 1px;
+}
+
+.card-brand.pelikano::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--pelikano-blue);
+  margin-top: 1px;
+}
+
+
+/* ============================================================================
+   V1.4.0: BOTONES Y PESTAÑAS UNIFICADOS CON EL COMPORTAMIENTO DE "IMPORTAR DESDE URL"
+   Y RELLENO DEL TONO AMARILLO DE LA BARRA LATERAL (#FFC576)
+   ============================================================================ */
+.ens-pill-btn,
+.filter-pill,
+.top-action-btn {
+  height: 28px;
+  padding: 0 13px;
+  border-radius: 999px;
+  border: 1px solid var(--brand-charcoal);
+  background: var(--brand-charcoal);
+  color: #FFFFFF;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 9.2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+  transition: background 0.16s ease, border-color 0.16s ease, color 0.16s ease, transform 0.14s ease;
+}
+
+.ens-pill-btn:hover,
+.filter-pill:hover,
+.top-action-btn:hover,
+.ens-pill-btn.active,
+.filter-pill.active,
+.top-action-btn.active {
+  background: var(--bg-sidebar) !important;
+  border-color: #FFC576 !important;
+  color: #1E242B !important;
+  font-weight: 600;
+}
+
+.active-material-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 28px;
+  background: var(--bg-sidebar) !important;
+  border: 1.5px solid #FFC576 !important;
+  border-radius: 999px;
+  padding: 3px 13px 3px 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.active-material-banner img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #1E242B;
+}
+
+.active-material-banner span {
+  font-size: 9px;
+  font-weight: 600;
+  color: #1E242B !important;
+}
+
+.catalog-extra-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+/* ============================================================================
+   BARRA DESLIZABLE DE ESPESOR DE PLACA EN MÓDULOS (3mm, 5mm, 12mm, 15mm, 18mm, 36mm)
+   ============================================================================ */
+.module-thickness-slider-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: #FFFFFF;
+  border: 1px solid #C8C8C8;
+  border-radius: 10px;
+  padding: 8px 16px 10px 16px;
+  margin-bottom: 10px;
+  width: 520px;
+  max-width: 92vw;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.thick-slider-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.thick-slider-title {
+  font-size: 9px;
+  font-weight: 600;
+  color: #2E343B;
+}
+
+.thick-slider-current-badge {
+  background: var(--bg-sidebar);
+  border: 1px solid #FFC576;
+  color: #1E242B;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 9px;
+  border-radius: 999px;
+}
+
+.thick-slider-track-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.thick-range-input {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: #E2E8F0;
+  border-radius: 999px;
+  outline: none;
+  cursor: pointer;
+}
+
+.thick-range-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--bg-sidebar);
+  border: 2px solid #1E242B;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.28);
+  cursor: pointer;
+}
+
+.thick-slider-ticks {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 4px;
+}
+
+.thick-tick-btn {
+  height: 22px;
+  border-radius: 999px;
+  border: 1px solid var(--brand-charcoal);
+  background: var(--brand-charcoal);
+  color: #FFFFFF;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8.2px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.14s ease;
+}
+
+.thick-tick-btn:hover,
+.thick-tick-btn.active {
+  background: var(--bg-sidebar);
+  border-color: #FFC576;
+  color: #1E242B;
+  font-weight: 700;
+}
+
+/* ============================================================================
+   PESTAÑA RENDER: VACÍO "en construcción" CON GATO Y CASQUITO DE OBRA
+   ============================================================================ */
+#viewRender.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 40px);
+}
+
+.render-under-construction-zone {
+  width: 100%;
+  height: 100%;
+  min-height: 72vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.construction-cat-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.construction-cat-svg {
+  width: 240px;
+  height: 196px;
+  display: block;
+}
+
+.under-construction-label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  color: #2E343B;
+  background: var(--bg-sidebar);
+  border: 1.5px solid #FFC576;
+  padding: 5px 20px;
+  border-radius: 999px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================================================
+   DESPIECE: ACORDEÓN PLEGABLE POR MÓDULO + TAPACANTO 1 ROJO Y TAPACANTO 2 AZUL
+   ============================================================================ */
+.mod-collapse-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--brand-charcoal);
+  background: var(--brand-charcoal);
+  color: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.16s ease;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.mod-collapse-btn:hover {
+  background: var(--bg-sidebar);
+  border-color: #FFC576;
+  color: #1E242B;
+}
+
+.mod-collapse-btn svg {
+  transition: transform 0.2s ease;
+}
+
+.module-cutlist-card.collapsed .mod-collapse-btn svg {
+  transform: rotate(-90deg);
+}
+
+.module-cutlist-card.collapsed .module-collapsible-body {
+  display: none;
+}
+
+.despiece-empty-box {
+  background: #FFFFFF;
+  border: 1px dashed #9CA3AF;
+  border-radius: 10px;
+  padding: 36px 20px;
+  text-align: center;
+  color: #4B5563;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* Tapacanto 1 (Rojo) y Tapacanto 2 (Azul) en la banda de materiales del módulo */
+.mat-box-tag.tc1-red-tag {
+  background: #FEF2F2;
+  color: #BE123C;
+  border-right: 2px solid #E11D48;
+  font-weight: 700;
+}
+
+.mat-box-tag.tc2-blue-tag {
+  background: #EFF6FF;
+  color: #1D4ED8;
+  border-right: 2px solid #2563EB;
+  font-weight: 700;
+}
+
+.tc-select-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+}
+
+.tc-thick-select {
+  border: 1px solid #CBD5E1;
+  border-radius: 4px;
+  background: #F8FAFC;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 8.2px;
+  color: #1E242B;
+  padding: 2px 4px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* Bordes Rojo (Tapacanto 1) y Azul (Tapacanto 2) en el ícono de la tabla */
+.mini-board-rect.eb-top-1    { border-top: 2.8px solid #E11D48; }
+.mini-board-rect.eb-bottom-1 { border-bottom: 2.8px solid #E11D48; }
+.mini-board-rect.eb-left-1   { border-left: 2.8px solid #E11D48; }
+.mini-board-rect.eb-right-1  { border-right: 2.8px solid #E11D48; }
+
+.mini-board-rect.eb-top-2    { border-top: 2.8px solid #2563EB; }
+.mini-board-rect.eb-bottom-2 { border-bottom: 2.8px solid #2563EB; }
+.mini-board-rect.eb-left-2   { border-left: 2.8px solid #2563EB; }
+.mini-board-rect.eb-right-2  { border-right: 2.8px solid #2563EB; }
+
+/* Leyenda y selectores Azul/Rojo en el visor 3D */
+.legend-dot.xray-blue {
+  background: #2563EB;
+}
+
+.tapacanto-brush-selector {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.tc-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.tc-dot.red { background: #E11D48; border: 1px solid #FFFFFF; }
+.tc-dot.blue { background: #2563EB; border: 1px solid #FFFFFF; }
+
+.edge-color-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  border: 1.5px solid #94A3B8;
+  background: #F1F5F9;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.edge-toggle-btn.tc-active-1 {
+  border-color: #E11D48;
+  background: #FFF1F2;
+}
+.edge-toggle-btn.tc-active-1 .edge-color-indicator {
+  background: #E11D48;
+  border-color: #BE123C;
+}
+.edge-toggle-btn.tc-active-1 .edge-btn-mm {
+  color: #BE123C;
+}
+
+.edge-toggle-btn.tc-active-2 {
+  border-color: #2563EB;
+  background: #EFF6FF;
+}
+.edge-toggle-btn.tc-active-2 .edge-color-indicator {
+  background: #2563EB;
+  border-color: #1D4ED8;
+}
+.edge-toggle-btn.tc-active-2 .edge-btn-mm {
+  color: #1D4ED8;
+}
+
+/* Modal Crear Módulo a través de Imagen */
+.img-mod-creator-grid {
+  display: grid;
+  grid-template-columns: 175px 1fr;
+  gap: 14px;
+  align-items: stretch;
+}
+
+.img-upload-dropzone {
+  border: 1.5px dashed #94A3B8;
+  border-radius: 9px;
+  background: #F8FAFC;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.img-upload-dropzone:hover {
+  border-color: #FFC576;
+  background: rgba(255, 197, 118, 0.15);
+}
+
+.img-upload-dropzone img {
+  width: 100%;
+  height: 135px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.img-upload-hint {
+  margin-top: 6px;
+  font-size: 8px;
+  font-weight: 600;
+  color: #334155;
+  text-align: center;
+}
+
+
+/* ============================================================================
+   V1.5.0 OVERRIDES:
+   1. Íconos y etiquetas de barra lateral en tono gris (#52565C) como el logo enssamble
+   2. Botones en modo neutro negro (#2B2B2B) que al seleccionarse o hacer mouseover
+      se ponen amarillos (#FFC576) y SE AGRANDAN visiblemente al estar activos
+   3. Barra deslizante de espesor minimalista ("Espesor", barrita gris corta y "18 mm")
+   4. Botón "Ver detalle" compacto y menos invasivo + botón "⋯" con opción "Eliminar" en Módulos
+   5. Panel Explotar modelo con cotas en Despiece
+   ============================================================================ */
+.nav-item,
+.nav-label,
+.bottom-label {
+  color: #4E5258 !important;
+}
+
+/* Botones en estado neutro: negro/carbón (#2B2B2B) */
+.ens-pill-btn,
+.filter-pill,
+.top-action-btn {
+  height: 28px;
+  padding: 0 13px;
+  border-radius: 999px;
+  border: 1.5px solid #2B2B2B !important;
+  background: #2B2B2B !important;
+  color: #FFFFFF !important;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 9.2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  transform: scale(1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.14);
+  transition: transform 0.18s cubic-bezier(0.22, 1, 0.36, 1),
+              background 0.16s ease,
+              border-color 0.16s ease,
+              color 0.16s ease,
+              box-shadow 0.18s ease;
+}
+
+/* Mouseover: pasa a amarillo de barra lateral (#FFC576) con leve realce */
+.ens-pill-btn:hover,
+.filter-pill:hover,
+.top-action-btn:hover {
+  background: var(--bg-sidebar) !important;
+  border-color: #FFC576 !important;
+  color: #1E242B !important;
+  font-weight: 600;
+  transform: scale(1.05);
+}
+
+/* Seleccionado / Activo: amarillo (#FFC576) + SE AGRANDA visiblemente para saber cuál está seleccionado */
+.ens-pill-btn.active,
+.filter-pill.active,
+.top-action-btn.active {
+  background: var(--bg-sidebar) !important;
+  border: 2px solid #FFC576 !important;
+  color: #1E242B !important;
+  font-weight: 700 !important;
+  transform: scale(1.12) !important;
+  margin-left: 4px;
+  margin-right: 4px;
+  box-shadow: 0 5px 14px rgba(255, 197, 118, 0.35) !important;
+  z-index: 5;
+}
+
+.filter-pills-row {
+  gap: 10px !important;
+  padding: 4px 0;
+}
+
+/* Barra deslizante minimalista de Espesor en Módulos */
+.minimal-thickness-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 30px;
+  padding: 0 11px;
+  background: #FFFFFF;
+  border: 1px solid #C8C8C8;
+  border-radius: 999px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+}
+
+.min-thick-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 9.2px;
+  color: #2E343B;
+}
+
+.min-thick-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 88px;
+  height: 5px;
+  background: #9CA3AF;
+  border-radius: 999px;
+  outline: none;
+  cursor: pointer;
+}
+
+.min-thick-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #2B2B2B;
+  border: 2px solid var(--bg-sidebar);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.32);
+  cursor: pointer;
+  transition: transform 0.12s ease;
+}
+
+.min-thick-range::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+.min-thick-badge {
+  background: var(--bg-sidebar);
+  border: 1px solid #FFC576;
+  color: #1E242B;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 8.8px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  min-width: 44px;
+  text-align: center;
+}
+
+/* Botón "Ver detalle" más pequeño y menos invasivo + botón "⋯" con opción "Eliminar" en Módulos */
+.hover-detail-overlay {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.0) 55%, rgba(15, 23, 42, 0.42) 100%) !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: flex-end !important;
+  gap: 5px;
+  padding: 6px !important;
+}
+
+.ver-detalle-btn {
+  width: auto !important;
+  min-width: 62px;
+  height: 20px !important;
+  padding: 0 9px !important;
+  border-radius: 999px !important;
+  background: rgba(43, 43, 43, 0.92) !important;
+  color: #FFFFFF !important;
+  font-weight: 600 !important;
+  font-size: 7.3px !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.ver-detalle-btn:hover {
+  background: var(--bg-sidebar) !important;
+  color: #1E242B !important;
+  transform: scale(1.06) !important;
+}
+
+.card-more-wrap {
+  position: relative;
+  display: inline-flex;
+}
+
+.card-more-dots-btn {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(43, 43, 43, 0.92);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  transition: all 0.14s ease;
+}
+
+.card-more-dots-btn:hover {
+  background: var(--bg-sidebar);
+  color: #1E242B;
+  transform: scale(1.08);
+}
+
+.card-more-dropdown {
+  position: absolute;
+  bottom: 24px;
+  right: 0;
+  background: #2B2B2B;
+  border: 1px solid #4B5563;
+  border-radius: 6px;
+  padding: 3px;
+  display: none;
+  min-width: 78px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.32);
+  z-index: 25;
+}
+
+.card-more-dropdown.open {
+  display: block;
+}
+
+.card-delete-opt-btn {
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: #FCA5A5;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 7.8px;
+  padding: 4px 7px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-align: left;
+}
+
+.card-delete-opt-btn:hover {
+  background: #DC2626;
+  color: #FFFFFF;
+}
+
+/* Panel Explotar Modelo con Cotas en Despiece */
+.explode-preview-card {
+  background: #FFFFFF;
+  border: 1.5px solid #FFC576;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.explode-preview-header {
+  background: rgba(255, 197, 118, 0.15);
+  border-bottom: 1px solid #FFC576;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.explode-badge {
+  background: var(--bg-sidebar);
+  border: 1px solid #FFC576;
+  color: #1E242B;
+  font-weight: 700;
+  font-size: 8.5px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-right: 8px;
+}
+
+.explode-sub {
+  font-size: 8.8px;
+  font-weight: 500;
+  color: #374151;
+}
+
+#explodeModelCanvas {
+  width: 100%;
+  height: 250px;
+  display: block;
+  background: linear-gradient(180deg, #F8FAFC 0%, #EFF6FF 100%);
+}
+
+
+/* ============================================================================
+   V1.6.0 OVERRIDES:
+   1. Color exacto del logo enssamble (#393939) en íconos y textos de barra lateral
+   2. Tres puntitos (⋯) en la esquina superior derecha de la tarjeta y "Ver detalle"
+      centrado horizontalmente en la parte inferior
+   3. Barrita de espesor más corta y de ancho 100% fijo + botón "Aplicar a..." de
+      ancho fijo (definido por su texto más largo) para que NADA se mueva a los lados
+   4. Cabecera superior fija (position: sticky; top: 0) en Materiales, Módulos y Despiece
+   ============================================================================ */
+.nav-item,
+.nav-label,
+.bottom-label {
+  color: #393939 !important;
+  font-weight: 400 !important;
+}
+
+/* Evitar cualquier movimiento horizontal al cambiar estados o deslizar:
+   sin cambios de margin ni de font-weight que alteren el ancho de flujo */
+.ens-pill-btn,
+.filter-pill,
+.top-action-btn {
+  font-weight: 600 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  flex-shrink: 0;
+}
+
+.ens-pill-btn.active,
+.filter-pill.active,
+.top-action-btn.active {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  transform: scale(1.09) !important;
+}
+
+/* Botón cíclico "Aplicar a todo el módulo" / "Aplicar solo a 1 cara" / "Aplicar a cara y contracara":
+   Ancho total fijo al texto más largo ("Aplicar a cara y contracara") para que no mueva los botones vecinos */
+#paintModeCycleBtn,
+.paint-mode-cycle-btn {
+  width: 196px !important;
+  min-width: 196px !important;
+  max-width: 196px !important;
+  padding: 0 10px !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+#paintModeCycleLabel {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Barra deslizante de espesor más cortita y de ancho 100% fijo (cero movimiento de elementos vecinos) */
+.minimal-thickness-bar {
+  width: 158px !important;
+  min-width: 158px !important;
+  max-width: 158px !important;
+  height: 28px !important;
+  padding: 0 9px !important;
+  gap: 6px !important;
+  justify-content: space-between !important;
+  flex-shrink: 0 !important;
+}
+
+.min-thick-title {
+  font-size: 8.8px !important;
+  font-weight: 600 !important;
+  color: #2E343B !important;
+  flex-shrink: 0;
+}
+
+.min-thick-range {
+  width: 48px !important;
+  min-width: 48px !important;
+  max-width: 48px !important;
+  height: 4px !important;
+  flex-shrink: 0 !important;
+}
+
+.min-thick-badge {
+  width: 44px !important;
+  min-width: 44px !important;
+  max-width: 44px !important;
+  padding: 2px 0 !important;
+  font-size: 8.4px !important;
+  text-align: center !important;
+  flex-shrink: 0 !important;
+}
+
+/* Tres puntitos (⋯) en la esquina superior derecha de la tarjeta y "Ver detalle" centrado abajo */
+.card-more-wrap {
+  position: absolute !important;
+  top: 6px !important;
+  right: 6px !important;
+  z-index: 16 !important;
+  opacity: 0;
+  transition: opacity 0.16s ease;
+}
+
+.catalog-card:hover .card-more-wrap,
+.card-more-wrap.menu-open {
+  opacity: 1 !important;
+}
+
+.card-more-dropdown {
+  top: 24px !important;
+  bottom: auto !important;
+  right: 0 !important;
+}
+
+.hover-detail-overlay {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: flex-end !important;
+  padding: 7px !important;
+}
+
+.ver-detalle-btn {
+  margin: 0 auto !important;
+}
+
+/* ============================================================================
+   CABECERA STICKY FIJA AL HACER SCROLL EN MATERIALES, MÓDULOS Y DESPIECE
+   ============================================================================ */
+#viewCatalog {
+  padding-top: 0 !important;
+}
+
+.catalog-header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 45 !important;
+  width: calc(100% + 44px) !important;
+  margin-left: -22px !important;
+  margin-right: -22px !important;
+  margin-bottom: 14px !important;
+  padding: 12px 22px 10px 22px !important;
+  background: rgba(217, 217, 217, 0.96) !important;
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+#viewDespiece {
+  padding-top: 0 !important;
+}
+
+.despiece-sticky-header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 45 !important;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px 0 10px 0;
+  background: rgba(217, 217, 217, 0.96) !important;
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+
+/* ============================================================================
+   V1.7.0 OVERRIDES:
+   1. Logo de enssamble centrado horizontalmente a toda la barra lateral
+   2. Pestaña intermedia "Url" a mitad de la barra lateral (entre Render y Sebastián)
+   3. Vista "Url" con título "Madereras" en esquina superior izquierda y logo EGGER
+      con efecto de resalte y agrandamiento en mouseover
+   4. Separación amplia entre los botones superiores de Catálogo de Materiales
+      (igual a la fila de Melaminas / Herrajes / Activo)
+   5. Botón "Ver detalle" más grande y claro como antes + menú de tres puntitos (⋯)
+      con opción "Eliminar" 100% visible tanto en Módulos como en Materiales
+   6. Diseño del gatito en construcción más grande armando un mueble minimalista
+   ============================================================================ */
+
+/* 1. Centrar horizontalmente el logo de enssamble en toda la barra lateral */
+.sidebar-logo-slot {
+  position: absolute !important;
+  top: 10px !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  height: 58px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  pointer-events: auto;
+}
+
+.logo-collapsed-img {
+  position: absolute !important;
+  top: 6px !important;
+  left: 50% !important;
+  transform: translateX(-50%) scale(1) !important;
+}
+
+.sidebar.expanded .logo-collapsed-img {
+  transform: translateX(-50%) scale(0.92) !important;
+}
+
+.logo-expanded-img {
+  position: absolute !important;
+  top: 2px !important;
+  left: 50% !important;
+  transform: translateX(-50%) scale(0.96) !important;
+}
+
+.sidebar.expanded .logo-expanded-img {
+  transform: translateX(-50%) scale(1) !important;
+}
+
+/* 2. Pestaña "Url" posicionada a mitad de la barra lateral entre Render y Sebastián */
+.nav-list {
+  margin-bottom: 0 !important;
+}
+
+.sidebar-mid {
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: auto;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.icon-url {
+  width: 26px;
+  height: 26px;
+}
+
+/* 3. Vista "Url": Esquina superior izquierda con título "Madereras" y logo EGGER interactivo */
+#viewUrl.active {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: calc(100vh - 30px);
+  padding: 26px 32px !important;
+}
+
+.url-madereras-corner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.url-madereras-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #2E343B;
+  letter-spacing: -0.01em;
+}
+
+.egger-partner-card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  padding: 4px;
+  background: #FFFFFF;
+  border: 2px solid rgba(226, 229, 236, 0.95);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+  cursor: pointer;
+  text-decoration: none;
+  transform: scale(1);
+  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.22s ease,
+              background 0.22s ease;
+}
+
+.egger-partner-card:hover {
+  transform: scale(1.08) translateY(-3px);
+  border-color: #E30613;
+  background: #FFFDF9;
+  box-shadow: 0 12px 26px rgba(227, 6, 19, 0.20), 0 0 0 4px rgba(255, 197, 118, 0.65);
+}
+
+.egger-partner-logo-img {
+  width: 220px;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+/* 4. Separación igual a la de Melaminas / Herrajes / Activo entre los botones superiores */
+.search-and-actions-row {
+  gap: 14px !important;
+  margin-bottom: 12px !important;
+  flex-wrap: wrap;
+}
+
+.catalog-extra-actions {
+  gap: 12px !important;
+}
+
+.filter-pills-row {
+  gap: 12px !important;
+}
+
+/* 5. Botón "Ver detalle" más grande y claro como estaba antes, centrado horizontalmente */
+.hover-detail-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.02) 40%, rgba(15, 23, 42, 0.56) 100%) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  padding: 8px !important;
+  opacity: 0;
+  transition: opacity 0.18s ease;
+  z-index: 10 !important;
+  pointer-events: none;
+}
+
+.catalog-card:hover .hover-detail-overlay {
+  opacity: 1;
+}
+
+.ver-detalle-btn {
+  pointer-events: auto !important;
+  width: calc(100% - 6px) !important;
+  height: 24px !important;
+  padding: 0 10px !important;
+  border: none !important;
+  border-radius: 6px !important;
+  background: rgba(255, 255, 255, 0.96) !important;
+  color: #1E242B !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 8.4px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.24) !important;
+  margin: 0 auto !important;
+}
+
+.ver-detalle-btn:hover {
+  background: var(--bg-sidebar) !important;
+  color: #1E242B !important;
+  transform: scale(1.03) !important;
+}
+
+/* Tres puntitos (⋯) en esquina superior derecha para Módulos y Materiales con opción "Eliminar" 100% funcional */
+.card-more-wrap {
+  position: absolute !important;
+  top: 6px !important;
+  right: 6px !important;
+  z-index: 35 !important;
+  opacity: 0;
+  pointer-events: auto !important;
+  transition: opacity 0.15s ease;
+}
+
+.catalog-card:hover .card-more-wrap,
+.card-more-wrap.menu-open {
+  opacity: 1 !important;
+}
+
+.card-more-dots-btn {
+  width: 24px !important;
+  height: 24px !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  background: rgba(30, 36, 43, 0.90) !important;
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+  font-size: 13px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.30) !important;
+}
+
+.card-more-dots-btn:hover {
+  background: var(--bg-sidebar) !important;
+  color: #1E242B !important;
+  border-color: #FFC576 !important;
+}
+
+.card-more-dropdown {
+  position: absolute !important;
+  top: 28px !important;
+  right: 0 !important;
+  bottom: auto !important;
+  background: #1E242B !important;
+  border: 1.5px solid var(--bg-sidebar) !important;
+  border-radius: 7px !important;
+  padding: 4px !important;
+  display: none;
+  min-width: 92px !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.40) !important;
+  z-index: 60 !important;
+}
+
+.card-more-dropdown.open {
+  display: block !important;
+}
+
+.card-delete-opt-btn {
+  width: 100% !important;
+  border: none !important;
+  background: transparent !important;
+  color: #FCA5A5 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 9.8px !important;
+  padding: 5px 8px !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+}
+
+.card-delete-opt-btn:hover {
+  background: #DC2626 !important;
+  color: #FFFFFF !important;
+}
+
+/* 6. Gatito en construcción más grande armando un mueble simple */
+.construction-cat-svg {
+  width: 390px !important;
+  height: 295px !important;
+  max-width: 90vw;
+}
+
+
+/* ============================================================================
+   V1.8.0 OVERRIDES:
+   1. Tres puntitos (⋯) perfectamente centrados horizontal y verticalmente
+      dentro del círculo mediante SVG geométrico
+   2. Nuevo Modal 2D Minimalista de Tapacanto por placa (adaptado a enssamble)
+   ============================================================================ */
+
+.card-more-dots-btn {
+  width: 24px !important;
+  height: 24px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 0 !important;
+  border-radius: 50% !important;
+  border: 1.2px solid rgba(255, 255, 255, 0.65) !important;
+  background: rgba(35, 39, 44, 0.92) !important;
+  color: #FFFFFF !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.30) !important;
+}
+
+.card-more-dots-btn svg {
+  width: 14px !important;
+  height: 14px !important;
+  display: block !important;
+  margin: auto !important;
+  flex-shrink: 0 !important;
+}
+
+.card-more-dots-btn:hover {
+  background: var(--bg-sidebar) !important;
+  color: #1E242B !important;
+  border-color: #FFC576 !important;
+}
+
+/* ============================================================================
+   MODAL 2D DE TAPACANTOS Y COLUMNA DE TABLA (Idéntico a Maderera Pinar / Video)
+   ============================================================================ */
+.tc-table-cell-box {
+  width: 50px;
+  height: 30px;
+  border: 1px solid #AAAAAA;
+  background: #FFFFFF;
+  margin: 0 auto;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.tc-table-cell-box:hover {
+  transform: scale(1.06);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16);
+}
+
+.tc-table-cell-inner {
+  width: 100%;
+  height: 100%;
+  border-style: solid;
+  border-width: 2.5px;
+  border-color: transparent;
+  box-sizing: border-box;
+}
+
+.tc-table-cell-inner.eb-top-1    { border-top-color: #FF0000 !important; }
+.tc-table-cell-inner.eb-top-2    { border-top-color: #0000FF !important; }
+.tc-table-cell-inner.eb-bottom-1 { border-bottom-color: #FF0000 !important; }
+.tc-table-cell-inner.eb-bottom-2 { border-bottom-color: #0000FF !important; }
+.tc-table-cell-inner.eb-left-1   { border-left-color: #FF0000 !important; }
+.tc-table-cell-inner.eb-left-2   { border-left-color: #0000FF !important; }
+.tc-table-cell-inner.eb-right-1  { border-right-color: #FF0000 !important; }
+.tc-table-cell-inner.eb-right-2  { border-right-color: #0000FF !important; }
+
+.modal-box.tc2d-modal-box {
+  width: 720px;
+  max-width: 95vw;
+  padding: 0 !important;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #FFFFFF;
+  border: 1px solid #9E9E9E;
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.28);
+}
+
+.tc2d-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 20px;
+  background: #FFFFFF;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+.tc2d-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: #393939;
+}
+
+.tc2d-body {
+  padding: 16px 24px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  background: #FFFFFF;
+}
+
+.tc2d-instruction-banner {
+  width: 100%;
+  background: #D9EDF7;
+  border: 1px solid #BCE8F1;
+  border-radius: 4px;
+  padding: 12px 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  color: #31708F;
+  text-align: left;
+}
+
+.tc2d-diagram-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 0;
+  width: 100%;
+}
+
+/* Contenedor exterior de 290 x 302 px idéntico a Maderera Pinar */
+.tc2d-outer-frame {
+  width: 290px;
+  height: 302px;
+  border: 1px solid #AAAAAA;
+  background: #FFFFFF;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.tc2d-board-box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-style: solid;
+  border-width: 3px;
+  border-color: transparent;
+  background: #FFFFFF;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+/* Indicadores de color en el perímetro exterior (Rojo = Tapacanto 1, Azul = Tapacanto 2) */
+.tc2d-board-box.top-tc-1    { border-top-color: #FF0000 !important; }
+.tc2d-board-box.top-tc-2    { border-top-color: #0000FF !important; }
+.tc2d-board-box.bottom-tc-1 { border-bottom-color: #FF0000 !important; }
+.tc2d-board-box.bottom-tc-2 { border-bottom-color: #0000FF !important; }
+.tc2d-board-box.left-tc-1   { border-left-color: #FF0000 !important; }
+.tc2d-board-box.left-tc-2   { border-left-color: #0000FF !important; }
+.tc2d-board-box.right-tc-1  { border-right-color: #FF0000 !important; }
+.tc2d-board-box.right-tc-2  { border-right-color: #0000FF !important; }
+
+/* Centro blanco clickeable (alterna los 4 cantos a la vez) */
+.tc2d-core-center {
+  position: absolute;
+  top: 67px;
+  left: 67px;
+  width: 150px;
+  height: 162px;
+  background: #FFFFFF;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* Bloques grises punteados de bordes y esquinas (.tapaLado) */
+.tc2d-edge,
+.tc2d-corner {
+  position: absolute;
+  border: 2px dashed #666666;
+  background-color: #D9D9D9;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  z-index: 3;
+}
+
+.tc2d-edge:hover,
+.tc2d-corner:hover {
+  background-color: #CFCFCF;
+}
+
+.tc2d-left {
+  width: 66px;
+  height: 160px;
+  top: 67px;
+  left: 0;
+}
+
+.tc2d-right {
+  width: 66px;
+  height: 160px;
+  top: 67px;
+  right: 0;
+}
+
+.tc2d-top {
+  width: 150px;
+  height: 66px;
+  left: 67px;
+  top: 0;
+}
+
+.tc2d-bottom {
+  width: 150px;
+  height: 66px;
+  left: 67px;
+  bottom: 0;
+}
+
+.tc2d-tl {
+  width: 66px;
+  height: 66px;
+  left: 0;
+  top: 0;
+}
+
+.tc2d-tr {
+  width: 66px;
+  height: 66px;
+  right: 0;
+  top: 0;
+}
+
+.tc2d-bl {
+  width: 66px;
+  height: 66px;
+  left: 0;
+  bottom: 0;
+}
+
+.tc2d-br {
+  width: 66px;
+  height: 66px;
+  right: 0;
+  bottom: 0;
+}
+
+.tc2d-edge-label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 9.2px;
+  color: #555555;
+  text-decoration: underline;
+  white-space: nowrap;
+}
+
+.tc2d-edge-dim {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: #555555;
+  margin-top: 2px;
+  white-space: nowrap;
+}
+
+.tc2d-vert-left-wrap {
+  transform: rotate(90deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.tc2d-vert-right-wrap {
+  transform: rotate(-90deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.tc2d-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px 16px 24px;
+  background: #FFFFFF;
+  border-top: 1px solid #E5E5E5;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.tc2d-legend-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tc2d-legend-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tc2d-legend-head {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.tc2d-color-bar {
+  width: 15px;
+  height: 4px;
+  display: inline-block;
+}
+
+.tc2d-color-bar.red {
+  background: #FF0000;
+  border: 1px solid #FF0000;
+}
+
+.tc2d-color-bar.blue {
+  background: #0000FF;
+  border: 1px solid #0000FF;
+}
+
+.tc2d-legend-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  color: #333333;
+}
+
+.tc2d-legend-desc {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  color: #555555;
+}
+
+.tc2d-right-footer {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.tc2d-realsize-box {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: left;
+}
+
+.tc2d-realsize-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  color: #333333;
+}
+
+.tc2d-realsize-sub {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  color: #555555;
+}
+
+.tc2d-realsize-val {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 11.5px;
+  color: #333333;
+  margin-top: 2px;
+}
+
+.tc2d-close-btn {
+  height: 34px !important;
+  padding: 0 20px !important;
+  font-size: 11px !important;
+}
+
+/* ============================================================================
+   V1.0.0 RELEASE:
+   1. Barra de Herrajes Sugeridos en Despiece
+   2. Optimizador de Corte 2D en Placa (2600 × 1830 mm)
+   3. Estudio de Render IA & Previsualización de Escena SketchUp
+   ============================================================================ */
+.despiece-hardware-bar {
+  background: #FFFFFF;
+  border: 1px solid #C8C8C8;
+  border-radius: 10px;
+  padding: 9px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+}
+
+.hw-bar-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 9px;
+  text-transform: uppercase;
+  color: #393939;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hw-pills-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.hw-item-pill {
+  background: #F8FAFC;
+  border: 1px solid #CBD5E1;
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 8.6px;
+  font-weight: 500;
+  color: #1E242B;
+}
+
+.hw-item-pill b {
+  color: #FFC576;
+  font-weight: 700;
+}
+
+.cut-optimizer-card {
+  border-color: #2B2B2B !important;
+}
+
+.cut-opt-header {
+  background: rgba(255, 197, 118, 0.15) !important;
+  border-bottom: 1px solid #FFC576 !important;
+  flex-wrap: wrap;
+}
+
+#cutOptimizerCanvas {
+  width: 100%;
+  height: 390px;
+  display: block;
+  background: #F1F5F9;
+}
+
+/* Estudio de Render IA & Previsualización */
+#viewRender.active {
+  display: block !important;
+  padding-top: 8px !important;
+}
+
+.render-studio-container {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.render-studio-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.render-controls-card {
+  background: #FFFFFF;
+  border: 1px solid #C8C8C8;
+  border-radius: 10px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.render-viewport-card {
+  position: relative;
+  background: #1E242B;
+  border: 2px solid #393939;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 460px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.14);
+}
+
+#renderStudioCanvas {
+  width: 100%;
+  height: 100%;
+  max-height: 520px;
+  object-fit: contain;
+  display: block;
+}
+
+.render-mascot-corner {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.90);
+  border: 1.5px solid #FFC576;
+  border-radius: 10px;
+  padding: 3px 6px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+}
+
+.construction-cat-svg.mini-cat-badge {
+  width: 68px !important;
+  height: 52px !important;
+}
+
+/* Asegurar que el menú de 3 puntitos (⋯ -> Eliminar) nunca se recorte y sea visible en TODAS las tarjetas */
+.catalog-card.card-menu-open {
+  overflow: visible !important;
+  z-index: 95 !important;
+}
+
+.catalog-card.card-menu-open .card-thumb-wrap {
+  overflow: hidden !important;
+}
+
+.catalog-card .card-flat-img {
+  border-radius: 8px 8px 0 0;
+}
+
+/* Badge de referencia de imagen subida + indicador de medidas detectadas */
+.img-raw-ref-badge {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  background: rgba(30, 36, 43, 0.88);
+  border: 1.5px solid #FFC576;
+  border-radius: 7px;
+  padding: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+  z-index: 5;
+  pointer-events: none;
+}
+
+.img-raw-ref-badge img {
+  width: 44px !important;
+  height: 44px !important;
+  object-fit: cover !important;
+  border-radius: 4px;
+  background: #FFFFFF;
+}
+
+.img-raw-ref-badge span {
+  font-size: 7.8px;
+  font-weight: 700;
+  color: #FFC576;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.img-detect-status-pill {
+  background: rgba(255, 197, 118, 0.15);
+  border: 1px solid #FFC576;
+  border-radius: 6px;
+  padding: 5px 8px;
+  font-size: 8.2px;
+  font-weight: 600;
+  color: #2E343B;
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* =========================================================================
+   CENTRADO 85% HORIZONTAL Y PEGADO ARRIBA VERTICALMENTE (DESPIECE Y RENDER)
+   + CABECERA STICKY DE LADO A LADO (100% LATERALES)
+   + RECUADROS LIMPIOS DE TAPACANTO #1 (ROJO) Y TAPACANTO #2 (AZUL)
+   ========================================================================= */
+#viewDespiece.active,
+#viewRender.active {
+  display: block !important;
+  width: 100% !important;
+  padding: 0 22px 32px 22px !important;
+  box-sizing: border-box;
+}
+
+#viewDespiece > .catalog-header,
+#viewRender > .catalog-header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 45 !important;
+  width: calc(100% + 44px) !important;
+  margin-left: -22px !important;
+  margin-right: -22px !important;
+  margin-bottom: 14px !important;
+  padding: 12px 22px 10px 22px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#viewDespiece .despiece-container {
+  width: 85% !important;
+  max-width: 85% !important;
+  margin: 0 auto !important;
+  transform-origin: top center;
+  transition: width 0.12s ease, max-width 0.12s ease;
+}
+
+#viewRender .render-studio-container {
+  width: 85% !important;
+  max-width: 85% !important;
+  margin: 0 auto !important;
+}
+
+/* Recuadros de Tapacanto #1 (Rojo) y Tapacanto #2 (Azul) sólo con texto e icono */
+.tc-only-box {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 8px 14px !important;
+  min-height: 36px;
+}
+
+.tc-only-box-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.tc1-only-box .tc-only-box-label {
+  color: #C92A2A;
+}
+
+.tc2-only-box .tc-only-box-label {
+  color: #1864AB;
+}
+
+/* Textarea de ambientación y controles Gemini en Renderizado */
+.render-ambientacion-textarea {
+  width: 100%;
+  min-height: 84px;
+  padding: 8px 10px;
+  border-radius: 7px;
+  border: 1px solid #DCD6CC;
+  background: #FFFFFF;
+  color: #2E343B;
+  font-family: inherit;
+  font-size: 9.5px;
+  line-height: 1.45;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.render-ambientacion-textarea:focus {
+  border-color: #FFC576;
+  box-shadow: 0 0 0 2px rgba(255, 197, 118, 0.25);
+}
+
+.render-status-pill {
+  padding: 6px 9px;
+  border-radius: 6px;
+  background: rgba(255, 197, 118, 0.15);
+  border: 1px solid #FFC576;
+  color: #495057;
+  font-size: 8.5px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+[data-theme="dark"] .main-content {
+  background-image: none !important;
+}
+
+[data-theme="light"] .main-content {
+  background-image: none !important;
+}
+
+/* ============================================================================
+   TRES PUNTITOS (⋯) AISLADOS — NUNCA DEFORMAN LA TARJETA CONTENEDORA
+   ============================================================================ */
+.catalog-card {
+  position: relative !important;
+  box-sizing: border-box !important;
+  contain: none !important;
+  overflow: visible !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-self: start !important;
+}
+
+.catalog-card .card-thumb-wrap {
+  position: relative !important;
+  width: 100% !important;
+  aspect-ratio: 1 / 1 !important;
+  overflow: hidden !important;
+  border-radius: 8px 8px 0 0 !important;
+  flex-shrink: 0 !important;
+}
+
+.card-more-wrap {
+  position: absolute !important;
+  top: 6px !important;
+  right: 6px !important;
+  width: 22px !important;
+  height: 22px !important;
+  z-index: 55 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  pointer-events: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.card-more-dots-btn {
+  width: 22px !important;
+  height: 22px !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(255, 255, 255, 0.45) !important;
+  background: rgba(30, 36, 43, 0.90) !important;
+  color: #FFFFFF !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 13px !important;
+  line-height: 1 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.28) !important;
+  transition: transform 0.12s ease, background 0.12s ease !important;
+}
+
+.card-more-dots-btn:hover {
+  background: #FFC576 !important;
+  color: #1E242B !important;
+  border-color: #FFC576 !important;
+  transform: scale(1.08) !important;
+}
+
+.card-more-dropdown {
+  position: absolute !important;
+  top: calc(100% + 4px) !important;
+  right: 0 !important;
+  bottom: auto !important;
+  left: auto !important;
+  background: #1E242B !important;
+  border: 1.5px solid #FFC576 !important;
+  border-radius: 6px !important;
+  padding: 3px !important;
+  display: none !important;
+  min-width: 88px !important;
+  width: max-content !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.40) !important;
+  z-index: 99 !important;
+  pointer-events: auto !important;
+}
+
+.card-more-dropdown.open {
+  display: block !important;
+}
+
+.card-delete-opt-btn {
+  width: 100% !important;
+  border: none !important;
+  background: transparent !important;
+  color: #FCA5A5 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 9.8px !important;
+  padding: 5px 8px !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  text-align: left !important;
+  transition: background 0.12s ease, color 0.12s ease !important;
+}
+
+.card-delete-opt-btn:hover {
+  background: rgba(220, 38, 38, 0.22) !important;
+  color: #FFFFFF !important;
+}
+
+/* ============================================================================
+   PESTAÑA TRASH (RECUPERACIÓN DE ELEMENTOS CON ORDEN EXACTO ORIGINAL)
+   ============================================================================ */
+.trash-count-badge {
+  display: none !important;
+}
+
+.card-restore-badge-btn {
+  position: absolute !important;
+  top: 6px !important;
+  right: 6px !important;
+  z-index: 35 !important;
+  border: none !important;
+  background: #2E7D5B !important;
+  color: #FFFFFF !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 9.3px !important;
+  letter-spacing: 0.3px !important;
+  padding: 4px 8px !important;
+  border-radius: 999px !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25) !important;
+  transition: background 0.15s ease, transform 0.12s ease !important;
+}
+
+.card-restore-badge-btn:hover {
+  background: #236549 !important;
+  transform: scale(1.06) !important;
+}
+
+.trash-empty-box {
+  width: 100%;
+  max-width: 480px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 32px 24px;
+  background: var(--bg-card);
+  border-radius: 12px;
+  border: 1px dashed rgba(150, 150, 150, 0.4);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.trash-empty-icon {
+  width: 44px;
+  height: 44px;
+  opacity: 0.45;
+  margin-bottom: 12px;
+}
+
+[data-theme="dark"] .trash-empty-icon {
+  filter: brightness(0) saturate(100%) invert(84%) sepia(26%) saturate(1050%) hue-rotate(345deg) brightness(103%) contrast(102%);
+}
+
+.trash-empty-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-title);
+  margin-bottom: 6px;
+}
+
+.trash-empty-sub {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  color: var(--text-desc);
+  line-height: 1.5;
+}
+
+/* ============================================================================
+   SETTINGS — ESTILO ANTIGRAVITY CON TIPOGRAFÍA MONTSERRAT
+   ============================================================================ */
+.ag-page {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.ag-settings-layout {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+.ag-settings-nav {
+  width: 190px;
+  min-width: 190px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: sticky;
+  top: 12px;
+  align-self: flex-start;
+}
+
+.ag-nav-btn {
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: transparent;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 11.5px;
+  color: var(--text-desc);
+  padding: 8px 12px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all 0.14s ease;
+}
+
+.ag-nav-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--text-title);
+}
+
+[data-theme="dark"] .ag-nav-btn:hover {
+  background: rgba(255, 197, 118, 0.08);
+}
+
+.ag-nav-btn.active {
+  background: var(--bg-card);
+  color: var(--text-title);
+  font-weight: 700;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="dark"] .ag-nav-btn.active {
+  background: #252D37;
+  color: #FFC576;
+}
+
+.ag-settings-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  min-width: 0;
+}
+
+.ag-set-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ag-set-section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-title);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] .ag-set-section-title {
+  border-bottom-color: rgba(255, 197, 118, 0.2);
+}
+
+.ag-set-panel {
+  background: var(--bg-card);
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+[data-theme="dark"] .ag-set-panel {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.ag-set-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.ag-set-row:last-child {
+  border-bottom: none;
+}
+
+[data-theme="dark"] .ag-set-row {
+  border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+.ag-set-row-col {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.ag-sub-row {
+  padding-left: 32px;
+  background: rgba(0, 0, 0, 0.015);
+}
+
+[data-theme="dark"] .ag-sub-row {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.ag-set-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.ag-set-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-title);
+}
+
+.ag-set-desc {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9.5px;
+  color: var(--text-desc);
+  margin-top: 2px;
+  line-height: 1.4;
+}
+
+.ag-set-control {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Switch Antigravity Style */
+.ag-switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.ag-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.ag-switch-track {
+  position: absolute;
+  inset: 0;
+  background-color: #CBD5E1;
+  border-radius: 999px;
+  transition: background-color 0.2s ease;
+}
+
+.ag-switch-track::before {
+  content: "";
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.ag-switch input:checked + .ag-switch-track {
+  background-color: #FFC576;
+}
+
+[data-theme="light"] .ag-switch input:checked + .ag-switch-track {
+  background-color: #393939;
+}
+
+.ag-switch input:checked + .ag-switch-track::before {
+  transform: translateX(18px);
+}
+
+/* Range Slider */
+.ag-range-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ag-range {
+  -webkit-appearance: none;
+  width: 160px;
+  height: 5px;
+  border-radius: 999px;
+  background: #CBD5E1;
+  outline: none;
+  cursor: pointer;
+}
+
+.ag-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #FFC576;
+  border: 1.5px solid #FFFFFF;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.ag-range-value {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--text-title);
+  min-width: 40px;
+  text-align: right;
+}
+
+/* Theme Picker Cards */
+.ag-theme-picker {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.ag-theme-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background: rgba(0, 0, 0, 0.03);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.ag-theme-card:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.ag-theme-card.active {
+  border-color: #FFC576;
+  background: rgba(255, 197, 118, 0.12);
+}
+
+[data-theme="light"] .ag-theme-card.active {
+  border-color: #393939;
+  background: rgba(57, 57, 57, 0.08);
+}
+
+.ag-theme-preview {
+  width: 100%;
+  height: 50px;
+  border-radius: 6px;
+  display: flex;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.ag-theme-preview .tp-side {
+  width: 25%;
+  height: 100%;
+}
+
+.ag-theme-preview .tp-main {
+  width: 75%;
+  height: 100%;
+  padding: 4px;
+  display: flex;
+  gap: 3px;
+}
+
+.ag-theme-preview .tp-main b {
+  flex: 1;
+  height: 100%;
+  border-radius: 2px;
+}
+
+/* Swatches for theme preview */
+.theme-prev-classic .tp-side { background: #FFC576; }
+.theme-prev-classic .tp-main { background: #D9D9D9; }
+.theme-prev-classic .tp-main b { background: #FFFFFF; }
+
+.theme-prev-dark .tp-side { background: #161A1F; border-right: 1px solid #FFC576; }
+.theme-prev-dark .tp-main { background: #1E242B; }
+.theme-prev-dark .tp-main b { background: #272E38; border: 1px solid #FFC576; }
+
+.theme-prev-light .tp-side { background: #FFFFFF; border-right: 1px solid #CBD5E1; }
+.theme-prev-light .tp-main { background: #F4F5F7; }
+.theme-prev-light .tp-main b { background: #FFFFFF; border: 1px solid #393939; }
+
+.ag-theme-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-title);
+}
+
+.ag-input, .ag-select {
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: var(--bg-card);
+  color: var(--text-title);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10.5px;
+  padding: 6px 10px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+[data-theme="dark"] .ag-input, [data-theme="dark"] .ag-select {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.ag-input:focus, .ag-select:focus {
+  border-color: #FFC576;
+}
+
+/* Login Tab */
+.ag-login-panel {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ag-login-hero {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.ag-login-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #FFC576;
+  color: #1E242B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.ag-login-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-title);
+}
+
+.ag-set-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 12px 16px;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+/* ============================================================================
+   MODALES DE CONFIRMACIÓN DE ELIMINACIÓN Y RENOMBRAR
+   ============================================================================ */
+.delete-confirm-modal-box {
+  max-width: 420px;
+  padding: 20px 22px;
+}
+
+.delete-confirm-buttons-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.del-confirm-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 18px;
+  border-radius: 999px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.12s ease, filter 0.12s ease;
+  user-select: none;
+}
+
+.del-confirm-btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+}
+
+.del-btn-no {
+  background: #DC2626 !important;
+  border: 1.5px solid #B91C1C !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 2px 6px rgba(220, 38, 38, 0.35);
+}
+
+.del-btn-si {
+  background: #16A34A !important;
+  border: 1.5px solid #15803D !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 2px 6px rgba(22, 163, 74, 0.35);
+}
+
+.rename-modal-box {
+  max-width: 440px;
+  padding: 20px 22px;
+}
+
+.card-rename-opt-btn {
+  width: 100% !important;
+  border: none !important;
+  background: transparent !important;
+  color: #E2E8F0 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 9.8px !important;
+  padding: 5px 8px !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  text-align: left !important;
+  transition: background 0.12s ease, color 0.12s ease !important;
+}
+
+.card-rename-opt-btn:hover {
+  background: rgba(255, 197, 118, 0.22) !important;
+  color: #FFC576 !important;
+}
+
+/* Foco y Navegación por flechas en Materiales */
+.catalog-card.keyboard-focused:not(.selected-material) {
+  outline: 2.5px solid #FFC576 !important;
+  outline-offset: 2px !important;
+}
+
+
+
+
+
+
+/* ============================================================================
+   SECCIÓN ANIMACIONES (DENTRO DE PESTAÑA MÓDULOS: PUERTAS 90°-135° Y CAJONES MM)
+   ============================================================================ */
+.anim-section-container {
+  max-width: 1080px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-bottom: 28px;
+}
+
+.anim-top-control-card {
+  background: #FFFFFF;
+  border-radius: 12px;
+  border: 1px solid rgba(226, 229, 236, 0.95);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+[data-theme="dark"] .anim-top-control-card,
+[data-theme="dark"] .anim-module-card {
+  background: #1E242B !important;
+  border-color: rgba(255, 197, 118, 0.22) !important;
+  color: #F3F4F6 !important;
+}
+
+.anim-top-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.anim-top-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  max-width: 560px;
+}
+
+.anim-badge-tag {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  background: var(--bg-sidebar);
+  color: #1E242B;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 3px 8px;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+[data-theme="dark"] .anim-badge-tag {
+  background: #FFC576 !important;
+  color: #1E242B !important;
+}
+
+.anim-panel-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1E242B;
+  margin: 2px 0 0 0;
+}
+
+[data-theme="dark"] .anim-panel-title,
+[data-theme="dark"] .anim-mod-title,
+[data-theme="dark"] .anim-part-name {
+  color: #FFFFFF !important;
+}
+
+.anim-panel-sub {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  color: #64748B;
+  line-height: 1.4;
+  margin: 0;
+}
+
+[data-theme="dark"] .anim-panel-sub,
+[data-theme="dark"] .anim-context-reason {
+  color: #94A3B8 !important;
+}
+
+.anim-top-btns {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+.anim-params-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 12px;
+}
+
+.anim-param-box {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+[data-theme="dark"] .anim-param-box {
+  background: rgba(15, 23, 42, 0.45) !important;
+  border-color: rgba(255, 197, 118, 0.18) !important;
+}
+
+.anim-param-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.anim-param-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #1E242B;
+}
+
+[data-theme="dark"] .anim-param-label,
+[data-theme="dark"] .anim-blank-label {
+  color: #E2E8F0 !important;
+}
+
+.anim-param-value-badge {
+  background: #FFC576;
+  color: #1E242B;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 9px;
+  border-radius: 999px;
+}
+
+.anim-door-controls-row,
+.anim-drawer-input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.anim-bound-lbl {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9.5px;
+  font-weight: 600;
+  color: #64748B;
+}
+
+.anim-angle-range {
+  flex: 1;
+  accent-color: #D97706;
+  cursor: pointer;
+}
+
+.anim-num-input-wrap,
+.anim-blank-field-wrap {
+  display: inline-flex;
+  align-items: center;
+  background: #FFFFFF;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 7px;
+  padding: 2px 7px;
+  gap: 3px;
+}
+
+.anim-blank-field-wrap:focus-within,
+.anim-num-input-wrap:focus-within {
+  border-color: #D97706;
+  box-shadow: 0 0 0 2px rgba(255, 197, 118, 0.45);
+}
+
+[data-theme="dark"] .anim-num-input-wrap,
+[data-theme="dark"] .anim-blank-field-wrap {
+  background: #0F172A !important;
+  border-color: rgba(255, 197, 118, 0.35) !important;
+}
+
+.anim-num-input,
+.anim-blank-mm-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: #1E242B;
+  width: 52px;
+  text-align: right;
+}
+
+.anim-blank-mm-input {
+  width: 72px;
+}
+
+[data-theme="dark"] .anim-num-input,
+[data-theme="dark"] .anim-blank-mm-input {
+  color: #FFFFFF !important;
+}
+
+.anim-unit-suffix {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #64748B;
+}
+
+.anim-blank-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.anim-presets-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.anim-preset-pill {
+  border: 1px solid #CBD5E1;
+  background: #FFFFFF;
+  color: #334155;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.14s ease;
+}
+
+.anim-preset-pill:hover,
+.anim-preset-pill.active {
+  background: #FFC576;
+  border-color: #D97706;
+  color: #1E242B;
+  font-weight: 700;
+}
+
+[data-theme="dark"] .anim-preset-pill:not(.active) {
+  background: #1E293B !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  color: #E2E8F0 !important;
+}
+
+.anim-modules-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.anim-module-card {
+  background: #FFFFFF;
+  border-radius: 11px;
+  border: 1px solid rgba(226, 229, 236, 0.95);
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.05);
+  padding: 13px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.anim-mod-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border-bottom: 1px solid #F1F5F9;
+  padding-bottom: 8px;
+}
+
+[data-theme="dark"] .anim-mod-header {
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.anim-mod-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #1E242B;
+}
+
+.anim-mod-dims {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9.5px;
+  font-weight: 600;
+  color: #64748B;
+  margin-left: 8px;
+}
+
+.anim-parts-table {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.anim-part-row {
+  display: grid;
+  grid-template-columns: minmax(150px, 1.2fr) minmax(190px, 1.6fr) minmax(155px, 1.1fr) minmax(120px, 0.9fr) auto;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 11px;
+  border-radius: 8px;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+}
+
+[data-theme="dark"] .anim-part-row {
+  background: rgba(15, 23, 42, 0.5) !important;
+  border-color: rgba(255, 197, 118, 0.16) !important;
+}
+
+.anim-part-name-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.anim-part-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #1E242B;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.anim-part-subdims {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8.8px;
+  color: #64748B;
+}
+
+.anim-context-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.anim-context-badge {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8.8px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #FEF3C7;
+  color: #92400E;
+  border: 1px solid #F59E0B;
+}
+
+.anim-context-badge.is-drawer {
+  background: #DBEAFE;
+  color: #1E40AF;
+  border-color: #60A5FA;
+}
+
+.anim-context-reason {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8.5px;
+  color: #64748B;
+}
+
+.anim-dir-select {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9.5px;
+  font-weight: 600;
+  color: #1E242B;
+  background: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  border-radius: 6px;
+  padding: 4px 7px;
+  cursor: pointer;
+}
+
+[data-theme="dark"] .anim-dir-select {
+  background: #0F172A !important;
+  color: #FFFFFF !important;
+  border-color: rgba(255, 197, 118, 0.3) !important;
+}
+
+.anim-row-param-col {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.anim-empty-state {
+  background: #FFFFFF;
+  border: 1px dashed #CBD5E1;
+  border-radius: 11px;
+  padding: 28px 20px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  color: #64748B;
+  font-size: 11px;
+}
+
+[data-theme="dark"] .anim-empty-state {
+  background: #1E242B !important;
+  border-color: rgba(255, 197, 118, 0.25) !important;
+  color: #94A3B8 !important;
+}
+
+
+/* ============================================================================
+   PESTAÑA RENDER: CONTENEDOR DE IMAGEN AL 90% DEL ESPACIO DISPONIBLE Y CENTRADO
+   (SIN INVADIR LA BARRA STICKY) + SELECTOR DE FONDO + ZOOM Y ROTACIÓN
+   ============================================================================ */
+#viewRender.active {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  height: calc(100vh - 28px) !important;
+  min-height: 480px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  overflow: hidden !important;
+}
+
+#viewRender .catalog-header {
+  flex-shrink: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+#viewRender .render-studio-container {
+  flex: 1 1 auto !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+}
+
+#viewRender .render-viewport-card {
+  width: 90% !important;
+  height: 90% !important;
+  max-width: 90% !important;
+  max-height: 90% !important;
+  min-height: 0 !important;
+  margin: auto !important;
+  position: relative !important;
+  border-radius: 12px !important;
+  border: 2px solid #393939 !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16) !important;
+  cursor: grab;
+  user-select: none;
+}
+
+[data-theme="dark"] #viewRender .render-viewport-card {
+  border-color: rgba(255, 197, 118, 0.45) !important;
+}
+
+#viewRender .render-viewport-card.is-orbiting {
+  cursor: grabbing !important;
+}
+
+#renderStudioCanvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  object-fit: contain !important;
+}
+
+.render-bg-options-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.render-bg-swatch {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* ============================================================================
+   MODO OSCURO EN PESTAÑA DESPIECE:
+   - El botón que indica 'MÓDULO 1', 'MÓDULO 2', etc. (.mod-badge-num) tiene
+     exactamente el mismo diseño que en el modo clásico (#FFC576 con texto #1E242B).
+   - El botón de la flecha que abre y cierra la info del módulo (.mod-collapse-btn)
+     tiene exactamente el mismo diseño que en el modo clásico (círculo #393939
+     con flecha blanca #FFFFFF y hover en amarillo clásico #FFC576).
+   ============================================================================ */
+.mod-badge-num,
+[data-theme="dark"] .mod-badge-num,
+[data-theme="light"] .mod-badge-num {
+  background: #FFC576 !important;
+  color: #1E242B !important;
+  font-weight: 700 !important;
+  font-size: 8.5px !important;
+  padding: 3px 8px !important;
+  border-radius: 5px !important;
+  border: none !important;
+}
+
+.mod-collapse-btn,
+[data-theme="dark"] .mod-collapse-btn,
+[data-theme="light"] .mod-collapse-btn {
+  width: 24px !important;
+  height: 24px !important;
+  border-radius: 50% !important;
+  border: 1px solid #393939 !important;
+  background: #393939 !important;
+  color: #FFFFFF !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.16s ease !important;
+  padding: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+.mod-collapse-btn svg,
+[data-theme="dark"] .mod-collapse-btn svg,
+[data-theme="light"] .mod-collapse-btn svg {
+  stroke: #FFFFFF !important;
+  color: #FFFFFF !important;
+}
+
+.mod-collapse-btn:hover,
+[data-theme="dark"] .mod-collapse-btn:hover,
+[data-theme="light"] .mod-collapse-btn:hover {
+  background: #FFC576 !important;
+  border-color: #FFC576 !important;
+  color: #1E242B !important;
+}
+
+.mod-collapse-btn:hover svg,
+[data-theme="dark"] .mod-collapse-btn:hover svg,
+[data-theme="light"] .mod-collapse-btn:hover svg {
+  stroke: #1E242B !important;
+  color: #1E242B !important;
+}
+
+
+/* ============================================================================
+   TARJETAS DE MÓDULOS NUEVOS: FONDO BLANCO PURO (#FFFFFF) EN TODOS LOS TEMAS
+   ============================================================================ */
+.catalog-card.new-custom-module-card,
+[data-theme="dark"] .catalog-card.new-custom-module-card,
+[data-theme="light"] .catalog-card.new-custom-module-card {
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
+}
+
+.catalog-card.new-custom-module-card .card-thumb-wrap,
+[data-theme="dark"] .catalog-card.new-custom-module-card .card-thumb-wrap,
+[data-theme="light"] .catalog-card.new-custom-module-card .card-thumb-wrap {
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
+}
+
+.catalog-card.new-custom-module-card .card-flat-img,
+[data-theme="dark"] .catalog-card.new-custom-module-card .card-flat-img,
+[data-theme="light"] .catalog-card.new-custom-module-card .card-flat-img {
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
+  object-fit: contain !important;
+}
+
+
+/* ============================================================================
+   TRASH: 3 PUNTITOS EN PARTE INFERIOR DERECHA (ENCIMA DE MARCA/CREADOR)
+   PARA ELIMINAR PERMANENTEMENTE EL OBJETO SELECCIONADO
+   ============================================================================ */
+.catalog-card.trash-catalog-card .card-thumb-wrap {
+  overflow: visible !important;
+}
+
+.catalog-card.trash-catalog-card .card-flat-img {
+  border-radius: 8px 8px 0 0 !important;
+  overflow: hidden !important;
+}
+
+.card-more-wrap.trash-card-more-wrap {
+  position: absolute !important;
+  top: auto !important;
+  bottom: 6px !important;
+  right: 6px !important;
+  z-index: 60 !important;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.14s ease, transform 0.14s ease !important;
+}
+
+.catalog-card.trash-catalog-card.selected-card .card-more-wrap.trash-card-more-wrap,
+.card-more-wrap.trash-card-more-wrap.is-selected-trash,
+.card-more-wrap.trash-card-more-wrap.menu-open {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+.card-more-dropdown.trash-more-dropdown {
+  top: auto !important;
+  bottom: calc(100% + 5px) !important;
+  right: 0 !important;
+  left: auto !important;
+  min-width: 155px !important;
+}
+
+
+/* ============================================================================
+   PESTAÑA MOODBOARD (EXTRAÍDA DE HABIAPP Y ADAPTADA A CLÁSICO, NOCHE Y LIGHT)
+   ============================================================================ */
+#viewMoodboard.active {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  height: 100vh !important;
+  min-height: 520px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+}
+
+.moodboard-host-wrap {
+  flex: 1 1 auto !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.moodboard-iframe {
+  width: 100% !important;
+  height: 100% !important;
+  border: none !important;
+  display: block !important;
+  background: transparent !important;
+}
+
+/* ============================================================================
+   TARJETAS EN TRASH: TAMAÑO 100% IDÉNTICO AL DE SU ORIGEN (MÓDULOS / MATERIALES)
+   ============================================================================ */
+#viewTrash {
+  padding-top: 0 !important;
+}
+
+.catalog-card .card-thumb-wrap,
+.catalog-card.trash-catalog-card .card-thumb-wrap {
+  position: relative !important;
+  width: 100% !important;
+  aspect-ratio: 1 / 1 !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+  border-radius: 8px 8px 0 0 !important;
+  flex-shrink: 0 !important;
+}
+
+.catalog-card .card-flat-img,
+.catalog-card.trash-catalog-card .card-flat-img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+}
+
+/* En Trash, los 3 puntitos se ubican en la esquina inferior derecha de la miniatura,
+   justo por encima del nombre del creador o marca (ENSSAMBLE / EGGER), sin deformar la tarjeta */
+.card-more-wrap.trash-card-more-wrap {
+  position: absolute !important;
+  top: auto !important;
+  bottom: 46px !important;
+  right: 6px !important;
+  z-index: 65 !important;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.14s ease, transform 0.14s ease !important;
+}
+
+.catalog-card.trash-catalog-card.selected-card .card-more-wrap.trash-card-more-wrap,
+.card-more-wrap.trash-card-more-wrap.is-selected-trash,
+.card-more-wrap.trash-card-more-wrap.menu-open {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+/* ============================================================================
+   ESPESOR MÓDULO Y ESPESOR PIEZA (ETIQUETA ARRIBA DEL SLIDER Y DEL VALOR EN MM)
+   ============================================================================ */
+.minimal-thickness-bar.stacked-thickness-box {
+  width: 156px !important;
+  min-width: 156px !important;
+  max-width: 156px !important;
+  height: auto !important;
+  min-height: 44px !important;
+  padding: 5px 10px 6px 10px !important;
+  border-radius: 12px !important;
+  display: inline-flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px !important;
+  background: #FFFFFF !important;
+  border: 1.5px solid #C8C8C8 !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08) !important;
+  transition: border-color 0.16s ease, box-shadow 0.16s ease, background 0.16s ease !important;
+}
+
+[data-theme="dark"] .minimal-thickness-bar.stacked-thickness-box {
+  background: #272E38 !important;
+  border-color: rgba(255, 197, 118, 0.35) !important;
+}
+
+.min-thick-top-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  line-height: 1.1 !important;
+}
+
+.min-thick-controls-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  gap: 7px !important;
+}
+
+.stacked-thickness-box .min-thick-range {
+  width: 78px !important;
+  min-width: 78px !important;
+  max-width: 78px !important;
+  height: 4px !important;
+}
+
+.stacked-thickness-box .min-thick-badge {
+  width: 46px !important;
+  min-width: 46px !important;
+  max-width: 46px !important;
+  font-size: 8.4px !important;
+  padding: 2px 0 !important;
+}
+
+/* Botón activable/desactivable de Espesor pieza */
+.piece-thickness-box {
+  cursor: pointer !important;
+}
+
+.piece-thick-toggle-btn {
+  border: none !important;
+  background: transparent !important;
+  padding: 1px 6px !important;
+  margin: 0 !important;
+  border-radius: 999px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 5px !important;
+  cursor: pointer !important;
+  width: 100% !important;
+  transition: background 0.15s ease, color 0.15s ease !important;
+}
+
+.piece-thick-status-dot {
+  width: 7px !important;
+  height: 7px !important;
+  border-radius: 50% !important;
+  background: #9CA3AF !important;
+  border: 1px solid rgba(0, 0, 0, 0.2) !important;
+  flex-shrink: 0 !important;
+  transition: background 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+.minimal-thickness-bar.piece-thickness-box.active,
+[data-theme="dark"] .minimal-thickness-bar.piece-thickness-box.active,
+[data-theme="light"] .minimal-thickness-bar.piece-thickness-box.active {
+  border: 2px solid #D97706 !important;
+  box-shadow: 0 0 0 3px rgba(255, 197, 118, 0.72), 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.minimal-thickness-bar.piece-thickness-box.active .piece-thick-toggle-btn {
+  background: #FFC576 !important;
+}
+
+.minimal-thickness-bar.piece-thickness-box.active .piece-thick-toggle-btn .min-thick-title {
+  color: #1E242B !important;
+  font-weight: 700 !important;
+}
+
+.minimal-thickness-bar.piece-thickness-box.active .piece-thick-status-dot {
+  background: #16A34A !important;
+  border-color: #FFFFFF !important;
+  box-shadow: 0 0 6px rgba(22, 163, 74, 0.8) !important;
+}
+
+/* ============================================================================
+   PESTAÑA RENDER: TAMAÑO TOTAL DEL CONTENEDOR DE LA IMAGEN SIN RECORTES
+   ============================================================================ */
+#viewRender.active {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  height: 100vh !important;
+  min-height: 480px !important;
+  padding: 0 14px 14px 14px !important;
+  overflow: hidden !important;
+}
+
+#viewRender > .catalog-header {
+  width: calc(100% + 28px) !important;
+  margin-left: -14px !important;
+  margin-right: -14px !important;
+  margin-bottom: 10px !important;
+  flex-shrink: 0 !important;
+}
+
+#viewRender .render-studio-container {
+  flex: 1 1 auto !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: stretch !important;
+  justify-content: center !important;
+}
+
+#viewRender .render-viewport-card {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  border-radius: 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+}
+
+#renderStudioCanvas {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+
+/* ============================================================================
+   PESTAÑA MOODBOARD (Hecha de 0 con Excalidraw oficial)
+   ============================================================================ */
+#viewMoodboard.active {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  height: calc(100vh - 24px) !important;
+  min-height: 520px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+.excalidraw-host-wrap {
+  flex: 1 1 auto !important;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  border: 1px solid var(--border-subtle) !important;
+  background: var(--bg-panel) !important;
+  display: flex !important;
+}
+
+.excalidraw-iframe {
+  width: 100% !important;
+  height: 100% !important;
+  border: none !important;
+  display: block !important;
+}
+
+/* ============================================================================
+   TIPOGRAFÍA MONTSERRAT BOLD LOCAL + PESTAÑA SHOWROOM
+   (Gato negro sin casco en la cabeza, casco a un lado en el suelo, jugando con
+    bola de estambre amarilla #FFC576 de aquí para allá + "en construcción" 3x)
+   ============================================================================ */
+@font-face {
+  font-family: "Montserrat";
+  src: url("fonts/Montserrat-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("fonts/Montserrat-Bold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+#viewShowroom.active {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: calc(100vh - 28px) !important;
+  min-height: 460px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+.showroom-box-content {
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+}
+
+.showroom-cat-stage {
+  width: 52% !important;
+  height: 60% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  position: relative !important;
+}
+
+.showroom-cat-svg {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
+  overflow: visible !important;
+}
+
+.showroom-under-construction-text {
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 48px !important;
+  font-weight: 700 !important;
+  line-height: 1.12 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: lowercase !important;
+  color: #FFC576 !important;
+  text-align: center !important;
+  margin-top: 4px !important;
+  white-space: nowrap !important;
+  user-select: none !important;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.28) !important;
+}
+
+[data-theme="light"] .showroom-under-construction-text {
+  color: #393939 !important;
+  text-shadow: none !important;
+}
+
+.showroom-cat-head-group {
+  transform-origin: 250px 210px;
+  animation: showroomCatHeadTrack 2.6s ease-in-out infinite;
+}
+
+.showroom-cat-eyes {
+  transform-origin: 250px 186px;
+  animation: showroomCatBlink 4.4s ease-in-out infinite;
+}
+
+.showroom-cat-pupils {
+  animation: showroomCatLookTrack 2.6s ease-in-out infinite;
+}
+
+.showroom-cat-ear-left {
+  transform-origin: 176px 142px;
+  animation: showroomEarLeftTwitch 3.4s ease-in-out infinite;
+}
+
+.showroom-cat-ear-right {
+  transform-origin: 324px 142px;
+  animation: showroomEarRightTwitch 3.8s ease-in-out infinite;
+}
+
+.showroom-cat-tail {
+  transform-origin: 316px 328px;
+  animation: showroomTailSway 2.2s ease-in-out infinite;
+}
+
+.showroom-cat-paw-left {
+  transform-origin: 209px 334px;
+  animation: showroomPawLeftPlay 2.6s ease-in-out infinite;
+}
+
+.showroom-cat-paw-right {
+  transform-origin: 291px 334px;
+  animation: showroomPawRightPlay 2.6s ease-in-out infinite;
+}
+
+.showroom-yarn-travel {
+  animation: showroomYarnRoll 2.6s ease-in-out infinite;
+}
+
+.showroom-yarn-spin {
+  transform-origin: 250px 350px;
+  animation: showroomYarnSpin 2.6s ease-in-out infinite;
+}
+
+.showroom-yarn-trail {
+  transform-origin: 250px 375px;
+  animation: showroomYarnTrailWave 2.6s ease-in-out infinite;
+}
+
+.showroom-cat-whiskers-left {
+  transform-origin: 172px 207px;
+  animation: showroomWhiskerL 2.6s ease-in-out infinite;
+}
+
+.showroom-cat-whiskers-right {
+  transform-origin: 328px 207px;
+  animation: showroomWhiskerR 2.6s ease-in-out infinite;
+}
+
+.showroom-helmet-lamp {
+  animation: showroomLampPulse 1.8s ease-in-out infinite;
+}
+
+.showroom-cat-shadow {
+  transform-origin: 250px 364px;
+  animation: showroomShadowPulse 2.6s ease-in-out infinite;
+}
+
+@keyframes showroomYarnRoll {
+  0%, 100% { transform: translateX(-52px); }
+  50%      { transform: translateX(52px); }
+}
+
+@keyframes showroomYarnSpin {
+  0%, 100% { transform: rotate(-165deg); }
+  50%      { transform: rotate(165deg); }
+}
+
+@keyframes showroomYarnTrailWave {
+  0%, 100% { transform: translateX(-18px) scaleX(0.94); }
+  50%      { transform: translateX(18px) scaleX(1.06); }
+}
+
+@keyframes showroomPawLeftPlay {
+  0%, 100% { transform: translate(12px, -10px) rotate(-18deg); }
+  18%, 82% { transform: translate(0px, 0px) rotate(0deg); }
+  50%      { transform: translate(0px, 0px) rotate(0deg); }
+}
+
+@keyframes showroomPawRightPlay {
+  0%, 32%, 68%, 100% { transform: translate(0px, 0px) rotate(0deg); }
+  50%                { transform: translate(-12px, -10px) rotate(18deg); }
+}
+
+@keyframes showroomCatHeadTrack {
+  0%, 100% { transform: translateY(-2px) rotate(-5.5deg); }
+  50%      { transform: translateY(-2px) rotate(5.5deg); }
+}
+
+@keyframes showroomCatBlink {
+  0%, 44%, 48%, 92%, 96%, 100% { transform: scaleY(1); }
+  46%, 94% { transform: scaleY(0.08); }
+}
+
+@keyframes showroomCatLookTrack {
+  0%, 100% { transform: translate(-6px, 3px); }
+  50%      { transform: translate(6px, 3px); }
+}
+
+@keyframes showroomEarLeftTwitch {
+  0%, 82%, 100% { transform: rotate(0deg); }
+  86% { transform: rotate(-8deg); }
+  92% { transform: rotate(3deg); }
+}
+
+@keyframes showroomEarRightTwitch {
+  0%, 60%, 100% { transform: rotate(0deg); }
+  65% { transform: rotate(8deg); }
+  71% { transform: rotate(-3deg); }
+}
+
+@keyframes showroomTailSway {
+  0%, 100% { transform: rotate(-9deg); }
+  50%      { transform: rotate(11deg); }
+}
+
+@keyframes showroomWhiskerL {
+  0%, 100% { transform: rotate(-3deg); }
+  50%      { transform: rotate(3deg); }
+}
+
+@keyframes showroomWhiskerR {
+  0%, 100% { transform: rotate(-3deg); }
+  50%      { transform: rotate(3deg); }
+}
+
+@keyframes showroomLampPulse {
+  0%, 100% { opacity: 0.75; filter: drop-shadow(0 0 3px #FFC576); }
+  50%      { opacity: 1; filter: drop-shadow(0 0 10px #FFE082); }
+}
+
+@keyframes showroomShadowPulse {
+  0%, 100% { transform: scaleX(1); opacity: 0.38; }
+  50%      { transform: scaleX(0.95); opacity: 0.30; }
+}
+
+/* Previsualización de tarjeta de «Agregar módulo» ocupando el 90% del espacio total
+   del box content de la tarjeta y centrada sin recortar jamás la imagen */
+.catalog-card.new-custom-module-card .card-thumb-wrap,
+[data-theme="dark"] .catalog-card.new-custom-module-card .card-thumb-wrap,
+[data-theme="light"] .catalog-card.new-custom-module-card .card-thumb-wrap {
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+}
+
+.catalog-card.new-custom-module-card .card-flat-img,
+[data-theme="dark"] .catalog-card.new-custom-module-card .card-flat-img,
+[data-theme="light"] .catalog-card.new-custom-module-card .card-flat-img {
+  position: absolute !important;
+  top: 5% !important;
+  left: 5% !important;
+  right: 5% !important;
+  bottom: 5% !important;
+  width: 90% !important;
+  height: 90% !important;
+  max-width: 90% !important;
+  max-height: 90% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  object-fit: contain !important;
+  box-sizing: border-box !important;
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
+  transform: none !important;
+}
+
+/* ============================================================================
+   MODAL «NUEVO NOMBRE» (Diseño idéntico a la imagen 2 adaptado a Clásico, Noche y Día)
+   ============================================================================ */
+.rename-modal-box {
+  background: #FFFFFF !important;
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 16px !important;
+  padding: 22px 24px 20px 24px !important;
+  width: 440px !important;
+  max-width: 92vw !important;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.22) !important;
+}
+
+.rename-modal-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-bottom: 16px !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+.rename-modal-title {
+  color: #393939 !important;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  margin: 0 !important;
+  letter-spacing: -0.01em !important;
+}
+
+.rename-modal-close-btn {
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 50% !important;
+  background: #F1F5F9 !important;
+  color: #393939 !important;
+  border: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 17px !important;
+  cursor: pointer !important;
+  transition: background 0.15s ease !important;
+}
+
+.rename-modal-close-btn:hover {
+  background: #E2E8F0 !important;
+}
+
+.rename-modal-input-group {
+  margin-bottom: 22px !important;
+}
+
+.rename-modal-input {
+  width: 100% !important;
+  height: 40px !important;
+  padding: 0 12px !important;
+  border-radius: 8px !important;
+  border: 1px solid #CBD5E1 !important;
+  background: #FFFFFF !important;
+  color: #1E242B !important;
+  font-size: 13.5px !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+}
+
+.rename-modal-input:focus {
+  border-color: #FFC576 !important;
+  box-shadow: 0 0 0 2px rgba(255, 197, 118, 0.28) !important;
+}
+
+.rename-modal-footer {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 10px !important;
+  margin-top: 4px !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+.rename-modal-box .rename-cancel-btn,
+[data-theme="light"] .rename-modal-box .rename-cancel-btn {
+  background: #2B2B2B !important;
+  color: #FFFFFF !important;
+  border: 1.5px solid #2B2B2B !important;
+  border-radius: 999px !important;
+  padding: 9px 18px !important;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+.rename-modal-box .rename-save-btn,
+[data-theme="light"] .rename-modal-box .rename-save-btn {
+  background: #FFC576 !important;
+  color: #2B2B2B !important;
+  border: 1.5px solid #FFC576 !important;
+  border-radius: 999px !important;
+  padding: 9px 20px !important;
+  font-size: 12.5px !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 12px rgba(255, 197, 118, 0.35) !important;
+}
+
+/* Adaptación armónica del cuadro «Nuevo nombre» al tema Noche (dark) */
+[data-theme="dark"] .rename-modal-box {
+  background: #181C22 !important;
+  border: 1.5px solid rgba(255, 197, 118, 0.28) !important;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.58) !important;
+}
+
+[data-theme="dark"] .rename-modal-title {
+  color: #FFC576 !important;
+}
+
+[data-theme="dark"] .rename-modal-close-btn {
+  background: #272E38 !important;
+  color: #FFC576 !important;
+}
+
+[data-theme="dark"] .rename-modal-close-btn:hover {
+  background: #323B48 !important;
+}
+
+[data-theme="dark"] .rename-modal-input {
+  background: #12151A !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(255, 197, 118, 0.35) !important;
+}
+
+[data-theme="dark"] .rename-modal-box .rename-cancel-btn {
+  background: #2B313B !important;
+  color: #FFFFFF !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
+  border-radius: 999px !important;
+  padding: 9px 18px !important;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+}
+
+[data-theme="dark"] .rename-modal-box .rename-save-btn {
+  background: #FFC576 !important;
+  color: #181C22 !important;
+  border: 1.5px solid #FFC576 !important;
+  border-radius: 999px !important;
+  padding: 9px 20px !important;
+  font-size: 12.5px !important;
+  font-weight: 700 !important;
+}
+
+
+/* ============================================================================
+   ACTUALIZACIÓN: BOTÓN «+ [ÍCONO MÓDULOS]», BOTÓN «ORDENAR» (DRAG & DROP),
+   MENÚ 3 PUNTITOS CON «MOVER A:» Y NUEVA PESTAÑA «ANIMACIONES» SIMPLE
+   ============================================================================ */
+
+/* Botón Agregar módulo: '+ [ícono]' con un ligero espacio entre el signo + y el ícono */
+.add-module-icon-pill-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 7px !important;
+  padding: 0 13px !important;
+  min-width: 54px !important;
+  height: 28px !important;
+}
+
+.add-module-icon-pill-btn .add-mod-plus-sign {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  display: inline-block !important;
+  transform: translateY(-0.5px);
+}
+
+.add-module-icon-pill-btn .add-mod-tab-icon {
+  height: 95% !important;
+  max-height: 95% !important;
+  width: auto !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: contain !important;
+  display: inline-block !important;
+  flex-shrink: 0 !important;
+  pointer-events: none !important;
+}
+
+[data-theme="dark"] .add-module-icon-pill-btn:hover .add-mod-tab-icon,
+[data-theme="dark"] .add-module-icon-pill-btn.active .add-mod-tab-icon {
+  filter: brightness(0.22) !important;
+}
+
+/* Botón Ordenar activo/inactivo y feedback visual en la grilla */
+#toggleSortModulesBtn.active {
+  background: #FFC576 !important;
+  color: #1E242B !important;
+  border-color: #FFC576 !important;
+  box-shadow: 0 3px 10px rgba(255, 197, 118, 0.38) !important;
+}
+
+.cards-grid.sorting-mode-active .catalog-card {
+  cursor: grab !important;
+  outline: 1.5px dashed rgba(255, 197, 118, 0.72) !important;
+  outline-offset: -2px !important;
+  transition: transform 0.14s ease, box-shadow 0.14s ease, outline-color 0.14s ease !important;
+}
+
+[data-theme="light"] .cards-grid.sorting-mode-active .catalog-card {
+  outline: 1.5px dashed rgba(57, 57, 57, 0.45) !important;
+}
+
+.cards-grid.sorting-mode-active .catalog-card:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+}
+
+.cards-grid.sorting-mode-active .catalog-card.dragging-sort-card {
+  opacity: 0.45 !important;
+  cursor: grabbing !important;
+  transform: scale(0.96) !important;
+}
+
+.cards-grid.sorting-mode-active .catalog-card.drag-over-sort-target {
+  outline: 2.5px solid #FFC576 !important;
+  box-shadow: 0 0 0 3px rgba(255, 197, 118, 0.38) !important;
+  transform: scale(1.03) !important;
+}
+
+/* Menú de 3 puntitos: 1. Renombrar, 2. Mover a:, 3. Eliminar */
+.card-more-dropdown {
+  min-width: 112px !important;
+  padding: 4px !important;
+}
+
+.card-move-to-wrap {
+  position: relative !important;
+  width: 100% !important;
+}
+
+.card-move-opt-btn {
+  width: 100% !important;
+  border: none !important;
+  background: transparent !important;
+  color: #F8FAFC !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 8.2px !important;
+  padding: 5px 7px !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 5px !important;
+  text-align: left !important;
+}
+
+.card-move-opt-btn:hover,
+.card-move-to-wrap:hover .card-move-opt-btn,
+.card-move-to-wrap.submenu-open .card-move-opt-btn {
+  background: rgba(255, 197, 118, 0.22) !important;
+  color: #FFC576 !important;
+}
+
+.card-move-opt-left {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+}
+
+.card-move-arrow {
+  font-size: 8px !important;
+  opacity: 0.85 !important;
+}
+
+.card-move-submenu {
+  position: absolute !important;
+  top: -2px !important;
+  right: calc(100% + 4px) !important;
+  background: #1E242B !important;
+  border: 1.5px solid #FFC576 !important;
+  border-radius: 7px !important;
+  padding: 4px !important;
+  min-width: 104px !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45) !important;
+  display: none;
+  flex-direction: column !important;
+  gap: 2px !important;
+  z-index: 80 !important;
+}
+
+.card-move-to-wrap:hover .card-move-submenu,
+.card-move-to-wrap.submenu-open .card-move-submenu {
+  display: flex !important;
+}
+
+.card-move-cat-btn {
+  width: 100% !important;
+  border: none !important;
+  background: transparent !important;
+  color: #E2E8F0 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 8px !important;
+  padding: 4.5px 8px !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  text-align: left !important;
+  white-space: nowrap !important;
+}
+
+.card-move-cat-btn:hover {
+  background: #FFC576 !important;
+  color: #1E242B !important;
+}
+
+.card-move-cat-btn.is-current-cat {
+  color: #FFC576 !important;
+  background: rgba(255, 197, 118, 0.14) !important;
+}
+
+.card-move-cat-btn.is-current-cat:hover {
+  background: #FFC576 !important;
+  color: #1E242B !important;
+}
+
+/* Nueva Pestaña Animaciones: Simple (Puertas + grados / Cajones + mm) */
+.anim-simple-panel {
+  width: 100%;
+  max-width: 880px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 8px 4px 28px 4px;
+}
+
+.anim-simple-group {
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="dark"] .anim-simple-group {
+  background: #1A1F26 !important;
+  border-color: rgba(255, 197, 118, 0.22) !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.32) !important;
+}
+
+[data-theme="light"] .anim-simple-group {
+  background: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+}
+
+.anim-simple-group-title {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  color: #2E343B !important;
+  margin: 0 !important;
+  letter-spacing: -0.01em;
+}
+
+[data-theme="dark"] .anim-simple-group-title {
+  color: #FFC576 !important;
+}
+
+[data-theme="light"] .anim-simple-group-title {
+  color: #393939 !important;
+}
+
+.anim-simple-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 12px 18px;
+}
+
+.anim-action-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.anim-assign-btn {
+  flex: 1 1 auto !important;
+  min-height: 32px !important;
+  height: 32px !important;
+  padding: 0 14px !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+  font-size: 10.2px !important;
+  font-weight: 600 !important;
+}
+
+.anim-assign-btn:hover {
+  transform: scale(1.02) !important;
+}
+
+.anim-blank-input {
+  width: 92px !important;
+  min-width: 92px !important;
+  height: 32px !important;
+  padding: 0 10px !important;
+  border-radius: 999px !important;
+  border: 1.5px solid rgba(57, 57, 57, 0.28) !important;
+  background: #FFFFFF !important;
+  color: #1E242B !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 10.5px !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+.anim-blank-input:focus {
+  border-color: #FFC576 !important;
+  box-shadow: 0 0 0 2px rgba(255, 197, 118, 0.32) !important;
+}
+
+[data-theme="dark"] .anim-blank-input {
+  background: #12151A !important;
+  color: #FFFFFF !important;
+  border-color: rgba(255, 197, 118, 0.35) !important;
+}
+
+[data-theme="dark"] .anim-blank-input::placeholder {
+  color: rgba(255, 197, 118, 0.55) !important;
+}
+
+
+/* Layout de 2 columnas para Puertas y Cajones con botón 'Quitar' al mismo nivel a la derecha del todo */
+.anim-simple-panel.anim-two-cols-layout {
+  max-width: 100% !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(300px, 1fr)) !important;
+  gap: 20px !important;
+  align-items: start !important;
+}
+
+@media (max-width: 720px) {
+  .anim-simple-panel.anim-two-cols-layout {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.anim-simple-group-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  min-height: 30px !important;
+  gap: 12px !important;
+  width: 100% !important;
+}
+
+.anim-simple-actions-stack {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 11px !important;
+  width: 100% !important;
+}
+
+.anim-remove-toggle-btn {
+  margin-left: auto !important;
+  min-width: 78px !important;
+  height: 28px !important;
+  padding: 0 14px !important;
+  justify-content: center !important;
+}
+
+#toggleRemoveAnimBtn.active {
+  background: #FFC576 !important;
+  color: #1E242B !important;
+  border-color: #FFC576 !important;
+  box-shadow: 0 3px 10px rgba(255, 197, 118, 0.38) !important;
+}
